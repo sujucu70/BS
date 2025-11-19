@@ -57,7 +57,7 @@ const PricingGuide: React.FC = () => {
                             <h3 className="text-xl font-bold text-gray-800 mb-4">Escenarios de Pricing Típicos</h3>
                             <p className="text-gray-600 mb-4">(Estos son ejemplos para guiarte. Cada propuesta es personalizada).</p>
                             <div className="border-t pt-4"><p className="font-bold">Sweet Spot (Sanidad Privada, 15k interacciones/mes)</p><ul className="text-sm text-gray-600 list-disc list-inside"><li><strong>Solución:</strong> Beyond-Booking + Beyond-IVR.</li><li><strong>Cuota Plataforma:</strong> ~€2,500 / mes.</li><li><strong>Cuota Éxito:</strong> ~€0.80 / interacción resuelta.</li><li><strong>MRR Estimado:</strong> €8,000 - €12,000.</li></ul></div>
-                            <div className="border-t pt-4 mt-4"><p className="font-bold">BPO 2.0 Completo (Utilities, 50k interacciones/mes)</p><ul className="text-sm text-gray-600 list-disc list-inside"><li><strong>Solución:</strong> Servicio gestionado completo.</li><li><strong>Cuota Plataforma:</strong> ~€5,000 / mes.</li><li><strong>Cuota Éxito:</strong> Modelo por niveles.</li><li><strong>MRR Estimado:</strong> >€25,000.</li></ul></div>
+                            <div className="border-t pt-4 mt-4"><p className="font-bold">BPO 2.0 Completo (Utilities, 50k interacciones/mes)</p><ul className="text-sm text-gray-600 list-disc list-inside"><li><strong>Solución:</strong> Servicio gestionado completo.</li><li><strong>Cuota Plataforma:</strong> ~€5,000 / mes.</li><li><strong>Cuota Éxito:</strong> Modelo por niveles.</li><li><strong>MRR Estimado:</strong> &gt;€25,000.</li></ul></div>
                         </div>
                     </div>
                 </section>

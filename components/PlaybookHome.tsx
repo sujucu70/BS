@@ -67,9 +67,6 @@ const PlaybookHome: React.FC<PlaybookHomeProps> = ({ onNavigate }) => {
             </header>
             <main>
                 <section id="pillars" className="mb-20">
-                    <h2 className="text-3xl font-bold text-[#3F3F3F] text-center mb-8" style={{fontFamily: 'Outfit, sans-serif'}}>
-                        📚 Pilares del Playbook
-                    </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 max-w-7xl mx-auto">
                         {pillars.map(pillar => <PillarCard key={pillar.section} {...pillar} onNavigate={onNavigate} />)}
                     </div>

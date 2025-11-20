@@ -22,6 +22,7 @@ This is a React-based interactive sales playbook application for BeyondCX. It pr
 ### Content Reorganization & Humanization
 - **Charts Relocated**: Moved MEDDICC Impact chart from Blueprint to Metodología section; removed Pipeline Conversion chart from Operaciones section to reduce visual noise
 - **Modelo Operativo Humanized & Simplified** (components/OperatingModel.tsx):
+  - Added info box "💡 Guía Rápida de Roles y Métricas" at top of Gobernanza section to explain key acronyms (SDR, AE, SQL, MRR) before users read role cards
   - Added micro-narratives to role cards: SDR ("Tu motor de generación de oportunidades"), AE ("Convertir dolor en contratos firmados"), Manager ("Eliminar obstáculos y asegurar el pronóstico")
   - Updated North Star metrics to plain language: "New MRR (Ingreso Recurrente)", "Precisión del Forecast"
   - Simplified Higiene del Dato section: eliminated 3 redundant grey cards, consolidated content into clean phase-based structure (Discovery, Solución, Económica) within "Campos Obligatorios" column

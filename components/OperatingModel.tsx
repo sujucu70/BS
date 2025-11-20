@@ -50,10 +50,35 @@ const OperatingModel: React.FC = () => {
                 
                 {/* BLOQUE 1: GOBERNANZA */}
                 <section>
-                    <h3 className="text-2xl font-bold text-[#3F3F3F] mb-8 flex items-center pb-2 border-b border-gray-200">
+                    <h3 className="text-2xl font-bold text-[#3F3F3F] mb-6 flex items-center pb-2 border-b border-gray-200">
                         <span className="bg-[#3F3F3F] text-white w-8 h-8 rounded-full flex items-center justify-center text-sm mr-3">1</span>
                         Gobernanza del Equipo (Quién)
                     </h3>
+
+                    {/* Cuadro de Información: Guía Rápida */}
+                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-5 mb-8 shadow-sm">
+                        <div className="flex items-start gap-3">
+                            <div className="flex-shrink-0 text-2xl text-blue-600">ℹ️</div>
+                            <div className="flex-grow">
+                                <h4 className="text-sm font-bold text-[#3F3F3F] mb-3">💡 Guía Rápida de Roles y Métricas</h4>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm text-[#3F3F3F]">
+                                    <div>
+                                        <strong className="text-blue-700">SDR</strong> (Sales Development Rep): Genera reuniones cualificadas (SQLs).
+                                    </div>
+                                    <div>
+                                        <strong className="text-blue-700">AE</strong> (Account Executive): Cierra contratos y genera ingresos (New MRR).
+                                    </div>
+                                    <div>
+                                        <strong className="text-blue-700">SQL</strong> (Sales Qualified Lead): Reunión agendada con un cliente que tiene dolor real.
+                                    </div>
+                                    <div>
+                                        <strong className="text-blue-700">MRR</strong> (Monthly Recurring Revenue): Ingreso mensual recurrente (Valor de la suscripción).
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                         <RoleKpiCard role="SDR (Desarrollo)" subtitle="Tu motor de generación de oportunidades." color="border-green-500" northStar="SQLs (Reuniones Agendadas)" inputs={["Llamadas salientes", "Cuentas tocadas", "Tasa de Contacto"]} outputs={["Reuniones (SQLs)", "Conversión a Opp"]} />
                         <RoleKpiCard role="AE (Cierre)" subtitle="Convertir dolor en contratos firmados." color="border-blue-500" northStar="New MRR (Ingreso Recurrente)" inputs={["Demos Ejecutadas", "Propuestas Enviadas", "Pipeline Generado"]} outputs={["Win Rate %", "Ciclo de Venta", "Ticket Medio"]} />

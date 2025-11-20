@@ -11,8 +11,8 @@ const PillarSection: React.FC<{
     children: React.ReactNode; 
 }> = ({ number, title, conceptTitle, conceptText, children }) => (
     <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-8 shadow-sm hover:shadow-md transition-shadow">
-        <div className="bg-gray-50 p-4 border-b border-gray-200 flex items-center justify-between">
-             <h3 className="text-lg font-bold text-gray-800 flex items-center">
+        <div className="bg-[#E4E3E3] p-4 border-b border-gray-200 flex items-center justify-between">
+             <h3 className="text-lg font-bold text-[#3F3F3F] flex items-center">
                 <span className="bg-[#6D84E3] text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm font-bold">{number}</span>
                 {title}
             </h3>
@@ -20,7 +20,7 @@ const PillarSection: React.FC<{
         <div className="p-6 md:p-8">
              <div className="bg-blue-50 border-l-4 border-[#6D84E3] p-4 mb-8 rounded-r-lg">
                 <p className="text-xs font-bold text-[#6D84E3] uppercase mb-1">📘 Concepto Clave: {conceptTitle}</p>
-                <p className="text-sm text-gray-700 leading-relaxed">{conceptText}</p>
+                <p className="text-sm text-[#3F3F3F] leading-relaxed">{conceptText}</p>
              </div>
              {children}
         </div>
@@ -28,7 +28,7 @@ const PillarSection: React.FC<{
 );
 
 const MeddiccCard: React.FC<{ letter: string; title: string }> = ({ letter, title }) => (
-    <div className="flex flex-col items-center p-4 bg-gray-800 rounded-lg border border-gray-700 text-center min-w-[100px]">
+    <div className="flex flex-col items-center p-4 bg-[#3F3F3F] rounded-lg border border-[#3F3F3F] text-center min-w-[100px]">
         <span className="text-3xl font-black text-[#6D84E3] mb-1">{letter}</span>
         <span className="text-xs text-white font-medium">{title}</span>
     </div>
@@ -57,7 +57,7 @@ const MethodologyTools: React.FC = () => {
                         
                         {/* 1. PRINCIPIOS */}
                         <section>
-                            <h2 className="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200">1. Principios de Nuestra Moción de Venta</h2>
+                            <h2 className="text-2xl font-bold text-[#3F3F3F] mb-6 pb-2 border-b border-gray-200">1. Principios de Nuestra Moción de Venta</h2>
                             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 text-center">
                                 {[
                                     { t: "Educación Primero", d: "Creamos categoría. El cliente debe entender el 'Por qué ahora'." },
@@ -66,9 +66,9 @@ const MethodologyTools: React.FC = () => {
                                     { t: "Escalabilidad", d: "Procesos diseñados para ser repetibles." },
                                     { t: "Portfolio Entry", d: "Empezamos pequeño (Piloto), escalamos rápido." }
                                 ].map((p, i) => (
-                                    <div key={i} className="bg-gray-50 p-4 rounded-lg border border-gray-100 hover:border-[#6D84E3] transition-colors">
+                                    <div key={i} className="bg-[#E4E3E3] p-4 rounded-lg border border-gray-100 hover:border-[#6D84E3] transition-colors">
                                         <h4 className="font-bold text-[#6D84E3] text-sm mb-2">{p.t}</h4>
-                                        <p className="text-xs text-gray-500">{p.d}</p>
+                                        <p className="text-xs text-[#B1B1B0]">{p.d}</p>
                                     </div>
                                 ))}
                             </div>
@@ -77,7 +77,7 @@ const MethodologyTools: React.FC = () => {
                         {/* 2. LOS 3 PILARES */}
                         <section>
                             <div className="mb-8">
-                                <h2 className="text-2xl font-bold text-gray-800 pb-2 border-b border-gray-200">2. Los 3 Pilares de la Metodología</h2>
+                                <h2 className="text-2xl font-bold text-[#3F3F3F] pb-2 border-b border-gray-200">2. Los 3 Pilares de la Metodología</h2>
                             </div>
 
                             {/* 2.1 MANIFESTO */}
@@ -90,7 +90,7 @@ const MethodologyTools: React.FC = () => {
                                 <div className="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
                                     <div className="text-5xl">🎯</div>
                                     <div>
-                                        <p className="text-xl text-gray-800 font-medium italic leading-relaxed">"No vendemos servicios, vendemos Resultados de Negocio. Nos posicionamos como educadores que diagnostican y co-crean valor."</p>
+                                        <p className="text-xl text-[#3F3F3F] font-medium italic leading-relaxed">"No vendemos servicios, vendemos Resultados de Negocio. Nos posicionamos como educadores que diagnostican y co-crean valor."</p>
                                     </div>
                                 </div>
                             </PillarSection>
@@ -105,15 +105,15 @@ const MethodologyTools: React.FC = () => {
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                                     <div className="bg-blue-50 p-4 rounded-lg border border-blue-100 text-center">
                                         <div className="text-blue-600 font-black text-xl mb-1">TOFU</div>
-                                        <div className="text-xs font-bold uppercase tracking-wide text-gray-500">Educación</div>
+                                        <div className="text-xs font-bold uppercase tracking-wide text-[#B1B1B0]">Educación</div>
                                     </div>
                                     <div className="bg-green-50 p-4 rounded-lg border border-green-100 text-center">
                                         <div className="text-green-600 font-black text-xl mb-1">MOFU</div>
-                                        <div className="text-xs font-bold uppercase tracking-wide text-gray-500">Cualificación</div>
+                                        <div className="text-xs font-bold uppercase tracking-wide text-[#B1B1B0]">Cualificación</div>
                                     </div>
                                     <div className="bg-orange-50 p-4 rounded-lg border border-orange-100 text-center">
                                         <div className="text-orange-600 font-black text-xl mb-1">BOFU</div>
-                                        <div className="text-xs font-bold uppercase tracking-wide text-gray-500">Cierre</div>
+                                        <div className="text-xs font-bold uppercase tracking-wide text-[#B1B1B0]">Cierre</div>
                                     </div>
                                 </div>
                             </PillarSection>
@@ -125,7 +125,7 @@ const MethodologyTools: React.FC = () => {
                                 conceptTitle="¿Qué es MEDDICC?" 
                                 conceptText="Es el checklist mental que nos dice si vamos a ganar o perder un trato. Si no puedes responder a cada letra, estás volando a ciegas."
                             >
-                                <div className="bg-gray-900 rounded-xl p-8 text-white shadow-inner">
+                                <div className="bg-[#3F3F3F] rounded-xl p-8 text-white shadow-inner">
                                     <div className="flex flex-wrap justify-center gap-3 mb-6">
                                         <MeddiccCard letter="M" title="Metrics" />
                                         <MeddiccCard letter="E" title="Economic Buyer" />

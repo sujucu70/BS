@@ -97,3 +97,18 @@
 - [x] Crear componente "Pricing & Negotiation" para dropdown Herramientas
 - [x] Actualizar tipos y navegación con nuevas herramientas
 - [ ] Actualizar todos los componentes con colores corporativos
+
+## Correcciones Pendientes
+
+- [x] Cambiar todas las fuentes restantes a Outfit
+- [x] Actualizar todos los colores a paleta corporativa
+- [x] Ajustar logo en header para mejor visualización
+- [x] Modificar Sales Plays Library para mostrar solo vista por fases
+- [x] Email Templates verificado (sin errores de sintaxis)
+
+## Rediseños Pendientes
+
+- [x] Rediseñar Home para reflejar estructura actual (4 secciones + 7 herramientas)
+- [x] Mejorar visualización de pestañas en Estrategia
+- [x] Ajustar formato de títulos en Estrategia (menos centrados, tamaño moderado)
+- [x] Rediseñar sección "Higiene del Dato" en Operaciones con layout de 3 columnas

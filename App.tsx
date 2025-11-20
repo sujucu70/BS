@@ -96,8 +96,10 @@ const App: React.FC = () => {
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-16">
                         <div className="flex items-center gap-3">
-                            <img src="/beyond-logo.png" alt="Beyond Logo" className="h-8" />
-                            <span className="hidden sm:inline text-sm text-[#B1B1B0] ml-2">Sales Playbook</span>
+                            <img src="/beyond-logo.png" alt="Beyond Logo" className="h-10 w-auto object-contain" />
+                            <div className="hidden sm:flex flex-col">
+                                <span className="text-xs text-[#B1B1B0] uppercase tracking-wide">Sales Playbook</span>
+                            </div>
                         </div>
                         <div className="hidden md:block">
                             <div className="ml-10 flex items-baseline space-x-4">

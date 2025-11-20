@@ -17,7 +17,7 @@ interface SalesPlay {
 }
 
 const SalesPlays: React.FC = () => {
-    const [selectedCategory, setSelectedCategory] = useState<string>('all');
+    const [selectedCategory, setSelectedCategory] = useState<string>('Prospecting');
     const [expandedPlay, setExpandedPlay] = useState<string | null>(null);
 
     const salesPlays: SalesPlay[] = [
@@ -323,19 +323,17 @@ const SalesPlays: React.FC = () => {
 
     const allPlays = [...salesPlays, ...templatePlays];
 
-    const categories = ['all', 'Prospecting', 'Discovery', 'Demo', 'Negotiation', 'Closing', 'Expansion'];
+    const categories = ['Prospecting', 'Discovery', 'Demo', 'Negotiation', 'Closing', 'Expansion'];
 
-    const filteredPlays = selectedCategory === 'all'
-        ? allPlays
-        : allPlays.filter(play => play.category === selectedCategory);
+    const filteredPlays = allPlays.filter(play => play.category === selectedCategory);
 
     return (
         <div className="container mx-auto p-4 md:p-8 bg-[#f8f9fa] min-h-screen">
             <header className="text-center py-12">
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight mb-4" style={{fontFamily: 'Playfair Display, serif'}}>
+                <h1 className="text-4xl md:text-5xl font-bold text-[#3F3F3F] tracking-tight mb-4" style={{fontFamily: 'Outfit, sans-serif'}}>
                     Sales Plays Library
                 </h1>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                <p className="text-xl text-[#B1B1B0] max-w-3xl mx-auto">
                     Playbooks tácticos para cada situación del ciclo de ventas
                 </p>
             </header>
@@ -349,11 +347,11 @@ const SalesPlays: React.FC = () => {
                             onClick={() => setSelectedCategory(category)}
                             className={`px-4 py-2 rounded-md text-sm font-medium transition-all whitespace-nowrap ${
                                 selectedCategory === category
-                                    ? 'bg-[#1e3a5f] text-white shadow-sm'
-                                    : 'text-gray-700 hover:bg-gray-100'
+                                    ? 'bg-[#6D84E3] text-white shadow-sm'
+                                    : 'text-[#3F3F3F] hover:bg-[#E4E3E3]'
                             }`}
                         >
-                            {category === 'all' ? 'Todos' : category}
+                            {category}
                         </button>
                     ))}
                 </div>
@@ -366,14 +364,14 @@ const SalesPlays: React.FC = () => {
                         {/* Play Header */}
                         <button
                             onClick={() => setExpandedPlay(expandedPlay === play.id ? null : play.id)}
-                            className="w-full p-6 flex items-center justify-between hover:bg-gray-50 transition-colors"
+                            className="w-full p-6 flex items-center justify-between hover:bg-[#E4E3E3] transition-colors"
                         >
                             <div className="flex items-center gap-4 text-left">
-                                <div className="bg-gradient-to-br from-[#1e3a5f] to-[#2d5a8f] text-white w-12 h-12 rounded-lg flex items-center justify-center font-bold">
+                                <div className="bg-gradient-to-br from-[#6D84E3] to-[#3F3F3F] text-white w-12 h-12 rounded-lg flex items-center justify-center font-bold">
                                     {play.id}
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-bold text-gray-900" style={{fontFamily: 'Playfair Display, serif'}}>
+                                    <h3 className="text-xl font-bold text-[#3F3F3F]" style={{fontFamily: 'Outfit, sans-serif'}}>
                                         {play.title}
                                     </h3>
                                     <span className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-semibold mt-2">
@@ -393,38 +391,38 @@ const SalesPlays: React.FC = () => {
 
                         {/* Play Details */}
                         {expandedPlay === play.id && play.steps.length > 0 && (
-                            <div className="p-6 border-t border-gray-200 bg-gray-50">
+                            <div className="p-6 border-t border-gray-200 bg-[#E4E3E3]">
                                 {/* Situation & Objective */}
                                 <div className="grid md:grid-cols-2 gap-6 mb-8">
                                     <div>
-                                        <h4 className="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                                        <h4 className="font-bold text-[#3F3F3F] mb-2 flex items-center gap-2">
                                             <span>📋</span> Situación
                                         </h4>
-                                        <p className="text-gray-700 text-sm">{play.situation}</p>
+                                        <p className="text-[#3F3F3F] text-sm">{play.situation}</p>
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-gray-800 mb-2 flex items-center gap-2">
+                                        <h4 className="font-bold text-[#3F3F3F] mb-2 flex items-center gap-2">
                                             <span>🎯</span> Objetivo
                                         </h4>
-                                        <p className="text-gray-700 text-sm">{play.objective}</p>
+                                        <p className="text-[#3F3F3F] text-sm">{play.objective}</p>
                                     </div>
                                 </div>
 
                                 {/* Steps */}
                                 <div className="mb-8">
-                                    <h4 className="font-bold text-gray-800 mb-4 text-lg">Pasos a Seguir</h4>
+                                    <h4 className="font-bold text-[#3F3F3F] mb-4 text-lg">Pasos a Seguir</h4>
                                     <div className="space-y-4">
                                         {play.steps.map((step) => (
                                             <div key={step.step} className="bg-white p-4 rounded-lg border border-gray-200">
                                                 <div className="flex items-start gap-3">
-                                                    <div className="bg-[#1e3a5f] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
+                                                    <div className="bg-[#6D84E3] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
                                                         {step.step}
                                                     </div>
                                                     <div className="flex-1">
-                                                        <h5 className="font-bold text-gray-900 mb-2">{step.action}</h5>
+                                                        <h5 className="font-bold text-[#3F3F3F] mb-2">{step.action}</h5>
                                                         <ul className="space-y-1">
                                                             {step.tips.map((tip, idx) => (
-                                                                <li key={idx} className="text-sm text-gray-600 flex items-start gap-2">
+                                                                <li key={idx} className="text-sm text-[#B1B1B0] flex items-start gap-2">
                                                                     <span className="text-green-600 mt-1">✓</span>
                                                                     <span>{tip}</span>
                                                                 </li>
@@ -440,17 +438,17 @@ const SalesPlays: React.FC = () => {
                                 {/* Tools, Metrics, Mistakes */}
                                 <div className="grid md:grid-cols-3 gap-6">
                                     <div>
-                                        <h4 className="font-bold text-gray-800 mb-3 text-sm">🛠️ Herramientas</h4>
+                                        <h4 className="font-bold text-[#3F3F3F] mb-3 text-sm">🛠️ Herramientas</h4>
                                         <ul className="space-y-1">
                                             {play.tools.map((tool, idx) => (
-                                                <li key={idx} className="text-sm text-gray-600 bg-white px-3 py-1 rounded">
+                                                <li key={idx} className="text-sm text-[#B1B1B0] bg-white px-3 py-1 rounded">
                                                     {tool}
                                                 </li>
                                             ))}
                                         </ul>
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-gray-800 mb-3 text-sm">📊 Métricas de Éxito</h4>
+                                        <h4 className="font-bold text-[#3F3F3F] mb-3 text-sm">📊 Métricas de Éxito</h4>
                                         <ul className="space-y-1">
                                             {play.successMetrics.map((metric, idx) => (
                                                 <li key={idx} className="text-sm text-green-700 flex items-start gap-1">
@@ -461,7 +459,7 @@ const SalesPlays: React.FC = () => {
                                         </ul>
                                     </div>
                                     <div>
-                                        <h4 className="font-bold text-gray-800 mb-3 text-sm">⚠️ Errores Comunes</h4>
+                                        <h4 className="font-bold text-[#3F3F3F] mb-3 text-sm">⚠️ Errores Comunes</h4>
                                         <ul className="space-y-1">
                                             {play.commonMistakes.map((mistake, idx) => (
                                                 <li key={idx} className="text-sm text-red-700 flex items-start gap-1">
@@ -478,7 +476,7 @@ const SalesPlays: React.FC = () => {
                         {/* Template indicator */}
                         {expandedPlay === play.id && play.steps.length === 0 && (
                             <div className="p-6 border-t border-gray-200 bg-yellow-50">
-                                <p className="text-center text-gray-600">
+                                <p className="text-center text-[#B1B1B0]">
                                     📝 <strong>Template pendiente de completar</strong> - Este play necesita ser desarrollado con contenido específico
                                 </p>
                             </div>
@@ -489,24 +487,24 @@ const SalesPlays: React.FC = () => {
 
             {/* Summary */}
             <div className="mt-16 bg-white p-8 rounded-xl shadow-md max-w-4xl mx-auto">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center" style={{fontFamily: 'Playfair Display, serif'}}>
+                <h2 className="text-2xl font-bold text-[#3F3F3F] mb-4 text-center" style={{fontFamily: 'Outfit, sans-serif'}}>
                     Cómo Usar Esta Biblioteca
                 </h2>
                 <div className="grid md:grid-cols-3 gap-6 text-center">
                     <div>
                         <div className="text-4xl mb-2">1️⃣</div>
-                        <h3 className="font-bold text-gray-800 mb-2">Identifica la Situación</h3>
-                        <p className="text-sm text-gray-600">Encuentra el play que coincide con tu escenario actual</p>
+                        <h3 className="font-bold text-[#3F3F3F] mb-2">Identifica la Situación</h3>
+                        <p className="text-sm text-[#B1B1B0]">Encuentra el play que coincide con tu escenario actual</p>
                     </div>
                     <div>
                         <div className="text-4xl mb-2">2️⃣</div>
-                        <h3 className="font-bold text-gray-800 mb-2">Sigue los Pasos</h3>
-                        <p className="text-sm text-gray-600">Ejecuta cada paso con los tips proporcionados</p>
+                        <h3 className="font-bold text-[#3F3F3F] mb-2">Sigue los Pasos</h3>
+                        <p className="text-sm text-[#B1B1B0]">Ejecuta cada paso con los tips proporcionados</p>
                     </div>
                     <div>
                         <div className="text-4xl mb-2">3️⃣</div>
-                        <h3 className="font-bold text-gray-800 mb-2">Mide Resultados</h3>
-                        <p className="text-sm text-gray-600">Compara tus métricas con los benchmarks de éxito</p>
+                        <h3 className="font-bold text-[#3F3F3F] mb-2">Mide Resultados</h3>
+                        <p className="text-sm text-[#B1B1B0]">Compara tus métricas con los benchmarks de éxito</p>
                     </div>
                 </div>
             </div>

@@ -117,10 +117,10 @@ const CaseStudies: React.FC = () => {
     return (
         <div className="container mx-auto p-4 md:p-8 bg-[#f8f9fa] min-h-screen">
             <header className="text-center py-12">
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight mb-4" style={{fontFamily: 'Playfair Display, serif'}}>
+                <h1 className="text-4xl md:text-5xl font-bold text-[#3F3F3F] tracking-tight mb-4" style={{fontFamily: 'Outfit, sans-serif'}}>
                     Case Studies
                 </h1>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                <p className="text-xl text-[#B1B1B0] max-w-3xl mx-auto">
                     Resultados reales de clientes que transformaron sus operaciones con BeyondCX
                 </p>
             </header>
@@ -134,8 +134,8 @@ const CaseStudies: React.FC = () => {
                             onClick={() => setSelectedIndustry(industry)}
                             className={`px-6 py-2 rounded-md text-sm font-medium transition-all ${
                                 selectedIndustry === industry 
-                                    ? 'bg-[#1e3a5f] text-white shadow-sm' 
-                                    : 'text-gray-700 hover:bg-gray-100'
+                                    ? 'bg-[#6D84E3] text-white shadow-sm' 
+                                    : 'text-[#3F3F3F] hover:bg-[#E4E3E3]'
                             }`}
                         >
                             {industry === 'all' ? 'Todos' : industry}
@@ -149,10 +149,10 @@ const CaseStudies: React.FC = () => {
                 {filteredCases.map((caseStudy, index) => (
                     <div key={caseStudy.id} className="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
                         {/* Header */}
-                        <div className="bg-gradient-to-r from-[#1e3a5f] to-[#2d5a8f] text-white p-6">
+                        <div className="bg-gradient-to-r from-[#6D84E3] to-[#3F3F3F] text-white p-6">
                             <div className="flex items-start justify-between flex-wrap gap-4">
                                 <div>
-                                    <h2 className="text-2xl font-bold mb-2" style={{fontFamily: 'Playfair Display, serif'}}>
+                                    <h2 className="text-2xl font-bold mb-2" style={{fontFamily: 'Outfit, sans-serif'}}>
                                         {caseStudy.company}
                                     </h2>
                                     <div className="flex flex-wrap gap-3 text-sm">
@@ -170,36 +170,36 @@ const CaseStudies: React.FC = () => {
                         <div className="p-8">
                             {/* Challenge */}
                             <div className="mb-8">
-                                <h3 className="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
+                                <h3 className="text-lg font-bold text-[#3F3F3F] mb-3 flex items-center gap-2">
                                     <span className="text-red-600">⚠️</span> Desafío
                                 </h3>
-                                <p className="text-gray-700 leading-relaxed bg-red-50 p-4 rounded-lg border-l-4 border-red-600">
+                                <p className="text-[#3F3F3F] leading-relaxed bg-red-50 p-4 rounded-lg border-l-4 border-red-600">
                                     {caseStudy.challenge}
                                 </p>
                             </div>
 
                             {/* Solution */}
                             <div className="mb-8">
-                                <h3 className="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
+                                <h3 className="text-lg font-bold text-[#3F3F3F] mb-3 flex items-center gap-2">
                                     <span className="text-blue-600">💡</span> Solución
                                 </h3>
-                                <p className="text-gray-700 leading-relaxed bg-blue-50 p-4 rounded-lg border-l-4 border-blue-600">
+                                <p className="text-[#3F3F3F] leading-relaxed bg-blue-50 p-4 rounded-lg border-l-4 border-blue-600">
                                     {caseStudy.solution}
                                 </p>
                             </div>
 
                             {/* Results */}
                             <div className="mb-8">
-                                <h3 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
+                                <h3 className="text-lg font-bold text-[#3F3F3F] mb-4 flex items-center gap-2">
                                     <span className="text-green-600">📊</span> Resultados
                                 </h3>
                                 <div className="grid md:grid-cols-2 gap-4">
                                     {caseStudy.results.map((result, idx) => (
                                         <div key={idx} className="bg-green-50 p-4 rounded-lg border border-green-200">
-                                            <div className="text-sm font-semibold text-gray-600 mb-2">{result.metric}</div>
+                                            <div className="text-sm font-semibold text-[#B1B1B0] mb-2">{result.metric}</div>
                                             <div className="flex items-center justify-between mb-2">
-                                                <span className="text-sm text-gray-500">Antes: {result.before}</span>
-                                                <span className="text-sm text-gray-500">Después: {result.after}</span>
+                                                <span className="text-sm text-[#B1B1B0]">Antes: {result.before}</span>
+                                                <span className="text-sm text-[#B1B1B0]">Después: {result.after}</span>
                                             </div>
                                             <div className="text-2xl font-bold text-green-700 text-center">
                                                 {result.improvement}
@@ -211,11 +211,11 @@ const CaseStudies: React.FC = () => {
 
                             {/* Testimonial */}
                             {caseStudy.testimonial && (
-                                <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-[#1e3a5f]">
-                                    <p className="text-gray-700 italic mb-4 text-lg leading-relaxed">
+                                <div className="bg-[#E4E3E3] p-6 rounded-lg border-l-4 border-[#6D84E3]">
+                                    <p className="text-[#3F3F3F] italic mb-4 text-lg leading-relaxed">
                                         "{caseStudy.testimonial.quote}"
                                     </p>
-                                    <div className="text-sm text-gray-600">
+                                    <div className="text-sm text-[#B1B1B0]">
                                         <div className="font-bold">{caseStudy.testimonial.author}</div>
                                         <div>{caseStudy.testimonial.role}</div>
                                     </div>
@@ -225,7 +225,7 @@ const CaseStudies: React.FC = () => {
                             {/* Tags */}
                             <div className="mt-6 flex flex-wrap gap-2">
                                 {caseStudy.tags.map((tag, idx) => (
-                                    <span key={idx} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium">
+                                    <span key={idx} className="bg-[#E4E3E3] text-[#3F3F3F] px-3 py-1 rounded-full text-xs font-medium">
                                         {tag}
                                     </span>
                                 ))}
@@ -237,14 +237,14 @@ const CaseStudies: React.FC = () => {
 
             {/* CTA */}
             <div className="text-center py-16">
-                <div className="bg-gradient-to-r from-[#1e3a5f] to-[#2d5a8f] text-white p-12 rounded-xl max-w-4xl mx-auto">
-                    <h2 className="text-3xl font-bold mb-4" style={{fontFamily: 'Playfair Display, serif'}}>
+                <div className="bg-gradient-to-r from-[#6D84E3] to-[#3F3F3F] text-white p-12 rounded-xl max-w-4xl mx-auto">
+                    <h2 className="text-3xl font-bold mb-4" style={{fontFamily: 'Outfit, sans-serif'}}>
                         ¿Quieres resultados similares?
                     </h2>
                     <p className="text-lg mb-8 opacity-90">
                         Descubre cómo BeyondCX puede transformar tu operación de atención al cliente
                     </p>
-                    <button className="bg-white text-[#1e3a5f] font-bold py-4 px-10 rounded-lg text-lg hover:shadow-xl transition-all">
+                    <button className="bg-white text-[#6D84E3] font-bold py-4 px-10 rounded-lg text-lg hover:shadow-xl transition-all">
                         Solicitar Demo
                     </button>
                 </div>

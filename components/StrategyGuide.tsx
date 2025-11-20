@@ -7,14 +7,14 @@ import { PlaybookSection } from '../types';
 const TabButton: React.FC<{ active: boolean; onClick: () => void; label: string; icon?: React.ReactNode }> = ({ active, onClick, label, icon }) => (
     <button
         onClick={onClick}
-        className={`flex items-center justify-center px-6 py-4 text-sm md:text-base font-bold transition-all border-b-4 flex-1 ${
+        className={`flex items-center gap-2 px-8 py-4 text-sm font-semibold transition-all rounded-t-lg ${
             active 
-                ? 'border-[#6D84E3] text-[#6D84E3] bg-white' 
-                : 'border-transparent text-gray-500 hover:text-gray-700 hover:bg-gray-50'
+                ? 'bg-[#6D84E3] text-white shadow-md' 
+                : 'bg-[#E4E3E3] text-[#B1B1B0] hover:text-[#3F3F3F] hover:bg-white'
         }`}
     >
-        <span className="mr-2">{icon}</span>
-        {label}
+        <span className="text-lg">{icon}</span>
+        <span>{label}</span>
     </button>
 );
 
@@ -23,12 +23,12 @@ const StrategyGuide: React.FC = () => {
 
     return (
         <div className="container mx-auto p-4 md:p-8 bg-[#f3f4f6] min-h-screen">
-            <header className="text-center py-8">
-                <h1 className="text-3xl md:text-5xl font-bold text-gray-900 tracking-tight">1. Estrategia & Posicionamiento</h1>
-                <p className="text-lg text-[#6D84E3] mt-2 font-medium">A quién vendemos y qué les decimos.</p>
+            <header className="py-8">
+                <h1 className="text-3xl font-bold text-[#3F3F3F] mb-2" style={{fontFamily: 'Outfit, sans-serif'}}>1. Estrategia & Posicionamiento</h1>
+                <p className="text-base text-[#B1B1B0]">A quién vendemos y qué les decimos</p>
             </header>
 
-            <div className="bg-white rounded-t-xl shadow-sm border-b border-gray-200 flex sticky top-16 z-30">
+            <div className="flex gap-2 mb-6">
                 <TabButton active={activeTab === 'client'} onClick={() => setActiveTab('client')} label="1A. El Cliente (ICP & Targeting)" icon="🎯" />
                 <TabButton active={activeTab === 'message'} onClick={() => setActiveTab('message')} label="1B. El Mensaje (Narrativa)" icon="📣" />
             </div>

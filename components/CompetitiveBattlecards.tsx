@@ -233,10 +233,10 @@ const CompetitiveBattlecards: React.FC = () => {
     return (
         <div className="container mx-auto p-4 md:p-8 bg-[#f8f9fa] min-h-screen">
             <header className="text-center py-12">
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight mb-4" style={{fontFamily: 'Playfair Display, serif'}}>
+                <h1 className="text-4xl md:text-5xl font-bold text-[#3F3F3F] tracking-tight mb-4" style={{fontFamily: 'Outfit, sans-serif'}}>
                     Competitive Battlecards
                 </h1>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                <p className="text-xl text-[#B1B1B0] max-w-3xl mx-auto">
                     Inteligencia competitiva para ganar deals contra cualquier competidor
                 </p>
             </header>
@@ -247,16 +247,16 @@ const CompetitiveBattlecards: React.FC = () => {
                     <div
                         key={competitor.id}
                         onClick={() => setSelectedCompetitor(competitor)}
-                        className="bg-white rounded-xl shadow-md border border-gray-200 p-6 cursor-pointer hover:shadow-lg hover:border-[#1e3a5f] transition-all text-center"
+                        className="bg-white rounded-xl shadow-md border border-gray-200 p-6 cursor-pointer hover:shadow-lg hover:border-[#6D84E3] transition-all text-center"
                     >
                         <div className="text-6xl mb-4">{competitor.logo}</div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-2" style={{fontFamily: 'Playfair Display, serif'}}>
+                        <h3 className="text-xl font-bold text-[#3F3F3F] mb-2" style={{fontFamily: 'Outfit, sans-serif'}}>
                             {competitor.name}
                         </h3>
-                        <p className="text-sm text-gray-600 mb-4">
+                        <p className="text-sm text-[#B1B1B0] mb-4">
                             {competitor.positioning}
                         </p>
-                        <button className="bg-[#1e3a5f] hover:bg-[#2d5a8f] text-white font-semibold py-2 px-6 rounded-lg transition-all text-sm">
+                        <button className="bg-[#6D84E3] hover:bg-[#3F3F3F] text-white font-semibold py-2 px-6 rounded-lg transition-all text-sm">
                             Ver Battlecard
                         </button>
                     </div>
@@ -267,12 +267,12 @@ const CompetitiveBattlecards: React.FC = () => {
             {selectedCompetitor && (
                 <div className="max-w-6xl mx-auto bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden mb-12">
                     {/* Header */}
-                    <div className="bg-gradient-to-r from-[#1e3a5f] to-[#2d5a8f] text-white p-8">
+                    <div className="bg-gradient-to-r from-[#6D84E3] to-[#3F3F3F] text-white p-8">
                         <div className="flex items-center justify-between">
                             <div className="flex items-center gap-4">
                                 <div className="text-5xl">{selectedCompetitor.logo}</div>
                                 <div>
-                                    <h2 className="text-3xl font-bold mb-2" style={{fontFamily: 'Playfair Display, serif'}}>
+                                    <h2 className="text-3xl font-bold mb-2" style={{fontFamily: 'Outfit, sans-serif'}}>
                                         {selectedCompetitor.name}
                                     </h2>
                                     <p className="opacity-90">{selectedCompetitor.positioning}</p>
@@ -402,30 +402,30 @@ const CompetitiveBattlecards: React.FC = () => {
                         {/* Differentiators Table */}
                         {selectedCompetitor.differentiators.length > 0 && (
                             <div>
-                                <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+                                <h3 className="text-lg font-bold text-[#3F3F3F] mb-4 flex items-center gap-2">
                                     <span>⚖️</span> Comparativa de Diferenciadores
                                 </h3>
                                 <div className="overflow-x-auto">
                                     <table className="w-full text-sm">
                                         <thead>
-                                            <tr className="border-b-2 border-gray-200 bg-gray-50">
-                                                <th className="text-left py-3 px-4 font-semibold text-gray-700">Feature</th>
+                                            <tr className="border-b-2 border-gray-200 bg-[#E4E3E3]">
+                                                <th className="text-left py-3 px-4 font-semibold text-[#3F3F3F]">Feature</th>
                                                 <th className="text-left py-3 px-4 font-semibold text-green-700">BeyondCX</th>
                                                 <th className="text-left py-3 px-4 font-semibold text-red-700">{selectedCompetitor.name}</th>
-                                                <th className="text-center py-3 px-4 font-semibold text-gray-700">Impacto</th>
+                                                <th className="text-center py-3 px-4 font-semibold text-[#3F3F3F]">Impacto</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             {selectedCompetitor.differentiators.map((diff, idx) => (
-                                                <tr key={idx} className="border-b border-gray-100 hover:bg-gray-50">
-                                                    <td className="py-3 px-4 font-medium text-gray-900">{diff.feature}</td>
+                                                <tr key={idx} className="border-b border-gray-100 hover:bg-[#E4E3E3]">
+                                                    <td className="py-3 px-4 font-medium text-[#3F3F3F]">{diff.feature}</td>
                                                     <td className="py-3 px-4 text-green-700">{diff.us}</td>
                                                     <td className="py-3 px-4 text-red-700">{diff.them}</td>
                                                     <td className="py-3 px-4 text-center">
                                                         <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${
                                                             diff.impact === 'high' ? 'bg-red-100 text-red-800' :
                                                             diff.impact === 'medium' ? 'bg-yellow-100 text-yellow-800' :
-                                                            'bg-gray-100 text-gray-800'
+                                                            'bg-[#E4E3E3] text-[#3F3F3F]'
                                                         }`}>
                                                             {diff.impact.toUpperCase()}
                                                         </span>
@@ -443,33 +443,33 @@ const CompetitiveBattlecards: React.FC = () => {
 
             {/* Usage Guide */}
             <div className="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-md">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center" style={{fontFamily: 'Playfair Display, serif'}}>
+                <h2 className="text-2xl font-bold text-[#3F3F3F] mb-6 text-center" style={{fontFamily: 'Outfit, sans-serif'}}>
                     Cómo Usar las Battlecards
                 </h2>
                 <div className="grid md:grid-cols-4 gap-6 text-center">
                     <div>
                         <div className="text-3xl mb-2">1️⃣</div>
-                        <h3 className="font-bold text-gray-800 mb-2 text-sm">Research</h3>
-                        <p className="text-xs text-gray-600">Identifica qué competidor está evaluando el prospect</p>
+                        <h3 className="font-bold text-[#3F3F3F] mb-2 text-sm">Research</h3>
+                        <p className="text-xs text-[#B1B1B0]">Identifica qué competidor está evaluando el prospect</p>
                     </div>
                     <div>
                         <div className="text-3xl mb-2">2️⃣</div>
-                        <h3 className="font-bold text-gray-800 mb-2 text-sm">Killer Questions</h3>
-                        <p className="text-xs text-gray-600">Usa las preguntas en discovery para exponer gaps</p>
+                        <h3 className="font-bold text-[#3F3F3F] mb-2 text-sm">Killer Questions</h3>
+                        <p className="text-xs text-[#B1B1B0]">Usa las preguntas en discovery para exponer gaps</p>
                     </div>
                     <div>
                         <div className="text-3xl mb-2">3️⃣</div>
-                        <h3 className="font-bold text-gray-800 mb-2 text-sm">Posiciona</h3>
-                        <p className="text-xs text-gray-600">Enfatiza diferenciadores de alto impacto</p>
+                        <h3 className="font-bold text-[#3F3F3F] mb-2 text-sm">Posiciona</h3>
+                        <p className="text-xs text-[#B1B1B0]">Enfatiza diferenciadores de alto impacto</p>
                     </div>
                     <div>
                         <div className="text-3xl mb-2">4️⃣</div>
-                        <h3 className="font-bold text-gray-800 mb-2 text-sm">Anticipa</h3>
-                        <p className="text-xs text-gray-600">Conoce patrones de pérdida y mitiga riesgos</p>
+                        <h3 className="font-bold text-[#3F3F3F] mb-2 text-sm">Anticipa</h3>
+                        <p className="text-xs text-[#B1B1B0]">Conoce patrones de pérdida y mitiga riesgos</p>
                     </div>
                 </div>
                 <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
-                    <p className="text-sm text-gray-700">
+                    <p className="text-sm text-[#3F3F3F]">
                         <strong>💡 Pro Tip:</strong> Nunca hables mal del competidor directamente. Usa las killer questions para que el prospect descubra las limitaciones por sí mismo.
                     </p>
                 </div>

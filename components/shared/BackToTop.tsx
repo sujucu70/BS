@@ -29,7 +29,7 @@ const BackToTop: React.FC = () => {
             {isVisible && (
                 <button
                     onClick={scrollToTop}
-                    className="fixed bottom-8 right-8 bg-[#1e3a5f] hover:bg-[#2d5a8f] text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all z-40"
+                    className="fixed bottom-8 right-8 bg-[#6D84E3] hover:bg-[#3F3F3F] text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all z-40"
                     aria-label="Volver arriba"
                 >
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

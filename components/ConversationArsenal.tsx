@@ -157,10 +157,10 @@ const competitive = [
 ];
 
 const productImpact = [
-    { product: "Beyond-IVR", solve: "IVR rígido, esperas largas", kpi: "Tasa de Abandono / CSAT", impact: "Reducción abandono <5%, Atención inmediata" },
+    { product: "Beyond-IVR", solve: "IVR rígido, esperas largas", kpi: "Tasa de Abandono / CSAT", impact: "Reducción abandono &lt;5%, Atención inmediata" },
     { product: "Beyond-Booking", solve: "No-shows, agenda caótica", kpi: "Ocupación / Ingresos", impact: "+25% Citas efectivas, -30% No-shows" },
     { product: "Beyond-Order", solve: "Errores en pedidos, lentitud", kpi: "Tasa de Error / Coste Proceso", impact: "-90% Errores, -70% Tiempo gestión" },
-    { product: "Beyond-FCR", solve: "Re-llamadas, bajo FCR", kpi: "FCR / Coste por Contacto", impact: "Resolución >85% primer contacto" }
+    { product: "Beyond-FCR", solve: "Re-llamadas, bajo FCR", kpi: "FCR / Coste por Contacto", impact: "Resolución &gt;85% primer contacto" }
 ];
 
 // Original Tactical Data (Preserved for Search)

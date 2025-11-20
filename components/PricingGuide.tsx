@@ -403,7 +403,7 @@ const PricingGuide: React.FC = () => {
                                         <li className="flex justify-between border-b border-gray-100 pb-2"><span>Solución:</span> <span className="font-bold">Beyond-Booking + IVR</span></li>
                                         <li className="flex justify-between border-b border-gray-100 pb-2"><span>Cuota Plataforma:</span> <span className="font-bold">~€2,500 / mes</span></li>
                                         <li className="flex justify-between border-b border-gray-100 pb-2"><span>Cuota Éxito:</span> <span className="font-bold">~€0.80 / cita</span></li>
-                                        <li className="flex justify-between bg-gray-50 p-2 rounded"><span>MRR Estimado:</span> <span className="font-bold text-[#6D84E3]">€8,000 - €12,000</span></li>
+                                        <li className="flex justify-between bg-gray-50 p-2 rounded"><span>MRR Estimado:</span> <span className="font-bold text-[#6D84E3]">&gt; €25,000</span></li>
                                     </ul>
                                 </div>
                                 <div className="bg-white p-6 rounded-xl shadow-sm border-t-4 border-gray-800">

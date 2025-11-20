@@ -226,7 +226,7 @@ const ProcessGuide: React.FC = () => {
                                 {[
                                     { t: "Educación Primero", d: "Creamos categoría. El cliente debe entender el 'Por qué ahora'." },
                                     { t: "Compromiso Mutuo", d: "No trabajamos gratis. Si nosotros invertimos recursos, ellos también." },
-                                    { t: "Valor > Precio", d: "Hablamos de ROI y eficiencia, no de coste por hora." },
+                                    { t: "Valor &gt; Precio", d: "Hablamos de ROI y eficiencia, no de coste por hora." },
                                     { t: "Escalabilidad", d: "Procesos diseñados para ser repetibles." },
                                     { t: "Portfolio Entry", d: "Empezamos pequeño (Piloto), escalamos rápido." }
                                 ].map((p, i) => (
@@ -492,7 +492,7 @@ const ProcessGuide: React.FC = () => {
                                     <ChecklistItem 
                                         category="4. Aceleradores (Quick Wins)" 
                                         items={[
-                                            "¿Hay algún tipo de interacción simple y repetitiva que sea >20% del volumen? (Ej: Estado de pedido)",
+                                            "¿Hay algún tipo de interacción simple y repetitiva que sea &gt;20% del volumen? (Ej: Estado de pedido)",
                                             "¿Tienen scripts o base de conocimiento documentada?",
                                             "¿Estarían dispuestos a empezar con un piloto en una sola línea de negocio?"
                                         ]} 

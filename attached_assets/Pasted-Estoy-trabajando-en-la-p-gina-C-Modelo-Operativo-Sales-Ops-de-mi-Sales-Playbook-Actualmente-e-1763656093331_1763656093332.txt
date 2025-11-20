@@ -1,0 +1,39 @@
+Estoy trabajando en la página "C. Modelo Operativo" (Sales Ops) de mi Sales Playbook. Actualmente, el diseño es limpio pero el contenido es demasiado técnico, lleno de siglas y parece más un cuadro de mando frío que una guía de ayuda para el vendedor.
+
+Objetivo: Quiero que actualices el código de esta página para "humanizar" el contenido. Necesito que cualquier comercial nuevo entienda qué se espera de él sin tener que preguntar qué significan las siglas.
+
+Instrucciones Específicas de Cambio:
+
+Por favor, edita el componente/página correspondiente a "Modelo Operativo" aplicando los siguientes 3 grupos de cambios en el contenido:
+
+1. SECCIÓN GOBERNANZA (Roles): Añadir "Micro-Narrativa" Debajo del título de cada rol, añade una frase de propósito en cursiva o un color de texto secundario:
+
+SDR: Añadir subtítulo: "Tu motor de generación de oportunidades."
+
+AE: Añadir subtítulo: "Convertir dolor en contratos firmados."
+
+Manager: Añadir subtítulo: "Eliminar obstáculos y asegurar el pronóstico."
+
+Cambio en Métricas: Donde dice solo "New MRR", cámbialo a: "New MRR (Ingreso Recurrente)". Donde dice "Forecast Accuracy", cámbialo a "Precisión del Forecast".
+
+2. SECCIÓN HIGIENE DEL DATO: Explicar Acrónimos (Plain English) En las tarjetas de datos, reemplaza los textos técnicos por explicaciones claras:
+
+Cambia "TCV" por: "Valor Total Contrato (TCV)" y añade debajo: "Suma total a facturar en el periodo."
+
+Cambia "MAP Activo" por: "Plan de Acción Mutuo (MAP)" y añade debajo: "¿Tenemos fechas de cierre pactadas con el cliente?"
+
+Cambia "Tech Stack" por: "Tecnología Actual del Cliente".
+
+Cambia "Pain Point Principal" por: "Dolor Principal (Pain)" y añade: "¿Qué problema les cuesta dinero hoy?"
+
+3. SECCIÓN RITUALES: Añadir Columna de "Preparación" En la tabla de Rituales de Gestión, añade una nueva columna a la derecha llamada "¿Qué debo llevar preparado?" (o "Input Requerido") con este contenido para cada fila:
+
+Daily Standup: "Bloqueos del día y Top 3 prioridades."
+
+Pipeline Review: "Propuesta de 'Siguiente Paso' para cada Deal abierto."
+
+Forecast Call: "Cifra de cierre comprometida (Commit) para el mes."
+
+QBR: "Lecciones aprendidas y Plan de Territorio."
+
+Nota de Diseño: Mantén el estilo visual actual (tarjetas, sombras, tipografía), solo actualiza los textos y la estructura de la tabla para acomodar la nueva columna. Asegúrate de que las explicaciones nuevas tengan un tamaño de fuente ligeramente menor o un gris más suave para mantener la jerarquía visual.

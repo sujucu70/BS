@@ -2,9 +2,10 @@
 import React, { useState } from 'react';
 import PipelineHealthChart from './charts/PipelineHealthChart';
 
-const RoleKpiCard: React.FC<{ role: string; northStar: string; inputs: string[]; outputs: string[]; color: string }> = ({ role, northStar, inputs, outputs, color }) => (
+const RoleKpiCard: React.FC<{ role: string; subtitle?: string; northStar: string; inputs: string[]; outputs: string[]; color: string }> = ({ role, subtitle, northStar, inputs, outputs, color }) => (
     <div className={`bg-white rounded-xl shadow border-t-4 ${color} p-6 flex flex-col h-full`}>
         <h3 className="text-lg font-bold text-[#3F3F3F] mb-1">{role}</h3>
+        {subtitle && <p className="text-sm text-[#6D84E3] italic mb-3">{subtitle}</p>}
         <div className="mb-4 pb-4 border-b border-gray-100">
             <p className="text-xs text-[#B1B1B0] uppercase font-bold">North Star Metric</p>
             <p className="text-xl font-black text-[#3F3F3F]">{northStar}</p>
@@ -55,9 +56,9 @@ const OperatingModel: React.FC = () => {
                         Gobernanza del Equipo (Quién)
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                        <RoleKpiCard role="SDR (Desarrollo)" color="border-green-500" northStar="SQLs (Reuniones Agendadas)" inputs={["Llamadas salientes", "Cuentas tocadas", "Tasa de Contacto"]} outputs={["Reuniones (SQLs)", "Conversión a Opp"]} />
-                        <RoleKpiCard role="AE (Cierre)" color="border-blue-500" northStar="New MRR (Ingresos)" inputs={["Demos Ejecutadas", "Propuestas Enviadas", "Pipeline Generado"]} outputs={["Win Rate %", "Ciclo de Venta", "Ticket Medio"]} />
-                        <RoleKpiCard role="Sales Manager" color="border-purple-500" northStar="Forecast Accuracy" inputs={["Coaching Hours", "Deal Reviews", "Pipeline Coverage"]} outputs={["% Attainment Equipo", "Participación", "Retención"]} />
+                        <RoleKpiCard role="SDR (Desarrollo)" subtitle="Tu motor de generación de oportunidades." color="border-green-500" northStar="SQLs (Reuniones Agendadas)" inputs={["Llamadas salientes", "Cuentas tocadas", "Tasa de Contacto"]} outputs={["Reuniones (SQLs)", "Conversión a Opp"]} />
+                        <RoleKpiCard role="AE (Cierre)" subtitle="Convertir dolor en contratos firmados." color="border-blue-500" northStar="New MRR (Ingreso Recurrente)" inputs={["Demos Ejecutadas", "Propuestas Enviadas", "Pipeline Generado"]} outputs={["Win Rate %", "Ciclo de Venta", "Ticket Medio"]} />
+                        <RoleKpiCard role="Sales Manager" subtitle="Eliminar obstáculos y asegurar el pronóstico." color="border-purple-500" northStar="Precisión del Forecast" inputs={["Coaching Hours", "Deal Reviews", "Pipeline Coverage"]} outputs={["% Attainment Equipo", "Participación", "Retención"]} />
                     </div>
                     <div className="text-center">
                         <button onClick={() => setShowRaci(!showRaci)} className="inline-flex items-center px-6 py-3 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-[#3F3F3F] bg-white hover:bg-[#E4E3E3] focus:outline-none">
@@ -155,18 +156,33 @@ const OperatingModel: React.FC = () => {
                                     <p className="text-sm text-[#3F3F3F]">Motivo de Pérdida (Reason Code).</p>
                                 </div>
                                 <div className="mt-6 p-3 bg-[#E4E3E3] rounded-lg">
+                                    <p className="text-xs font-bold text-[#3F3F3F] mb-1">🚦 Datos de Cualificación:</p>
+                                    <p className="text-xs text-[#B1B1B0] mb-2">
+                                        <strong>Dolor Principal (Pain):</strong> ¿Qué problema les cuesta dinero hoy?
+                                    </p>
                                     <p className="text-xs text-[#B1B1B0]">
-                                        <strong>🚦 Datos de Cualificación:</strong> Pain Point Principal, Fuente del Lead, Buyer Persona, Volumen Actual
+                                        Fuente del Lead, Buyer Persona, Volumen Actual
                                     </p>
                                 </div>
                                 <div className="p-3 bg-[#E4E3E3] rounded-lg">
+                                    <p className="text-xs font-bold text-[#3F3F3F] mb-1">🛠️ Datos Solución:</p>
+                                    <p className="text-xs text-[#B1B1B0] mb-2">
+                                        <strong>Tecnología Actual del Cliente</strong>
+                                    </p>
+                                    <p className="text-xs text-[#B1B1B0] mb-2">
+                                        <strong>Plan de Acción Mutuo (MAP):</strong> ¿Tenemos fechas de cierre pactadas con el cliente?
+                                    </p>
                                     <p className="text-xs text-[#B1B1B0]">
-                                        <strong>🛠️ Datos Solución:</strong> Tech Stack Actual, Viabilidad Técnica, MAP Activo, Roles Identificados
+                                        Viabilidad Técnica, Roles Identificados
                                     </p>
                                 </div>
                                 <div className="p-3 bg-[#E4E3E3] rounded-lg">
+                                    <p className="text-xs font-bold text-[#3F3F3F] mb-1">💰 Datos Económicos:</p>
+                                    <p className="text-xs text-[#B1B1B0] mb-2">
+                                        <strong>Valor Total Contrato (TCV):</strong> Suma total a facturar en el periodo.
+                                    </p>
                                     <p className="text-xs text-[#B1B1B0]">
-                                        <strong>💰 Datos Económicos:</strong> TCV, Fecha de Cierre, Motivo de Pérdida, Fecha Inicio Servicio
+                                        Fecha de Cierre, Motivo de Pérdida, Fecha Inicio Servicio
                                     </p>
                                 </div>
                             </div>
@@ -211,7 +227,7 @@ const OperatingModel: React.FC = () => {
                         Ritmo de Negocio (Cuándo)
                     </h3>
                     
-                    <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-10">
+                    <div className="bg-white rounded-xl border border-gray-200 overflow-x-auto mb-10">
                         <table className="min-w-full text-sm text-left">
                             <thead className="bg-[#E4E3E3] text-[#3F3F3F] uppercase text-xs font-bold">
                                 <tr>
@@ -219,6 +235,7 @@ const OperatingModel: React.FC = () => {
                                     <th className="px-6 py-3">Frecuencia</th>
                                     <th className="px-6 py-3">Objetivo Crítico</th>
                                     <th className="px-6 py-3">Audiencia</th>
+                                    <th className="px-6 py-3 bg-blue-50 text-[#6D84E3]">¿Qué debo llevar preparado?</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-gray-100">
@@ -227,30 +244,35 @@ const OperatingModel: React.FC = () => {
                                     <td className="px-6 py-4"><span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded font-bold">Diario (15 min)</span></td>
                                     <td className="px-6 py-4">Eliminar bloqueos inmediatos y asegurar foco en actividades generadoras de ingresos (IGA).</td>
                                     <td className="px-6 py-4 text-[#B1B1B0]">SDRs + Manager</td>
+                                    <td className="px-6 py-4 bg-blue-50 text-sm text-[#3F3F3F]">Bloqueos del día y Top 3 prioridades.</td>
                                 </tr>
                                 <tr className="hover:bg-[#E4E3E3]">
                                     <td className="px-6 py-4 font-bold text-[#3F3F3F]">Pipeline Review</td>
                                     <td className="px-6 py-4"><span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded font-bold">Semanal (Lunes)</span></td>
                                     <td className="px-6 py-4">Validar 'Next Steps' con fecha futura y sanear la higiene del dato (eliminar zombies).</td>
                                     <td className="px-6 py-4 text-[#B1B1B0]">AEs + Manager</td>
+                                    <td className="px-6 py-4 bg-blue-50 text-sm text-[#3F3F3F]">Propuesta de 'Siguiente Paso' para cada Deal abierto.</td>
                                 </tr>
                                 <tr className="hover:bg-[#E4E3E3]">
                                     <td className="px-6 py-4 font-bold text-[#3F3F3F]">Deal Strategy (Clinic)</td>
                                     <td className="px-6 py-4"><span className="bg-[#E4E3E3] text-[#B1B1B0] text-xs px-2 py-1 rounded font-bold">Ad-hoc / Jueves</span></td>
                                     <td className="px-6 py-4">Desbloquear estancamientos en cuentas Tier 1 y definir plan de ataque con Executive Sponsorship.</td>
                                     <td className="px-6 py-4 text-[#B1B1B0]">Equipo Completo</td>
+                                    <td className="px-6 py-4 bg-blue-50 text-sm text-[#B1B1B0] italic">—</td>
                                 </tr>
                                 <tr className="hover:bg-[#E4E3E3]">
                                     <td className="px-6 py-4 font-bold text-[#3F3F3F]">Forecast Call</td>
                                     <td className="px-6 py-4"><span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded font-bold">Mensual</span></td>
                                     <td className="px-6 py-4">Confirmar la cifra de 'Commit' (Cierre seguro) y analizar desviaciones (Gap).</td>
                                     <td className="px-6 py-4 text-[#B1B1B0]">Manager + Dirección</td>
+                                    <td className="px-6 py-4 bg-blue-50 text-sm text-[#3F3F3F]">Cifra de cierre comprometida (Commit) para el mes.</td>
                                 </tr>
                                  <tr className="hover:bg-[#E4E3E3]">
                                     <td className="px-6 py-4 font-bold text-[#3F3F3F]">QBR (Quarterly Review)</td>
                                     <td className="px-6 py-4"><span className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded font-bold">Trimestral</span></td>
                                     <td className="px-6 py-4">Revisión de rendimiento trimestral (Win/Loss) y re-alineación de territorios/cuotas.</td>
                                     <td className="px-6 py-4 text-[#B1B1B0]">Toda la compañía</td>
+                                    <td className="px-6 py-4 bg-blue-50 text-sm text-[#3F3F3F]">Lecciones aprendidas y Plan de Territorio.</td>
                                 </tr>
                             </tbody>
                         </table>

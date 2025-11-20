@@ -8,7 +8,7 @@ interface PlaybookHomeProps {
 
 const PillarCard: React.FC<{ title: string; description: string; section: PlaybookSection; onNavigate: (section: PlaybookSection) => void; icon: React.ReactNode; }> = ({ title, description, section, onNavigate, icon }) => (
     <div className="bg-white p-8 rounded-xl shadow-md border border-gray-100 flex flex-col items-center text-center transition-all hover:shadow-xl hover:border-[#6D84E3] h-full group">
-        <div className="mx-auto bg-gradient-to-br from-[#6D84E3] to-[#3F3F3F] text-white w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">{icon}</div>
+        <div className="mx-auto text-[#3F3F3F] mb-6 group-hover:scale-110 transition-transform">{icon}</div>
         <h2 className="text-2xl font-bold text-[#3F3F3F]" style={{fontFamily: 'Outfit, sans-serif'}}>{title}</h2>
         <p className="text-[#B1B1B0] mt-4 mb-8 flex-grow text-sm leading-relaxed">{description}</p>
         <button onClick={() => onNavigate(section)} className="inline-block bg-[#6D84E3] hover:bg-[#3F3F3F] text-white font-semibold py-3 px-10 rounded-lg text-base shadow-sm hover:shadow-md transition-all">

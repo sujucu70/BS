@@ -9,18 +9,14 @@ import BookingVP from './components/solutions/BookingVP';
 import FcrVP from './components/solutions/FcrVP';
 import IvrVP from './components/solutions/IvrVP';
 import OrderVP from './components/solutions/OrderVP';
-import { useFeedback } from './hooks/useFeedback';
-import FeedbackModal from './components/shared/FeedbackModal';
 
 const App: React.FC = () => {
     const [activeSection, setActiveSection] = useState<PlaybookSection>(PlaybookSection.HOME);
-    const { isModalOpen, closeModal, handleFeedbackSubmit, resetTimer } = useFeedback();
 
     const navigateTo = useCallback((section: PlaybookSection) => {
         setActiveSection(section);
         window.scrollTo(0, 0);
-        resetTimer();
-    }, [resetTimer]);
+    }, []);
 
     const renderSection = () => {
         switch (activeSection) {
@@ -56,11 +52,6 @@ const App: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-[#e3e3e3] text-gray-800">
-            <FeedbackModal 
-                isOpen={isModalOpen}
-                onClose={closeModal}
-                onSubmit={handleFeedbackSubmit}
-            />
             <nav className="bg-white/80 backdrop-blur-md shadow-md sticky top-0 z-40">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-16">

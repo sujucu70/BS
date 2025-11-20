@@ -141,7 +141,7 @@ const ClientManifesto: React.FC = () => {
                                 <h3 className="font-bold text-gray-800 border-b pb-2 mt-6">💻 Tecnológicos</h3>
                                 <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
                                     <li>Dependencia de <strong>IVR tradicional</strong> (DTMF).</li>
-                                    <li><strong>IT Saturado:</strong> Backlog de >6 meses.</li>
+                                    <li><strong>IT Saturado:</strong> Backlog de &gt;6 meses.</li>
                                     <li>Sin capacidad interna de IA.</li>
                                     <li>CRM implementado pero desconectado (Silos).</li>
                                 </ul>
@@ -168,7 +168,7 @@ const ClientManifesto: React.FC = () => {
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-gray-100">
-                                    <tr className="hover:bg-gray-50"><td className="px-6 py-3 font-medium">Volumen > 20k interacciones/mes</td><td className="px-6 py-3 text-right text-[#6D84E3] font-bold">+20</td></tr>
+                                    <tr className="hover:bg-gray-50"><td className="px-6 py-3 font-medium">Volumen &gt; 20k interacciones/mes</td><td className="px-6 py-3 text-right text-[#6D84E3] font-bold">+20</td></tr>
                                     <tr className="hover:bg-gray-50"><td className="px-6 py-3 font-medium">Sector Prioritario (Sanidad/Retail)</td><td className="px-6 py-3 text-right text-[#6D84E3] font-bold">+15</td></tr>
                                     <tr className="hover:bg-gray-50"><td className="px-6 py-3 font-medium">Dolor Financiero Identificado (Coste/Churn)</td><td className="px-6 py-3 text-right text-[#6D84E3] font-bold">+20</td></tr>
                                     <tr className="hover:bg-gray-50"><td className="px-6 py-3 font-medium">Acceso Directo a C-Level (COO/CFO)</td><td className="px-6 py-3 text-right text-[#6D84E3] font-bold">+15</td></tr>

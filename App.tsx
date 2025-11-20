@@ -96,7 +96,7 @@ const App: React.FC = () => {
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-16">
                         <div className="flex items-center gap-3">
-                            <img src="/beyond-logo.png" alt="Beyond Logo" className="h-10 w-auto object-contain" />
+                            <img src="/attached_assets/IMAGOTIPO_BEYOND_Mesa de trabajo 1 copia 3.png" alt="Beyond Logo" className="h-10 w-auto object-contain" />
                             <div className="hidden sm:flex flex-col">
                                 <span className="text-xs text-[#B1B1B0] uppercase tracking-wide">Sales Playbook</span>
                             </div>

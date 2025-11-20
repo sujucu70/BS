@@ -16,6 +16,8 @@ import SalesPlays from './components/SalesPlays';
 import ROICalculator from './components/ROICalculator';
 import EmailTemplates from './components/EmailTemplates';
 import CompetitiveBattlecards from './components/CompetitiveBattlecards';
+import DiscoveryScripts from './components/DiscoveryScripts';
+import PricingNegotiation from './components/PricingNegotiation';
 
 const App: React.FC = () => {
     const [activeSection, setActiveSection] = useState<PlaybookSection>(PlaybookSection.HOME);
@@ -47,6 +49,10 @@ const App: React.FC = () => {
                 return <EmailTemplates />;
             case PlaybookSection.COMPETITIVE:
                 return <CompetitiveBattlecards />;
+            case PlaybookSection.DISCOVERY_SCRIPTS:
+                return <DiscoveryScripts />;
+            case PlaybookSection.PRICING_NEGOTIATION:
+                return <PricingNegotiation />;
             
             // Solution pages
             case PlaybookSection.BOOKING_VP:
@@ -75,6 +81,8 @@ const App: React.FC = () => {
     ];
 
     const toolsItems = [
+        { section: PlaybookSection.DISCOVERY_SCRIPTS, label: 'Discovery Scripts', icon: '❓' },
+        { section: PlaybookSection.PRICING_NEGOTIATION, label: 'Pricing & Negotiation', icon: '💵' },
         { section: PlaybookSection.CASE_STUDIES, label: 'Case Studies', icon: '📊' },
         { section: PlaybookSection.SALES_PLAYS, label: 'Sales Plays', icon: '🎯' },
         { section: PlaybookSection.ROI_CALCULATOR, label: 'ROI Calculator', icon: '💰' },
@@ -87,10 +95,9 @@ const App: React.FC = () => {
             <nav className="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-200">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-16">
-                        <div className="flex items-center gap-2">
-                            <span className="text-2xl">📊</span>
-                            <span className="font-bold text-xl text-[#1e3a5f]" style={{fontFamily: 'Playfair Display, serif'}}>BeyondCX</span>
-                            <span className="hidden sm:inline text-sm text-gray-500 ml-2">Sales Playbook</span>
+                        <div className="flex items-center gap-3">
+                            <img src="/beyond-logo.png" alt="Beyond Logo" className="h-8" />
+                            <span className="hidden sm:inline text-sm text-[#B1B1B0] ml-2">Sales Playbook</span>
                         </div>
                         <div className="hidden md:block">
                             <div className="ml-10 flex items-baseline space-x-4">
@@ -98,7 +105,7 @@ const App: React.FC = () => {
                                     <button
                                         key={item.section}
                                         onClick={() => navigateTo(item.section)}
-                                        className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${activeSection === item.section ? 'bg-[#1e3a5f] text-white shadow-sm' : 'text-gray-700 hover:bg-gray-100 hover:text-[#1e3a5f]'}`}
+                                        className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${activeSection === item.section ? 'bg-[#6D84E3] text-white shadow-sm' : 'text-[#3F3F3F] hover:bg-[#E4E3E3] hover:text-[#6D84E3]'}`}
                                     >
                                         {item.label}
                                     </button>
@@ -107,7 +114,7 @@ const App: React.FC = () => {
                                 <div className="relative">
                                     <button
                                         onClick={() => setShowToolsMenu(!showToolsMenu)}
-                                        className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-gray-700 hover:bg-gray-100 hover:text-[#1e3a5f] flex items-center gap-1"
+                                        className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-[#3F3F3F] hover:bg-[#E4E3E3] hover:text-[#6D84E3] flex items-center gap-1"
                                     >
                                         🛠️ Herramientas
                                         <svg className={`w-4 h-4 transition-transform ${showToolsMenu ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -123,7 +130,7 @@ const App: React.FC = () => {
                                                         navigateTo(tool.section);
                                                         setShowToolsMenu(false);
                                                     }}
-                                                    className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center gap-2"
+                                                    className="w-full text-left px-4 py-2 text-sm text-[#3F3F3F] hover:bg-[#E4E3E3] flex items-center gap-2"
                                                 >
                                                     <span>{tool.icon}</span>
                                                     <span>{tool.label}</span>

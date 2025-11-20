@@ -11,6 +11,8 @@ export enum PlaybookSection {
   ROI_CALCULATOR = 'ROI_CALCULATOR',
   EMAIL_TEMPLATES = 'EMAIL_TEMPLATES',
   COMPETITIVE = 'COMPETITIVE',
+  DISCOVERY_SCRIPTS = 'DISCOVERY_SCRIPTS',
+  PRICING_NEGOTIATION = 'PRICING_NEGOTIATION',
   // Solutions pages remain accessible via internal links if needed
   BOOKING_VP = 'BOOKING_VP',
   FCR_VP = 'FCR_VP',

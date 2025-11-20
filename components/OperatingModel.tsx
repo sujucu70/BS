@@ -1,6 +1,5 @@
 
 import React, { useState } from 'react';
-import PipelineHealthChart from './charts/PipelineHealthChart';
 
 const RoleKpiCard: React.FC<{ role: string; subtitle?: string; northStar: string; inputs: string[]; outputs: string[]; color: string }> = ({ role, subtitle, northStar, inputs, outputs, color }) => (
     <div className={`bg-white rounded-xl shadow border-t-4 ${color} p-6 flex flex-col h-full`}>
@@ -138,52 +137,62 @@ const OperatingModel: React.FC = () => {
                             <h4 className="font-bold text-[#3F3F3F] mb-4 flex items-center">
                                 <span className="text-xl mr-2">🔵</span> Campos Obligatorios
                             </h4>
-                            <div className="space-y-4">
+                            <div className="space-y-5">
+                                {/* Fase Discovery */}
                                 <div>
-                                    <p className="text-xs font-bold text-[#B1B1B0] mb-2">Etapa 2 (Discovery)</p>
-                                    <p className="text-sm text-[#3F3F3F]">Pain, Métrica, Champion (MEDDICC).</p>
+                                    <p className="text-xs font-bold text-[#6D84E3] uppercase tracking-wide mb-2">Fase Discovery</p>
+                                    <ul className="space-y-2 text-sm text-[#3F3F3F]">
+                                        <li className="flex items-start gap-2">
+                                            <span className="text-[#B1B1B0] mt-0.5">•</span>
+                                            <div>
+                                                <strong>Pain (Dolor):</strong> ¿Qué problema les cuesta dinero hoy?
+                                            </div>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <span className="text-[#B1B1B0] mt-0.5">•</span>
+                                            <div>
+                                                <strong>Métricas:</strong> Datos actuales del cliente.
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
+
+                                {/* Fase Solución */}
                                 <div>
-                                    <p className="text-xs font-bold text-[#B1B1B0] mb-2">Etapa 4 (Solución)</p>
-                                    <p className="text-sm text-[#3F3F3F]">Importe Estimado, Fecha Cierre.</p>
+                                    <p className="text-xs font-bold text-[#6D84E3] uppercase tracking-wide mb-2">Fase Solución</p>
+                                    <ul className="space-y-2 text-sm text-[#3F3F3F]">
+                                        <li className="flex items-start gap-2">
+                                            <span className="text-[#B1B1B0] mt-0.5">•</span>
+                                            <div>
+                                                <strong>Tech Stack:</strong> Tecnología actual del cliente.
+                                            </div>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <span className="text-[#B1B1B0] mt-0.5">•</span>
+                                            <div>
+                                                <strong>MAP:</strong> ¿Fechas de cierre pactadas?
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
+
+                                {/* Fase Económica */}
                                 <div>
-                                    <p className="text-xs font-bold text-[#B1B1B0] mb-2">Etapa 5 (Propuesta)</p>
-                                    <p className="text-sm text-[#3F3F3F]">Link a Propuesta, Competidor.</p>
-                                </div>
-                                <div>
-                                    <p className="text-xs font-bold text-[#B1B1B0] mb-2">Closed Lost</p>
-                                    <p className="text-sm text-[#3F3F3F]">Motivo de Pérdida (Reason Code).</p>
-                                </div>
-                                <div className="mt-6 p-3 bg-[#E4E3E3] rounded-lg">
-                                    <p className="text-xs font-bold text-[#3F3F3F] mb-1">🚦 Datos de Cualificación:</p>
-                                    <p className="text-xs text-[#B1B1B0] mb-2">
-                                        <strong>Dolor Principal (Pain):</strong> ¿Qué problema les cuesta dinero hoy?
-                                    </p>
-                                    <p className="text-xs text-[#B1B1B0]">
-                                        Fuente del Lead, Buyer Persona, Volumen Actual
-                                    </p>
-                                </div>
-                                <div className="p-3 bg-[#E4E3E3] rounded-lg">
-                                    <p className="text-xs font-bold text-[#3F3F3F] mb-1">🛠️ Datos Solución:</p>
-                                    <p className="text-xs text-[#B1B1B0] mb-2">
-                                        <strong>Tecnología Actual del Cliente</strong>
-                                    </p>
-                                    <p className="text-xs text-[#B1B1B0] mb-2">
-                                        <strong>Plan de Acción Mutuo (MAP):</strong> ¿Tenemos fechas de cierre pactadas con el cliente?
-                                    </p>
-                                    <p className="text-xs text-[#B1B1B0]">
-                                        Viabilidad Técnica, Roles Identificados
-                                    </p>
-                                </div>
-                                <div className="p-3 bg-[#E4E3E3] rounded-lg">
-                                    <p className="text-xs font-bold text-[#3F3F3F] mb-1">💰 Datos Económicos:</p>
-                                    <p className="text-xs text-[#B1B1B0] mb-2">
-                                        <strong>Valor Total Contrato (TCV):</strong> Suma total a facturar en el periodo.
-                                    </p>
-                                    <p className="text-xs text-[#B1B1B0]">
-                                        Fecha de Cierre, Motivo de Pérdida, Fecha Inicio Servicio
-                                    </p>
+                                    <p className="text-xs font-bold text-[#6D84E3] uppercase tracking-wide mb-2">Fase Económica</p>
+                                    <ul className="space-y-2 text-sm text-[#3F3F3F]">
+                                        <li className="flex items-start gap-2">
+                                            <span className="text-[#B1B1B0] mt-0.5">•</span>
+                                            <div>
+                                                <strong>TCV:</strong> Valor Total del Contrato.
+                                            </div>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <span className="text-[#B1B1B0] mt-0.5">•</span>
+                                            <div>
+                                                <strong>Fecha Cierre:</strong> Realista y confirmada.
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -280,15 +289,6 @@ const OperatingModel: React.FC = () => {
 
                     <h4 className="text-lg font-bold text-[#3F3F3F] mb-6">Output: Cuadros de Mando (Dashboards)</h4>
                     
-                    {/* Ejemplo Visual: Gráfico de Conversión */}
-                    <div className="mb-8 bg-white rounded-xl shadow p-6 border border-gray-200">
-                        <h4 className="text-lg font-bold text-center text-[#3F3F3F] mb-4">Ejemplo: Conversión por Etapa del Funnel</h4>
-                        <p className="text-sm text-[#B1B1B0] text-center mb-4">Este tipo de gráfico debe estar visible en tus dashboards para monitorear la salud del pipeline</p>
-                        <div className="h-[400px]">
-                            <PipelineHealthChart />
-                        </div>
-                    </div>
-
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
                         
                         {/* Dashboard 1 */}

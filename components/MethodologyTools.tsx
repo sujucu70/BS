@@ -28,15 +28,6 @@ const PillarSection: React.FC<{
     </div>
 );
 
-const MeddiccCard: React.FC<{ letter: string; title: string }> = ({ letter, title }) => (
-    <div className="flex flex-col items-center p-4 bg-[#3F3F3F] rounded-lg border border-[#3F3F3F] text-center min-w-[100px]">
-        <span className="text-3xl font-black text-[#6D84E3] mb-1">{letter}</span>
-        <span className="text-xs text-white font-medium">{title}</span>
-    </div>
-);
-
-
-
 // --- MAIN COMPONENT ---
 
 const MethodologyTools: React.FC = () => {
@@ -119,33 +110,111 @@ const MethodologyTools: React.FC = () => {
                                 </div>
                             </PillarSection>
 
-                            {/* 2.3 MEDDICC */}
+                            {/* 2.3 MEDDICC - Rediseñado con 2 columnas */}
                             <PillarSection 
                                 number="2.3" 
                                 title="Rigor MEDDICC" 
                                 conceptTitle="¿Qué es MEDDICC?" 
                                 conceptText="Es el checklist mental que nos dice si vamos a ganar o perder un trato. Si no puedes responder a cada letra, estás volando a ciegas."
                             >
-                                <div className="bg-[#3F3F3F] rounded-xl p-8 text-white shadow-inner">
-                                    <div className="flex flex-wrap justify-center gap-3 mb-6">
-                                        <MeddiccCard letter="M" title="Metrics" />
-                                        <MeddiccCard letter="E" title="Economic Buyer" />
-                                        <MeddiccCard letter="D" title="Decision Criteria" />
-                                        <MeddiccCard letter="D" title="Decision Process" />
-                                        <MeddiccCard letter="I" title="Identify Pain" />
-                                        <MeddiccCard letter="C" title="Champion" />
-                                        <MeddiccCard letter="C" title="Competition" />
+                                {/* Layout de 2 Columnas */}
+                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                                    
+                                    {/* Columna Izquierda: El Framework */}
+                                    <div className="space-y-4">
+                                        <h4 className="text-sm font-bold text-[#B1B1B0] uppercase tracking-wide mb-4">El Framework</h4>
+                                        
+                                        {/* M - Metrics */}
+                                        <div className="flex items-start gap-3 group">
+                                            <div className="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center">
+                                                <span className="text-white font-bold text-lg">M</span>
+                                            </div>
+                                            <div className="flex-grow">
+                                                <h5 className="font-bold text-[#3F3F3F] mb-1">Metrics</h5>
+                                                <p className="text-sm text-[#B1B1B0]">KPIs económicos que mejorará el cliente.</p>
+                                            </div>
+                                        </div>
+
+                                        {/* E - Economic Buyer */}
+                                        <div className="flex items-start gap-3 group">
+                                            <div className="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center">
+                                                <span className="text-white font-bold text-lg">E</span>
+                                            </div>
+                                            <div className="flex-grow">
+                                                <h5 className="font-bold text-[#3F3F3F] mb-1">Economic Buyer</h5>
+                                                <p className="text-sm text-[#B1B1B0]">Quién controla el presupuesto final.</p>
+                                            </div>
+                                        </div>
+
+                                        {/* D - Decision Criteria */}
+                                        <div className="flex items-start gap-3 group">
+                                            <div className="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center">
+                                                <span className="text-white font-bold text-lg">D</span>
+                                            </div>
+                                            <div className="flex-grow">
+                                                <h5 className="font-bold text-[#3F3F3F] mb-1">Decision Criteria</h5>
+                                                <p className="text-sm text-[#B1B1B0]">Criterios técnicos y de negocio para elegir.</p>
+                                            </div>
+                                        </div>
+
+                                        {/* D - Decision Process */}
+                                        <div className="flex items-start gap-3 group">
+                                            <div className="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center">
+                                                <span className="text-white font-bold text-lg">D</span>
+                                            </div>
+                                            <div className="flex-grow">
+                                                <h5 className="font-bold text-[#3F3F3F] mb-1">Decision Process</h5>
+                                                <p className="text-sm text-[#B1B1B0]">Pasos formales hasta la firma del contrato.</p>
+                                            </div>
+                                        </div>
+
+                                        {/* I - Identify Pain */}
+                                        <div className="flex items-start gap-3 group">
+                                            <div className="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center">
+                                                <span className="text-white font-bold text-lg">I</span>
+                                            </div>
+                                            <div className="flex-grow">
+                                                <h5 className="font-bold text-[#3F3F3F] mb-1">Identify Pain</h5>
+                                                <p className="text-sm text-[#B1B1B0]">Problema urgente que les cuesta dinero hoy.</p>
+                                            </div>
+                                        </div>
+
+                                        {/* C - Champion */}
+                                        <div className="flex items-start gap-3 group">
+                                            <div className="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center">
+                                                <span className="text-white font-bold text-lg">C</span>
+                                            </div>
+                                            <div className="flex-grow">
+                                                <h5 className="font-bold text-[#3F3F3F] mb-1">Champion</h5>
+                                                <p className="text-sm text-[#B1B1B0]">Aliado interno que vende por ti.</p>
+                                            </div>
+                                        </div>
+
+                                        {/* C - Competition */}
+                                        <div className="flex items-start gap-3 group">
+                                            <div className="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center">
+                                                <span className="text-white font-bold text-lg">C</span>
+                                            </div>
+                                            <div className="flex-grow">
+                                                <h5 className="font-bold text-[#3F3F3F] mb-1">Competition</h5>
+                                                <p className="text-sm text-[#B1B1B0]">Alternativas en evaluación (incluido no hacer nada).</p>
+                                            </div>
+                                        </div>
                                     </div>
+
+                                    {/* Columna Derecha: La Evidencia */}
+                                    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border border-indigo-100">
+                                        <div className="mb-4">
+                                            <h4 className="text-sm font-bold text-[#B1B1B0] uppercase tracking-wide mb-1">Por qué usarlo</h4>
+                                            <h5 className="text-lg font-bold text-[#3F3F3F]">Impacto en Win Rate</h5>
+                                        </div>
+                                        <div className="h-[400px] bg-white rounded-lg p-4 shadow-sm">
+                                            <MeddiccImpactChart />
+                                        </div>
+                                    </div>
+
                                 </div>
                             </PillarSection>
-
-                            {/* Gráfico MEDDICC Impact */}
-                            <div className="mt-8 bg-white rounded-xl shadow p-6 border border-gray-200">
-                                <h4 className="text-lg font-bold text-center text-[#3F3F3F] mb-4">Probabilidad de Cierre (Impacto MEDDICC)</h4>
-                                <div className="h-[400px]">
-                                    <MeddiccImpactChart />
-                                </div>
-                            </div>
                         </section>
                     </div>
                 </div>

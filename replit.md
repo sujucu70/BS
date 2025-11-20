@@ -26,6 +26,12 @@ This is a React-based interactive sales playbook application for BeyondCX. It pr
   - Updated North Star metrics to plain language: "New MRR (Ingreso Recurrente)", "Precisión del Forecast"
   - Explained technical acronyms in Higiene del Dato section: TCV → "Valor Total Contrato (TCV): Suma total a facturar en el periodo", MAP → "Plan de Acción Mutuo (MAP): ¿Tenemos fechas de cierre pactadas con el cliente?", Tech Stack → "Tecnología Actual del Cliente", Pain Point → "Dolor Principal (Pain): ¿Qué problema les cuesta dinero hoy?"
   - Added new column "¿Qué debo llevar preparado?" to Rituales de Gestión table with preparation requirements for each meeting type
+- **MEDDICC Section Redesigned** (components/MethodologyTools.tsx):
+  - Unified MEDDICC framework and impact chart into single two-column card layout
+  - Left column: Vertical list of 7 MEDDICC elements with indigo circular badges and brief descriptions
+  - Right column: Win Rate impact chart with gradient background
+  - Removed dark horizontal bar design for cleaner "Dashboard SaaS" aesthetic
+  - Theory and visual proof now side-by-side for single-glance comprehension
 
 ## Project Structure
 ```

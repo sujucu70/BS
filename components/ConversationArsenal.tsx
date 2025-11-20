@@ -190,7 +190,7 @@ const ConversationArsenal: React.FC<ConversationArsenalProps> = ({ onNavigate })
     return (
         <div className="container mx-auto p-4 md:p-8 bg-[#f8f9fa]">
              <header className="text-center py-12">
-                <h1 className="text-4xl md:text-6xl font-bold text-gray-900 tracking-tight">Narrativa de Valor y Mensajería</h1>
+                <h1 className="text-4xl md:text-6xl font-bold text-[#3F3F3F] tracking-tight">Narrativa de Valor y Mensajería</h1>
                 <p className="text-xl text-[#6D84E3] mt-4 font-medium">Guía Estratégica para Comunicar el Valor de BeyondCX</p>
             </header>
 
@@ -198,7 +198,7 @@ const ConversationArsenal: React.FC<ConversationArsenalProps> = ({ onNavigate })
                 
                 {/* SECTION A: MESSAGE HOUSE */}
                 <section className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
-                    <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center border-b pb-4">🏛️ A. La "Message House" de BeyondCX</h2>
+                    <h2 className="text-3xl font-bold text-[#3F3F3F] mb-8 text-center border-b pb-4">🏛️ A. La "Message House" de BeyondCX</h2>
                     
                     {/* Roof: Core Message */}
                     <div className="bg-[#6D84E3] text-white p-8 rounded-t-xl text-center shadow-md mb-6">
@@ -211,16 +211,16 @@ const ConversationArsenal: React.FC<ConversationArsenalProps> = ({ onNavigate })
                     {/* Pillars */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                         {messageHouse.pillars.map((p, i) => (
-                            <div key={i} className="bg-gray-50 p-6 rounded-xl border-t-4 border-[#6D84E3] shadow-sm hover:shadow-md transition-all">
+                            <div key={i} className="bg-[#E4E3E3] p-6 rounded-xl border-t-4 border-[#6D84E3] shadow-sm hover:shadow-md transition-all">
                                 <div className="text-4xl mb-4">{p.icon}</div>
-                                <h4 className="font-bold text-lg text-gray-800 mb-3">{p.title}</h4>
-                                <p className="text-sm text-gray-600 leading-relaxed">{p.desc}</p>
+                                <h4 className="font-bold text-lg text-[#3F3F3F] mb-3">{p.title}</h4>
+                                <p className="text-sm text-[#B1B1B0] leading-relaxed">{p.desc}</p>
                             </div>
                         ))}
                     </div>
 
                     {/* Foundation: Evidence */}
-                    <div className="bg-gray-900 text-white p-6 rounded-b-xl flex flex-wrap justify-around items-center text-center">
+                    <div className="bg-[#3F3F3F] text-white p-6 rounded-b-xl flex flex-wrap justify-around items-center text-center">
                         {messageHouse.evidence.map((e, i) => (
                             <div key={i} className="p-4">
                                 <div className="text-3xl font-bold text-[#6D84E3]">{e.value}</div>
@@ -233,9 +233,9 @@ const ConversationArsenal: React.FC<ConversationArsenalProps> = ({ onNavigate })
 
                 {/* SECTION B: BUYER PERSONA MATRIX */}
                 <section className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
-                    <div className="p-8 bg-gray-50 border-b border-gray-200">
-                        <h2 className="text-3xl font-bold text-gray-800 text-center">B. Matriz de Mensajes por Buyer Persona</h2>
-                        <p className="text-center text-gray-500 mt-2">Adapta tu discurso a quien tienes delante. No vendas características, vende soluciones a SUS problemas.</p>
+                    <div className="p-8 bg-[#E4E3E3] border-b border-gray-200">
+                        <h2 className="text-3xl font-bold text-[#3F3F3F] text-center">B. Matriz de Mensajes por Buyer Persona</h2>
+                        <p className="text-center text-[#B1B1B0] mt-2">Adapta tu discurso a quien tienes delante. No vendas características, vende soluciones a SUS problemas.</p>
                     </div>
 
                     {/* Tabs */}
@@ -244,7 +244,7 @@ const ConversationArsenal: React.FC<ConversationArsenalProps> = ({ onNavigate })
                             <button
                                 key={role}
                                 onClick={() => setActivePersona(role)}
-                                className={`flex-1 py-6 text-lg font-bold transition-colors ${activePersona === role ? 'bg-white text-[#6D84E3] border-b-4 border-[#6D84E3]' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'}`}
+                                className={`flex-1 py-6 text-lg font-bold transition-colors ${activePersona === role ? 'bg-white text-[#6D84E3] border-b-4 border-[#6D84E3]' : 'bg-[#E4E3E3] text-[#B1B1B0] hover:bg-gray-200'}`}
                             >
                                 {role}
                             </button>
@@ -254,7 +254,7 @@ const ConversationArsenal: React.FC<ConversationArsenalProps> = ({ onNavigate })
                     {/* Persona Content */}
                     <div className="p-8 md:p-10">
                         <div className="mb-6">
-                            <h3 className="text-2xl font-bold text-gray-800">{personas[activePersona].role}</h3>
+                            <h3 className="text-2xl font-bold text-[#3F3F3F]">{personas[activePersona].role}</h3>
                             <p className="text-[#6D84E3] font-medium">{personas[activePersona].focus}</p>
                         </div>
 
@@ -262,21 +262,21 @@ const ConversationArsenal: React.FC<ConversationArsenalProps> = ({ onNavigate })
                             <div className="space-y-6">
                                 <div className="bg-red-50 p-5 rounded-lg border-l-4 border-red-400">
                                     <h4 className="font-bold text-red-800 mb-2">Dolores Principales (Pains)</h4>
-                                    <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+                                    <ul className="list-disc list-inside text-sm text-[#3F3F3F] space-y-1">
                                         {personas[activePersona].pains.map((p, i) => <li key={i}>{p}</li>)}
                                     </ul>
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-gray-800 mb-2">KPIs que le quitan el sueño</h4>
+                                    <h4 className="font-bold text-[#3F3F3F] mb-2">KPIs que le quitan el sueño</h4>
                                     <div className="flex flex-wrap gap-2">
                                         {personas[activePersona].kpis.map((k, i) => (
-                                            <span key={i} className="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-xs font-bold">{k}</span>
+                                            <span key={i} className="bg-gray-200 text-[#3F3F3F] px-3 py-1 rounded-full text-xs font-bold">{k}</span>
                                         ))}
                                     </div>
                                 </div>
                                 <div className="bg-blue-50 p-5 rounded-lg border-l-4 border-blue-400">
                                     <h4 className="font-bold text-blue-800 mb-2">Propuesta de Valor Específica</h4>
-                                    <p className="text-sm text-gray-700">{personas[activePersona].valueProp}</p>
+                                    <p className="text-sm text-[#3F3F3F]">{personas[activePersona].valueProp}</p>
                                     <div className="mt-3 pt-3 border-t border-blue-200 text-xs">
                                         <span className="font-bold text-blue-800">Productos Clave: </span>
                                         {personas[activePersona].products.join(", ")}
@@ -285,18 +285,18 @@ const ConversationArsenal: React.FC<ConversationArsenalProps> = ({ onNavigate })
                             </div>
 
                             <div className="space-y-6">
-                                <div className="bg-gray-800 text-white p-6 rounded-xl shadow-md relative overflow-hidden">
+                                <div className="bg-[#3F3F3F] text-white p-6 rounded-xl shadow-md relative overflow-hidden">
                                     <div className="absolute top-0 right-0 bg-[#6D84E3] text-white text-xs px-2 py-1">Elevator Pitch (20s)</div>
                                     <h4 className="font-bold text-blue-300 mb-3">Tu Guion:</h4>
                                     <p className="italic text-sm leading-relaxed">"{personas[activePersona].elevatorPitch}"</p>
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-gray-800 mb-3">Objeciones Típicas y Respuestas</h4>
+                                    <h4 className="font-bold text-[#3F3F3F] mb-3">Objeciones Típicas y Respuestas</h4>
                                     <div className="space-y-3">
                                         {personas[activePersona].objections.map((o, i) => (
-                                            <div key={i} className="border border-gray-200 rounded p-3 bg-gray-50">
+                                            <div key={i} className="border border-gray-200 rounded p-3 bg-[#E4E3E3]">
                                                 <p className="text-xs font-bold text-red-600 mb-1">" {o.q} "</p>
-                                                <p className="text-sm text-gray-700">💡 {o.a}</p>
+                                                <p className="text-sm text-[#3F3F3F]">💡 {o.a}</p>
                                             </div>
                                         ))}
                                     </div>
@@ -308,12 +308,12 @@ const ConversationArsenal: React.FC<ConversationArsenalProps> = ({ onNavigate })
 
                 {/* SECTION C: STORYLINES */}
                 <section className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
-                    <h2 className="text-3xl font-bold text-gray-800 mb-2 text-center">C. Storylines Consultivas</h2>
-                    <p className="text-center text-gray-500 mb-8">La secuencia lógica para guiar al cliente desde el problema hasta la solución.</p>
+                    <h2 className="text-3xl font-bold text-[#3F3F3F] mb-2 text-center">C. Storylines Consultivas</h2>
+                    <p className="text-center text-[#B1B1B0] mb-8">La secuencia lógica para guiar al cliente desde el problema hasta la solución.</p>
                     
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                         {storylines.map((story, i) => (
-                            <div key={i} className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                            <div key={i} className="bg-[#E4E3E3] p-6 rounded-xl border border-gray-200">
                                 <h3 className="font-bold text-[#6D84E3] mb-4 text-lg">{story.title}</h3>
                                 <div className="space-y-4 relative">
                                     {/* Connector Line */}
@@ -325,8 +325,8 @@ const ConversationArsenal: React.FC<ConversationArsenalProps> = ({ onNavigate })
                                                 {j + 1}
                                             </div>
                                             <div className="ml-4">
-                                                <p className="text-xs font-bold text-gray-500 uppercase">{step.stage}</p>
-                                                <p className="text-sm text-gray-800 font-medium">{step.text}</p>
+                                                <p className="text-xs font-bold text-[#B1B1B0] uppercase">{step.stage}</p>
+                                                <p className="text-sm text-[#3F3F3F] font-medium">{step.text}</p>
                                             </div>
                                         </div>
                                     ))}
@@ -338,12 +338,12 @@ const ConversationArsenal: React.FC<ConversationArsenalProps> = ({ onNavigate })
 
                 {/* SECTION D: COMPETITIVE */}
                 <section className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
-                    <h2 className="text-3xl font-bold text-gray-800 mb-2 text-center">D. Posicionamiento Competitivo</h2>
-                    <p className="text-center text-gray-500 mb-8">Por qué ganamos contra las alternativas tradicionales.</p>
+                    <h2 className="text-3xl font-bold text-[#3F3F3F] mb-2 text-center">D. Posicionamiento Competitivo</h2>
+                    <p className="text-center text-[#B1B1B0] mb-8">Por qué ganamos contra las alternativas tradicionales.</p>
 
                     <div className="overflow-x-auto">
-                         <table className="w-full text-sm text-left text-gray-700">
-                            <thead className="text-xs text-gray-700 uppercase bg-gray-100">
+                         <table className="w-full text-sm text-left text-[#3F3F3F]">
+                            <thead className="text-xs text-[#3F3F3F] uppercase bg-[#E4E3E3]">
                                 <tr>
                                     <th className="px-6 py-4 w-1/4 rounded-l-lg">Competidor</th>
                                     <th className="px-6 py-4 w-1/4">Su Debilidad (The Gap)</th>
@@ -353,14 +353,14 @@ const ConversationArsenal: React.FC<ConversationArsenalProps> = ({ onNavigate })
                             </thead>
                             <tbody className="divide-y divide-gray-100">
                                 {competitive.map((c, i) => (
-                                    <tr key={i} className="bg-white hover:bg-gray-50">
+                                    <tr key={i} className="bg-white hover:bg-[#E4E3E3]">
                                         <td className="px-6 py-4">
-                                            <span className="block font-bold text-gray-800 text-lg">{c.competitor}</span>
-                                            <span className="text-xs text-gray-500">{c.context}</span>
+                                            <span className="block font-bold text-[#3F3F3F] text-lg">{c.competitor}</span>
+                                            <span className="text-xs text-[#B1B1B0]">{c.context}</span>
                                         </td>
                                         <td className="px-6 py-4 text-red-700 bg-red-50 rounded-lg my-2 block md:table-cell">{c.weakness}</td>
                                         <td className="px-6 py-4 font-bold text-[#6D84E3]">{c.beyondEdge}</td>
-                                        <td className="px-6 py-4 italic text-gray-600 border-l border-gray-200">"{c.killerQ}"</td>
+                                        <td className="px-6 py-4 italic text-[#B1B1B0] border-l border-gray-200">"{c.killerQ}"</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -370,17 +370,17 @@ const ConversationArsenal: React.FC<ConversationArsenalProps> = ({ onNavigate })
 
                 {/* SECTION F: PRODUCT - KPI CONNECTION */}
                 <section className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
-                    <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">F. Conexión Producto → KPI</h2>
+                    <h2 className="text-3xl font-bold text-[#3F3F3F] mb-8 text-center">F. Conexión Producto → KPI</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                         {productImpact.map((p, i) => (
-                            <div key={i} className="bg-gray-50 p-6 rounded-xl border border-gray-200 flex flex-col">
+                            <div key={i} className="bg-[#E4E3E3] p-6 rounded-xl border border-gray-200 flex flex-col">
                                 <h3 className="font-bold text-xl text-[#6D84E3] mb-2">{p.product}</h3>
                                 <div className="mb-4 flex-grow">
-                                    <p className="text-xs text-gray-500 uppercase font-bold">Resuelve:</p>
-                                    <p className="text-sm text-gray-800">{p.solve}</p>
+                                    <p className="text-xs text-[#B1B1B0] uppercase font-bold">Resuelve:</p>
+                                    <p className="text-sm text-[#3F3F3F]">{p.solve}</p>
                                 </div>
                                 <div className="mb-4">
-                                    <p className="text-xs text-gray-500 uppercase font-bold">KPI Afectado:</p>
+                                    <p className="text-xs text-[#B1B1B0] uppercase font-bold">KPI Afectado:</p>
                                     <span className="bg-yellow-100 text-yellow-800 text-xs font-bold px-2 py-1 rounded">{p.kpi}</span>
                                 </div>
                                 <div className="bg-green-100 p-3 rounded-lg">
@@ -393,7 +393,7 @@ const ConversationArsenal: React.FC<ConversationArsenalProps> = ({ onNavigate })
                 </section>
 
                 {/* TACTICAL ARSENAL (SEARCH TOOL) */}
-                <section id="tactical-search" className="bg-gray-800 rounded-2xl shadow-lg p-8 border border-gray-700 mt-12 text-white">
+                <section id="tactical-search" className="bg-[#3F3F3F] rounded-2xl shadow-lg p-8 border border-[#3F3F3F] mt-12 text-white">
                     <div className="text-center mb-8">
                         <h2 className="text-2xl font-bold mb-2">⚡ Arsenal Táctico (Buscador Rápido)</h2>
                         <p className="text-gray-400 text-sm">Encuentra scripts y respuestas a objeciones en tiempo real durante la llamada.</p>
@@ -403,7 +403,7 @@ const ConversationArsenal: React.FC<ConversationArsenalProps> = ({ onNavigate })
                         <input 
                             type="text"
                             placeholder="🔍 Busca: 'precio', 'competencia', 'metricas'..."
-                            className="w-full p-4 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#6D84E3]"
+                            className="w-full p-4 rounded-full text-[#3F3F3F] focus:outline-none focus:ring-2 focus:ring-[#6D84E3]"
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                         />
@@ -419,7 +419,7 @@ const ConversationArsenal: React.FC<ConversationArsenalProps> = ({ onNavigate })
                                     </div>
                                 ))
                             ) : (
-                                <p className="text-center text-gray-500 col-span-2">No se encontraron resultados tácticos.</p>
+                                <p className="text-center text-[#B1B1B0] col-span-2">No se encontraron resultados tácticos.</p>
                             )}
                         </div>
                     )}
@@ -428,7 +428,7 @@ const ConversationArsenal: React.FC<ConversationArsenalProps> = ({ onNavigate })
             </main>
             
             <footer className="text-center py-8 border-t border-gray-200 mt-16">
-                <p className="text-gray-600 font-medium">BeyondCX Playbook | <span className="text-[#6D84E3]">Confidential & Internal Use Only</span></p>
+                <p className="text-[#B1B1B0] font-medium">BeyondCX Playbook | <span className="text-[#6D84E3]">Confidential & Internal Use Only</span></p>
             </footer>
         </div>
     );

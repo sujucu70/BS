@@ -37,23 +37,23 @@ const FeedbackModal: React.FC<FeedbackModalProps> = ({ isOpen, onClose, onSubmit
         >
             <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md transform transition-all duration-300 scale-95 opacity-0 animate-fade-in-scale">
                 <div className="flex justify-between items-center mb-4">
-                    <h2 className="text-2xl font-bold text-gray-800">{submitted ? "¡Gracias!" : "Comparte tu opinión"}</h2>
-                    <button onClick={onClose} className="text-gray-400 hover:text-gray-600" aria-label="Cerrar modal">
+                    <h2 className="text-2xl font-bold text-[#3F3F3F]">{submitted ? "¡Gracias!" : "Comparte tu opinión"}</h2>
+                    <button onClick={onClose} className="text-gray-400 hover:text-[#B1B1B0]" aria-label="Cerrar modal">
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                     </button>
                 </div>
                 {submitted ? (
                     <div className="text-center py-8">
-                        <p className="text-lg text-gray-600">Agradecemos tus comentarios. Nos ayudan a mejorar.</p>
+                        <p className="text-lg text-[#B1B1B0]">Agradecemos tus comentarios. Nos ayudan a mejorar.</p>
                     </div>
                 ) : (
                     <form onSubmit={handleSubmit}>
-                        <p className="text-gray-600 mb-6">Tu feedback es importante para nosotros. ¿Cómo calificarías tu experiencia?</p>
+                        <p className="text-[#B1B1B0] mb-6">Tu feedback es importante para nosotros. ¿Cómo calificarías tu experiencia?</p>
                         <div className="mb-6 flex justify-center">
                             <StarRating value={rating} onChange={setRating} />
                         </div>
                         <div className="mb-6">
-                            <label htmlFor="comments" className="block text-sm font-medium text-gray-700 mb-2">
+                            <label htmlFor="comments" className="block text-sm font-medium text-[#3F3F3F] mb-2">
                                 ¿Tienes algún comentario adicional?
                             </label>
                             <textarea

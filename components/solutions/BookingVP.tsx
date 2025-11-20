@@ -4,7 +4,7 @@ const InfoCard: React.FC<{ title: string; children: React.ReactNode; icon: React
     <div className="bg-white p-6 rounded-lg shadow-md flex flex-col text-center items-center h-full">
         <div className="mx-auto bg-blue-100 text-[#6D84E3] w-16 h-16 rounded-full flex items-center justify-center mb-4">{icon}</div>
         <h3 className="text-xl font-bold text-[#3F3F3F] mb-2">{title}</h3>
-        <div className="text-sm text-gray-600 flex-grow">{children}</div>
+        <div className="text-sm text-[#B1B1B0] flex-grow">{children}</div>
     </div>
 );
 
@@ -15,7 +15,7 @@ const ImpactCard: React.FC<{ title: string; items: { value: string, label: strin
             {items.map(item => (
                 <li key={item.label} className="flex items-center">
                     <span className="text-3xl font-bold text-[#3F3F3F] w-24">{item.value}</span>
-                    <span className="text-sm text-gray-600">{item.label}</span>
+                    <span className="text-sm text-[#B1B1B0]">{item.label}</span>
                 </li>
             ))}
         </ul>
@@ -29,7 +29,7 @@ const DifferentiatorCard: React.FC<{ title: string; children: React.ReactNode; n
             <div className="flex-shrink-0 bg-[#6D84E3] text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg mr-4">{number}</div>
             <h3 className="text-lg font-bold text-[#3F3F3F]">{title}</h3>
         </div>
-        <p className="text-sm text-gray-600">{children}</p>
+        <p className="text-sm text-[#B1B1B0]">{children}</p>
     </div>
 );
 
@@ -37,7 +37,7 @@ const DifferentiatorCard: React.FC<{ title: string; children: React.ReactNode; n
 const BookingVP: React.FC = () => {
     return (
         <div className="container mx-auto p-4 md:p-8">
-            <header className="text-center py-12 bg-gray-800 text-white rounded-lg shadow-2xl" style={{background: 'linear-gradient(rgba(31, 41, 55, 0.8), rgba(31, 41, 55, 0.8)), url(https://images.unsplash.com/photo-1556761175-57738b4c09d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80) center/cover'}}>
+            <header className="text-center py-12 bg-[#3F3F3F] text-white rounded-lg shadow-2xl" style={{background: 'linear-gradient(rgba(31, 41, 55, 0.8), rgba(31, 41, 55, 0.8)), url(https://images.unsplash.com/photo-1556761175-57738b4c09d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80) center/cover'}}>
                 <h1 className="text-4xl md:text-6xl font-bold tracking-tight">Beyond-Booking</h1>
                 <p className="text-xl md:text-2xl text-blue-300 mt-4 font-light">Gestión de Citas Inteligente para Cualquier Negocio</p>
                 <p className="mt-6 max-w-3xl mx-auto">Transformamos la experiencia del cliente y la eficiencia de tu negocio con una solución de IA Híbrida que reduce no-shows en un 35%, aumenta las citas atendidas en un 25% y automatiza hasta el 90% de las interacciones de agendamiento.</p>
@@ -83,8 +83,8 @@ const BookingVP: React.FC = () => {
                     <h2 className="text-3xl font-bold text-center text-[#000000] mb-2">Análisis Competitivo</h2>
                     <p className="text-center text-lg text-[#6D84E3] mb-12">No somos otra herramienta de agenda. Somos tu socio operativo.</p>
                     <div className="overflow-x-auto">
-                        <table className="w-full min-w-full text-sm text-left text-gray-700 bg-white rounded-lg shadow-inner border">
-                            <thead className="text-xs text-gray-800 uppercase bg-[#e3e3e3]">
+                        <table className="w-full min-w-full text-sm text-left text-[#3F3F3F] bg-white rounded-lg shadow-inner border">
+                            <thead className="text-xs text-[#3F3F3F] uppercase bg-[#e3e3e3]">
                                 <tr>
                                     <th scope="col" className="px-6 py-3 w-1/4 rounded-tl-lg">Criterio</th>
                                     <th scope="col" className="px-6 py-3 w-1/4 text-center bg-red-50">Software de Agenda SaaS (ej. Calendly)</th>

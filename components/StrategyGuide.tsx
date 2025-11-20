@@ -10,7 +10,7 @@ const TabButton: React.FC<{ active: boolean; onClick: () => void; label: string;
         className={`flex items-center justify-center px-6 py-4 text-sm md:text-base font-bold transition-all border-b-4 flex-1 ${
             active 
                 ? 'border-[#6D84E3] text-[#6D84E3] bg-white' 
-                : 'border-transparent text-gray-500 hover:text-gray-700 hover:bg-gray-50'
+                : 'border-transparent text-[#B1B1B0] hover:text-[#3F3F3F] hover:bg-[#E4E3E3]'
         }`}
     >
         <span className="mr-2">{icon}</span>
@@ -24,7 +24,7 @@ const StrategyGuide: React.FC = () => {
     return (
         <div className="container mx-auto p-4 md:p-8 bg-[#f3f4f6] min-h-screen">
             <header className="text-center py-8">
-                <h1 className="text-3xl md:text-5xl font-bold text-gray-900 tracking-tight">1. Estrategia & Posicionamiento</h1>
+                <h1 className="text-3xl md:text-5xl font-bold text-[#3F3F3F] tracking-tight">1. Estrategia & Posicionamiento</h1>
                 <p className="text-lg text-[#6D84E3] mt-2 font-medium">A quién vendemos y qué les decimos.</p>
             </header>
 

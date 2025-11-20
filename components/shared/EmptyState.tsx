@@ -14,22 +14,22 @@ const EmptyState: React.FC<EmptyStateProps> = ({ icon, title, description, actio
     return (
         <div className="flex flex-col items-center justify-center p-12 text-center">
             {icon && (
-                <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mb-6 text-gray-400">
+                <div className="w-20 h-20 bg-[#E4E3E3] rounded-full flex items-center justify-center mb-6 text-gray-400">
                     {icon}
                 </div>
             )}
-            <h3 className="text-xl font-bold text-gray-800 mb-2" style={{fontFamily: 'Playfair Display, serif'}}>
+            <h3 className="text-xl font-bold text-[#3F3F3F] mb-2" style={{fontFamily: 'Playfair Display, serif'}}>
                 {title}
             </h3>
             {description && (
-                <p className="text-gray-600 mb-6 max-w-md">
+                <p className="text-[#B1B1B0] mb-6 max-w-md">
                     {description}
                 </p>
             )}
             {action && (
                 <button
                     onClick={action.onClick}
-                    className="bg-[#1e3a5f] hover:bg-[#2d5a8f] text-white font-semibold py-3 px-8 rounded-lg transition-all"
+                    className="bg-[#6D84E3] hover:bg-[#3F3F3F] text-white font-semibold py-3 px-8 rounded-lg transition-all"
                 >
                     {action.label}
                 </button>

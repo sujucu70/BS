@@ -14,8 +14,8 @@ const Loading: React.FC<LoadingProps> = ({ size = 'md', text }) => {
 
     return (
         <div className="flex flex-col items-center justify-center p-8">
-            <div className={`${sizeClasses[size]} border-[#1e3a5f] border-t-transparent rounded-full animate-spin`}></div>
-            {text && <p className="mt-4 text-gray-600 text-sm">{text}</p>}
+            <div className={`${sizeClasses[size]} border-[#6D84E3] border-t-transparent rounded-full animate-spin`}></div>
+            {text && <p className="mt-4 text-[#B1B1B0] text-sm">{text}</p>}
         </div>
     );
 };

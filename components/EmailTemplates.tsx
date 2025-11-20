@@ -364,10 +364,10 @@ P.D. Cualquier duda, estoy aquí. Pero {{IM_NAME}} será tu punto de contacto pr
     return (
         <div className="container mx-auto p-4 md:p-8 bg-[#f8f9fa] min-h-screen">
             <header className="text-center py-12">
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight mb-4" style={{fontFamily: 'Playfair Display, serif'}}>
+                <h1 className="text-4xl md:text-5xl font-bold text-[#3F3F3F] tracking-tight mb-4" style={{fontFamily: 'Outfit, sans-serif'}}>
                     Email Templates Library
                 </h1>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                <p className="text-xl text-[#B1B1B0] max-w-3xl mx-auto">
                     Templates probados para cada etapa del ciclo de ventas
                 </p>
             </header>
@@ -381,8 +381,8 @@ P.D. Cualquier duda, estoy aquí. Pero {{IM_NAME}} será tu punto de contacto pr
                             onClick={() => setSelectedCategory(category)}
                             className={`px-4 py-2 rounded-md text-sm font-medium transition-all whitespace-nowrap ${
                                 selectedCategory === category
-                                    ? 'bg-[#1e3a5f] text-white shadow-sm'
-                                    : 'text-gray-700 hover:bg-gray-100'
+                                    ? 'bg-[#6D84E3] text-white shadow-sm'
+                                    : 'text-[#3F3F3F] hover:bg-[#E4E3E3]'
                             }`}
                         >
                             {category === 'all' ? 'Todos' : category}
@@ -397,7 +397,7 @@ P.D. Cualquier duda, estoy aquí. Pero {{IM_NAME}} será tu punto de contacto pr
                     <div
                         key={template.id}
                         onClick={() => setSelectedTemplate(template)}
-                        className="bg-white rounded-lg shadow-md border border-gray-200 p-6 cursor-pointer hover:shadow-lg hover:border-[#1e3a5f] transition-all"
+                        className="bg-white rounded-lg shadow-md border border-gray-200 p-6 cursor-pointer hover:shadow-lg hover:border-[#6D84E3] transition-all"
                     >
                         <div className="flex items-start justify-between mb-3">
                             <span className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-semibold">
@@ -409,7 +409,7 @@ P.D. Cualquier duda, estoy aquí. Pero {{IM_NAME}} será tu punto de contacto pr
                                         e.stopPropagation();
                                         copyToClipboard(template);
                                     }}
-                                    className="text-gray-400 hover:text-[#1e3a5f] transition-colors"
+                                    className="text-gray-400 hover:text-[#6D84E3] transition-colors"
                                     title="Copiar"
                                 >
                                     {copiedId === template.id ? (
@@ -422,14 +422,14 @@ P.D. Cualquier duda, estoy aquí. Pero {{IM_NAME}} será tu punto de contacto pr
                                 </button>
                             )}
                         </div>
-                        <h3 className="text-lg font-bold text-gray-900 mb-2" style={{fontFamily: 'Playfair Display, serif'}}>
+                        <h3 className="text-lg font-bold text-[#3F3F3F] mb-2" style={{fontFamily: 'Outfit, sans-serif'}}>
                             {template.title}
                         </h3>
-                        <p className="text-sm text-gray-600 mb-3">
+                        <p className="text-sm text-[#B1B1B0] mb-3">
                             {template.situation}
                         </p>
                         {template.body !== '[Template pendiente]' ? (
-                            <div className="text-xs text-gray-500">
+                            <div className="text-xs text-[#B1B1B0]">
                                 <strong>Subject:</strong> {template.subject}
                             </div>
                         ) : (
@@ -452,13 +452,13 @@ P.D. Cualquier duda, estoy aquí. Pero {{IM_NAME}} será tu punto de contacto pr
                         onClick={(e) => e.stopPropagation()}
                     >
                         {/* Header */}
-                        <div className="sticky top-0 bg-gradient-to-r from-[#1e3a5f] to-[#2d5a8f] text-white p-6 rounded-t-xl">
+                        <div className="sticky top-0 bg-gradient-to-r from-[#6D84E3] to-[#3F3F3F] text-white p-6 rounded-t-xl">
                             <div className="flex items-start justify-between">
                                 <div>
                                     <span className="inline-block bg-white/20 px-3 py-1 rounded-full text-xs font-semibold mb-2">
                                         {selectedTemplate.category}
                                     </span>
-                                    <h2 className="text-2xl font-bold" style={{fontFamily: 'Playfair Display, serif'}}>
+                                    <h2 className="text-2xl font-bold" style={{fontFamily: 'Outfit, sans-serif'}}>
                                         {selectedTemplate.title}
                                     </h2>
                                     <p className="text-sm opacity-90 mt-2">{selectedTemplate.situation}</p>
@@ -478,23 +478,23 @@ P.D. Cualquier duda, estoy aquí. Pero {{IM_NAME}} será tu punto de contacto pr
                         <div className="p-6">
                             {/* Subject */}
                             <div className="mb-6">
-                                <label className="block text-sm font-semibold text-gray-700 mb-2">Subject Line</label>
-                                <div className="bg-gray-50 p-4 rounded-lg border border-gray-200 font-mono text-sm">
+                                <label className="block text-sm font-semibold text-[#3F3F3F] mb-2">Subject Line</label>
+                                <div className="bg-[#E4E3E3] p-4 rounded-lg border border-gray-200 font-mono text-sm">
                                     {selectedTemplate.subject}
                                 </div>
                             </div>
 
                             {/* Body */}
                             <div className="mb-6">
-                                <label className="block text-sm font-semibold text-gray-700 mb-2">Email Body</label>
-                                <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 whitespace-pre-wrap font-mono text-sm leading-relaxed">
+                                <label className="block text-sm font-semibold text-[#3F3F3F] mb-2">Email Body</label>
+                                <div className="bg-[#E4E3E3] p-6 rounded-lg border border-gray-200 whitespace-pre-wrap font-mono text-sm leading-relaxed">
                                     {selectedTemplate.body}
                                 </div>
                             </div>
 
                             {/* Variables */}
                             <div className="mb-6">
-                                <label className="block text-sm font-semibold text-gray-700 mb-3">Variables a Personalizar</label>
+                                <label className="block text-sm font-semibold text-[#3F3F3F] mb-3">Variables a Personalizar</label>
                                 <div className="flex flex-wrap gap-2">
                                     {selectedTemplate.variables.map((variable, idx) => (
                                         <span key={idx} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-mono">
@@ -506,10 +506,10 @@ P.D. Cualquier duda, estoy aquí. Pero {{IM_NAME}} será tu punto de contacto pr
 
                             {/* Tips */}
                             <div className="mb-6">
-                                <label className="block text-sm font-semibold text-gray-700 mb-3">Tips de Uso</label>
+                                <label className="block text-sm font-semibold text-[#3F3F3F] mb-3">Tips de Uso</label>
                                 <ul className="space-y-2">
                                     {selectedTemplate.tips.map((tip, idx) => (
-                                        <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
+                                        <li key={idx} className="flex items-start gap-2 text-sm text-[#3F3F3F]">
                                             <span className="text-green-600 mt-0.5">✓</span>
                                             <span>{tip}</span>
                                         </li>
@@ -521,7 +521,7 @@ P.D. Cualquier duda, estoy aquí. Pero {{IM_NAME}} será tu punto de contacto pr
                             <div className="flex gap-4">
                                 <button
                                     onClick={() => copyToClipboard(selectedTemplate)}
-                                    className="flex-1 bg-[#1e3a5f] hover:bg-[#2d5a8f] text-white font-semibold py-3 px-6 rounded-lg transition-all flex items-center justify-center gap-2"
+                                    className="flex-1 bg-[#6D84E3] hover:bg-[#3F3F3F] text-white font-semibold py-3 px-6 rounded-lg transition-all flex items-center justify-center gap-2"
                                 >
                                     {copiedId === selectedTemplate.id ? (
                                         <>
@@ -539,7 +539,7 @@ P.D. Cualquier duda, estoy aquí. Pero {{IM_NAME}} será tu punto de contacto pr
                                 </button>
                                 <button
                                     onClick={() => setSelectedTemplate(null)}
-                                    className="px-6 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-all"
+                                    className="px-6 py-3 border-2 border-gray-300 text-[#3F3F3F] font-semibold rounded-lg hover:bg-[#E4E3E3] transition-all"
                                 >
                                     Cerrar
                                 </button>
@@ -551,34 +551,34 @@ P.D. Cualquier duda, estoy aquí. Pero {{IM_NAME}} será tu punto de contacto pr
 
             {/* Usage Guide */}
             <div className="mt-16 bg-white p-8 rounded-xl shadow-md max-w-4xl mx-auto">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center" style={{fontFamily: 'Playfair Display, serif'}}>
+                <h2 className="text-2xl font-bold text-[#3F3F3F] mb-6 text-center" style={{fontFamily: 'Outfit, sans-serif'}}>
                     Cómo Usar Estos Templates
                 </h2>
                 <div className="grid md:grid-cols-3 gap-6">
                     <div className="text-center">
-                        <div className="bg-[#1e3a5f] text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 font-bold">
+                        <div className="bg-[#6D84E3] text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 font-bold">
                             1
                         </div>
-                        <h3 className="font-bold text-gray-800 mb-2">Personaliza</h3>
-                        <p className="text-sm text-gray-600">Reemplaza todas las variables {{}} con información específica del prospect</p>
+                        <h3 className="font-bold text-[#3F3F3F] mb-2">Personaliza</h3>
+                        <p className="text-sm text-[#B1B1B0]">Reemplaza todas las variables {{}} con información específica del prospect</p>
                     </div>
                     <div className="text-center">
-                        <div className="bg-[#1e3a5f] text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 font-bold">
+                        <div className="bg-[#6D84E3] text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 font-bold">
                             2
                         </div>
-                        <h3 className="font-bold text-gray-800 mb-2">Adapta</h3>
-                        <p className="text-sm text-gray-600">Ajusta el tono y contenido según tu estilo y la situación específica</p>
+                        <h3 className="font-bold text-[#3F3F3F] mb-2">Adapta</h3>
+                        <p className="text-sm text-[#B1B1B0]">Ajusta el tono y contenido según tu estilo y la situación específica</p>
                     </div>
                     <div className="text-center">
-                        <div className="bg-[#1e3a5f] text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 font-bold">
+                        <div className="bg-[#6D84E3] text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 font-bold">
                             3
                         </div>
-                        <h3 className="font-bold text-gray-800 mb-2">Mide</h3>
-                        <p className="text-sm text-gray-600">Trackea tasas de respuesta y ajusta templates según resultados</p>
+                        <h3 className="font-bold text-[#3F3F3F] mb-2">Mide</h3>
+                        <p className="text-sm text-[#B1B1B0]">Trackea tasas de respuesta y ajusta templates según resultados</p>
                     </div>
                 </div>
                 <div className="mt-8 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
-                    <p className="text-sm text-gray-700">
+                    <p className="text-sm text-[#3F3F3F]">
                         <strong>⚠️ Importante:</strong> Estos templates son puntos de partida. La personalización genuina basada en research es crítica para el éxito. Nunca envíes un email sin personalizar las variables y adaptar el contenido.
                     </p>
                 </div>

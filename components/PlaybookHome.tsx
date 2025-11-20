@@ -7,11 +7,11 @@ interface PlaybookHomeProps {
 }
 
 const PillarCard: React.FC<{ title: string; description: string; section: PlaybookSection; onNavigate: (section: PlaybookSection) => void; icon: React.ReactNode; }> = ({ title, description, section, onNavigate, icon }) => (
-    <div className="bg-white p-8 rounded-xl shadow-md border border-gray-100 flex flex-col items-center text-center transition-all hover:shadow-xl hover:border-[#1e3a5f] h-full group">
-        <div className="mx-auto bg-gradient-to-br from-[#1e3a5f] to-[#2d5a8f] text-white w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">{icon}</div>
-        <h2 className="text-2xl font-bold text-gray-800" style={{fontFamily: 'Playfair Display, serif'}}>{title}</h2>
-        <p className="text-gray-600 mt-4 mb-8 flex-grow text-sm leading-relaxed">{description}</p>
-        <button onClick={() => onNavigate(section)} className="inline-block bg-[#1e3a5f] hover:bg-[#2d5a8f] text-white font-semibold py-3 px-10 rounded-lg text-base shadow-sm hover:shadow-md transition-all">
+    <div className="bg-white p-8 rounded-xl shadow-md border border-gray-100 flex flex-col items-center text-center transition-all hover:shadow-xl hover:border-[#6D84E3] h-full group">
+        <div className="mx-auto bg-gradient-to-br from-[#6D84E3] to-[#3F3F3F] text-white w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">{icon}</div>
+        <h2 className="text-2xl font-bold text-[#3F3F3F]" style={{fontFamily: 'Outfit, sans-serif'}}>{title}</h2>
+        <p className="text-[#B1B1B0] mt-4 mb-8 flex-grow text-sm leading-relaxed">{description}</p>
+        <button onClick={() => onNavigate(section)} className="inline-block bg-[#6D84E3] hover:bg-[#3F3F3F] text-white font-semibold py-3 px-10 rounded-lg text-base shadow-sm hover:shadow-md transition-all">
             Explorar
         </button>
     </div>
@@ -48,13 +48,13 @@ const PlaybookHome: React.FC<PlaybookHomeProps> = ({ onNavigate }) => {
     return (
         <div className="container mx-auto p-4 md:p-8">
             <header className="text-center py-16 md:py-24">
-                <div className="inline-block bg-gradient-to-r from-[#1e3a5f] to-[#2d5a8f] text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                <div className="inline-block bg-gradient-to-r from-[#6D84E3] to-[#3F3F3F] text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
                     🚀 Sales Enablement Framework
                 </div>
-                <h1 className="text-5xl md:text-7xl font-bold text-gray-900 tracking-tight mb-6" style={{fontFamily: 'Playfair Display, serif'}}>
+                <h1 className="text-5xl md:text-7xl font-bold text-[#3F3F3F] tracking-tight mb-6" style={{fontFamily: 'Outfit, sans-serif'}}>
                     BeyondCX Sales Playbook
                 </h1>
-                <p className="text-xl md:text-2xl text-gray-600 mt-4 max-w-3xl mx-auto leading-relaxed">
+                <p className="text-xl md:text-2xl text-[#B1B1B0] mt-4 max-w-3xl mx-auto leading-relaxed">
                     Framework Estratégico para Equipos Comerciales de Alto Rendimiento
                 </p>
             </header>
@@ -65,10 +65,10 @@ const PlaybookHome: React.FC<PlaybookHomeProps> = ({ onNavigate }) => {
             </main>
              <footer className="text-center py-16 mt-16">
                 <div className="max-w-2xl mx-auto">
-                    <p className="text-2xl font-bold text-gray-800 mb-4" style={{fontFamily: 'Playfair Display, serif'}}>
+                    <p className="text-2xl font-bold text-[#3F3F3F] mb-4" style={{fontFamily: 'Outfit, sans-serif'}}>
                         Construyendo un motor de ingresos predecible
                     </p>
-                    <p className="text-gray-600">
+                    <p className="text-[#B1B1B0]">
                         Metodologías probadas • Procesos escalables • Resultados medibles
                     </p>
                 </div>

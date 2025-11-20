@@ -5,7 +5,7 @@ import React, { useState, useMemo } from 'react';
 
 const SectionTitle: React.FC<{ title: string; subtitle?: string }> = ({ title, subtitle }) => (
     <div className="mb-8 text-center md:text-left border-b border-gray-200 pb-4">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-800">{title}</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-[#3F3F3F]">{title}</h2>
         {subtitle && <p className="text-lg text-[#6D84E3] font-medium mt-2">{subtitle}</p>}
     </div>
 );
@@ -14,12 +14,12 @@ const LeverCard: React.FC<{ icon: string; title: string; kpis: string[]; impact:
     <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 flex flex-col h-full transition-all hover:shadow-md hover:border-[#6D84E3]">
         <div className="flex items-center mb-4">
             <span className="text-3xl mr-3">{icon}</span>
-            <h3 className="font-bold text-xl text-gray-800">{title}</h3>
+            <h3 className="font-bold text-xl text-[#3F3F3F]">{title}</h3>
         </div>
         <div className="mb-4 flex-grow">
             <p className="text-xs font-bold text-gray-400 uppercase mb-2">KPIs Afectados:</p>
             <div className="flex flex-wrap gap-2">
-                {kpis.map((k, i) => <span key={i} className="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">{k}</span>)}
+                {kpis.map((k, i) => <span key={i} className="bg-[#E4E3E3] text-[#B1B1B0] text-xs px-2 py-1 rounded">{k}</span>)}
             </div>
         </div>
         <div className="bg-blue-50 p-3 rounded-lg">
@@ -39,14 +39,14 @@ const DiagnosticCheckitem: React.FC<{
 }> = ({ label, subtext, checked, onChange }) => (
     <div 
         onClick={onChange}
-        className={`flex items-start p-3 border-b border-gray-100 last:border-0 cursor-pointer transition-colors ${checked ? 'bg-green-50' : 'hover:bg-gray-50'}`}
+        className={`flex items-start p-3 border-b border-gray-100 last:border-0 cursor-pointer transition-colors ${checked ? 'bg-green-50' : 'hover:bg-[#E4E3E3]'}`}
     >
         <div className={`mt-1 min-w-[20px] h-5 w-5 rounded border-2 flex items-center justify-center mr-3 transition-colors ${checked ? 'bg-green-500 border-green-500' : 'border-gray-300'}`}>
             {checked && <span className="text-white text-xs font-bold">✓</span>}
         </div>
         <div className={checked ? 'opacity-50' : ''}>
-            <p className={`text-sm font-bold ${checked ? 'text-green-800 line-through' : 'text-gray-800'}`}>{label}</p>
-            <p className="text-xs text-gray-500">{subtext}</p>
+            <p className={`text-sm font-bold ${checked ? 'text-green-800 line-through' : 'text-[#3F3F3F]'}`}>{label}</p>
+            <p className="text-xs text-[#B1B1B0]">{subtext}</p>
         </div>
     </div>
 );
@@ -57,7 +57,7 @@ const ScoreRow: React.FC<{
     value: number; 
     onChange: (val: number) => void 
 }> = ({ label, description, value, onChange }) => (
-    <div className="flex flex-col sm:flex-row justify-between items-center py-3 border-b border-gray-700 last:border-0">
+    <div className="flex flex-col sm:flex-row justify-between items-center py-3 border-b border-[#3F3F3F] last:border-0">
         <div className="mb-2 sm:mb-0 sm:mr-4 text-center sm:text-left">
             <p className="font-bold text-sm">{label}</p>
             <p className="text-xs text-gray-400">{description}</p>
@@ -129,16 +129,16 @@ const PricingGuide: React.FC = () => {
         <div className="container mx-auto p-4 md:p-8 bg-[#f8f9fa] min-h-screen">
             
             <header className="text-center py-12">
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">Diagnóstico Comercial y ROI</h1>
+                <h1 className="text-4xl md:text-5xl font-bold text-[#3F3F3F] tracking-tight">Diagnóstico Comercial y ROI</h1>
                 <p className="text-xl text-[#6D84E3] mt-4 font-medium">De la Venta de Features a la Venta de Impacto Económico.</p>
             </header>
 
             {/* NAVIGATION */}
             <div className="flex justify-center mb-8">
                 <div className="bg-white rounded-lg shadow-sm p-1 inline-flex">
-                    <button onClick={() => setActiveTab('diagnosis')} className={`px-6 py-2 rounded-md text-sm font-bold transition-colors ${activeTab === 'diagnosis' ? 'bg-[#6D84E3] text-white' : 'text-gray-600 hover:bg-gray-100'}`}>1. Diagnóstico y Palancas</button>
-                    <button onClick={() => setActiveTab('roi')} className={`px-6 py-2 rounded-md text-sm font-bold transition-colors ${activeTab === 'roi' ? 'bg-[#6D84E3] text-white' : 'text-gray-600 hover:bg-gray-100'}`}>2. ROI Canvas y Precios</button>
-                    <button onClick={() => setActiveTab('presentation')} className={`px-6 py-2 rounded-md text-sm font-bold transition-colors ${activeTab === 'presentation' ? 'bg-[#6D84E3] text-white' : 'text-gray-600 hover:bg-gray-100'}`}>3. Narrativa y Cierre</button>
+                    <button onClick={() => setActiveTab('diagnosis')} className={`px-6 py-2 rounded-md text-sm font-bold transition-colors ${activeTab === 'diagnosis' ? 'bg-[#6D84E3] text-white' : 'text-[#B1B1B0] hover:bg-[#E4E3E3]'}`}>1. Diagnóstico y Palancas</button>
+                    <button onClick={() => setActiveTab('roi')} className={`px-6 py-2 rounded-md text-sm font-bold transition-colors ${activeTab === 'roi' ? 'bg-[#6D84E3] text-white' : 'text-[#B1B1B0] hover:bg-[#E4E3E3]'}`}>2. ROI Canvas y Precios</button>
+                    <button onClick={() => setActiveTab('presentation')} className={`px-6 py-2 rounded-md text-sm font-bold transition-colors ${activeTab === 'presentation' ? 'bg-[#6D84E3] text-white' : 'text-[#B1B1B0] hover:bg-[#E4E3E3]'}`}>3. Narrativa y Cierre</button>
                 </div>
             </div>
 
@@ -154,18 +154,18 @@ const PricingGuide: React.FC = () => {
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                                 <div className="p-4">
                                     <div className="text-3xl mb-3">💡</div>
-                                    <h3 className="font-bold text-gray-800">Valor antes que Precio</h3>
-                                    <p className="text-sm text-gray-600 mt-2">El precio es irrelevante sin contexto. Nuestra misión es cuantificar el coste del problema antes de hablar de nuestra tarifa.</p>
+                                    <h3 className="font-bold text-[#3F3F3F]">Valor antes que Precio</h3>
+                                    <p className="text-sm text-[#B1B1B0] mt-2">El precio es irrelevante sin contexto. Nuestra misión es cuantificar el coste del problema antes de hablar de nuestra tarifa.</p>
                                 </div>
                                 <div className="p-4 border-x border-gray-100">
                                     <div className="text-3xl mb-3">📉</div>
-                                    <h3 className="font-bold text-gray-800">Vendemos ROI, no Horas</h3>
-                                    <p className="text-sm text-gray-600 mt-2">No somos un centro de coste (BPO tradicional). Somos un motor de eficiencia. Cada propuesta debe tener un retorno claro.</p>
+                                    <h3 className="font-bold text-[#3F3F3F]">Vendemos ROI, no Horas</h3>
+                                    <p className="text-sm text-[#B1B1B0] mt-2">No somos un centro de coste (BPO tradicional). Somos un motor de eficiencia. Cada propuesta debe tener un retorno claro.</p>
                                 </div>
                                 <div className="p-4">
                                     <div className="text-3xl mb-3">🤝</div>
-                                    <h3 className="font-bold text-gray-800">Conversación, no Listado</h3>
-                                    <p className="text-sm text-gray-600 mt-2">Nunca enviamos un PDF de precios en frío. Presentamos la inversión como la conclusión lógica de un Business Case conjunto.</p>
+                                    <h3 className="font-bold text-[#3F3F3F]">Conversación, no Listado</h3>
+                                    <p className="text-sm text-[#B1B1B0] mt-2">Nunca enviamos un PDF de precios en frío. Presentamos la inversión como la conclusión lógica de un Business Case conjunto.</p>
                                 </div>
                             </div>
                         </section>
@@ -199,11 +199,11 @@ const PricingGuide: React.FC = () => {
 
                         {/* C. ARBOL DE DECISIÓN */}
                         <section className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">
-                            <div className="p-6 bg-gray-50 border-b border-gray-200">
-                                <h2 className="text-xl font-bold text-gray-800">C. Árbol de Diagnóstico (Dolor → Solución)</h2>
+                            <div className="p-6 bg-[#E4E3E3] border-b border-gray-200">
+                                <h2 className="text-xl font-bold text-[#3F3F3F]">C. Árbol de Diagnóstico (Dolor → Solución)</h2>
                             </div>
                             <table className="w-full text-sm text-left">
-                                <thead className="bg-gray-100 text-gray-600 uppercase text-xs font-bold">
+                                <thead className="bg-[#E4E3E3] text-[#B1B1B0] uppercase text-xs font-bold">
                                     <tr>
                                         <th className="px-6 py-3">Dolor del Cliente</th>
                                         <th className="px-6 py-3">Causa Raíz (Diagnóstico)</th>
@@ -224,8 +224,8 @@ const PricingGuide: React.FC = () => {
                         <section className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                             <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
                                 <div className="flex justify-between items-center mb-4 border-b pb-2">
-                                    <h3 className="font-bold text-gray-800">D. Checklist de Inputs Mínimos</h3>
-                                    <span className={`text-xs font-bold px-2 py-1 rounded ${checklistProgress === 100 ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-600'}`}>
+                                    <h3 className="font-bold text-[#3F3F3F]">D. Checklist de Inputs Mínimos</h3>
+                                    <span className={`text-xs font-bold px-2 py-1 rounded ${checklistProgress === 100 ? 'bg-green-100 text-green-800' : 'bg-[#E4E3E3] text-[#B1B1B0]'}`}>
                                         {checklistProgress}% Completado
                                     </span>
                                 </div>
@@ -270,7 +270,7 @@ const PricingGuide: React.FC = () => {
                             </div>
 
                             {/* CALCULADORA SCORECARD */}
-                            <div className="bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-700 text-white">
+                            <div className="bg-[#3F3F3F] rounded-xl shadow-lg p-6 border border-[#3F3F3F] text-white">
                                 <h3 className="font-bold text-white mb-4 border-b border-gray-600 pb-2">Calculadora de Viabilidad (Scorecard)</h3>
                                 <div className="space-y-4">
                                     <ScoreRow 
@@ -315,36 +315,36 @@ const PricingGuide: React.FC = () => {
                         
                         {/* INTRO */}
                         <div className="text-center max-w-3xl mx-auto">
-                            <h2 className="text-3xl font-bold text-gray-800">E. ROI Canvas y Modelo de Precios</h2>
-                            <p className="text-gray-600 mt-2">La herramienta para construir el Business Case. Recuerda: El precio se compone de una <strong>Cuota de Plataforma</strong> (Fija) + <strong>Cuota de Éxito</strong> (Variable).</p>
+                            <h2 className="text-3xl font-bold text-[#3F3F3F]">E. ROI Canvas y Modelo de Precios</h2>
+                            <p className="text-[#B1B1B0] mt-2">La herramienta para construir el Business Case. Recuerda: El precio se compone de una <strong>Cuota de Plataforma</strong> (Fija) + <strong>Cuota de Éxito</strong> (Variable).</p>
                         </div>
 
                         {/* ROI CANVAS */}
                         <div className="bg-white rounded-xl shadow-lg border border-gray-300 overflow-hidden">
-                            <div className="bg-gray-800 text-white p-4 flex justify-between items-center">
+                            <div className="bg-[#3F3F3F] text-white p-4 flex justify-between items-center">
                                 <h3 className="font-bold text-lg">📊 BeyondCX ROI Canvas (Hoja de Trabajo)</h3>
                                 <span className="text-xs bg-blue-600 px-2 py-1 rounded">Confidencial</span>
                             </div>
                             
                             <div className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-gray-200">
                                 {/* INPUTS */}
-                                <div className="p-8 bg-gray-50">
-                                    <h4 className="font-bold text-gray-700 mb-6 border-b pb-2">1. Inputs del Cliente (Estado Actual)</h4>
+                                <div className="p-8 bg-[#E4E3E3]">
+                                    <h4 className="font-bold text-[#3F3F3F] mb-6 border-b pb-2">1. Inputs del Cliente (Estado Actual)</h4>
                                     <div className="space-y-4">
                                         <div className="flex justify-between items-center p-3 bg-white border rounded">
-                                            <span className="text-sm font-medium text-gray-600">Volumen Mensual</span>
+                                            <span className="text-sm font-medium text-[#B1B1B0]">Volumen Mensual</span>
                                             <span className="text-gray-400 font-mono">____________ int.</span>
                                         </div>
                                         <div className="flex justify-between items-center p-3 bg-white border rounded">
-                                            <span className="text-sm font-medium text-gray-600">Coste por Contacto (Actual)</span>
+                                            <span className="text-sm font-medium text-[#B1B1B0]">Coste por Contacto (Actual)</span>
                                             <span className="text-gray-400 font-mono">€ ___________ /ud</span>
                                         </div>
                                         <div className="flex justify-between items-center p-3 bg-white border rounded">
-                                            <span className="text-sm font-medium text-gray-600">FTEs (Empleados) Dedicados</span>
+                                            <span className="text-sm font-medium text-[#B1B1B0]">FTEs (Empleados) Dedicados</span>
                                             <span className="text-gray-400 font-mono">____________ px.</span>
                                         </div>
                                         <div className="flex justify-between items-center p-3 bg-white border rounded">
-                                            <span className="text-sm font-medium text-gray-600">Tasa de Error / Abandono</span>
+                                            <span className="text-sm font-medium text-[#B1B1B0]">Tasa de Error / Abandono</span>
                                             <span className="text-gray-400 font-mono">____________ %</span>
                                         </div>
                                     </div>
@@ -385,7 +385,7 @@ const PricingGuide: React.FC = () => {
                                         </div>
                                     </div>
 
-                                    <div className="bg-gray-50 p-4 rounded text-xs text-gray-500 italic">
+                                    <div className="bg-[#E4E3E3] p-4 rounded text-xs text-[#B1B1B0] italic">
                                         * Nota: Estas estimaciones son conservadoras. El impacto en CX (NPS) y reducción de churn genera valor adicional no incluido en este cálculo directo.
                                     </div>
                                 </div>
@@ -397,23 +397,23 @@ const PricingGuide: React.FC = () => {
                             <SectionTitle title="Ejemplos Reales de Configuración de Precio" subtitle="Cómo se traduce esto en propuestas concretas" />
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div className="bg-white p-6 rounded-xl shadow-sm border-t-4 border-[#6D84E3]">
-                                    <h3 className="font-bold text-lg text-gray-800 mb-2">Caso 1: Sweet Spot (Sanidad)</h3>
-                                    <p className="text-sm text-gray-500 mb-4">Clínica Privada / 15k interacciones mes</p>
+                                    <h3 className="font-bold text-lg text-[#3F3F3F] mb-2">Caso 1: Sweet Spot (Sanidad)</h3>
+                                    <p className="text-sm text-[#B1B1B0] mb-4">Clínica Privada / 15k interacciones mes</p>
                                     <ul className="space-y-3 text-sm">
                                         <li className="flex justify-between border-b border-gray-100 pb-2"><span>Solución:</span> <span className="font-bold">Beyond-Booking + IVR</span></li>
                                         <li className="flex justify-between border-b border-gray-100 pb-2"><span>Cuota Plataforma:</span> <span className="font-bold">~€2,500 / mes</span></li>
                                         <li className="flex justify-between border-b border-gray-100 pb-2"><span>Cuota Éxito:</span> <span className="font-bold">~€0.80 / cita</span></li>
-                                        <li className="flex justify-between bg-gray-50 p-2 rounded"><span>MRR Estimado:</span> <span className="font-bold text-[#6D84E3]">&gt; €25,000</span></li>
+                                        <li className="flex justify-between bg-[#E4E3E3] p-2 rounded"><span>MRR Estimado:</span> <span className="font-bold text-[#6D84E3]">&gt; €25,000</span></li>
                                     </ul>
                                 </div>
-                                <div className="bg-white p-6 rounded-xl shadow-sm border-t-4 border-gray-800">
-                                    <h3 className="font-bold text-lg text-gray-800 mb-2">Caso 2: BPO 2.0 (Utilities)</h3>
-                                    <p className="text-sm text-gray-500 mb-4">Energética / 50k interacciones mes</p>
+                                <div className="bg-white p-6 rounded-xl shadow-sm border-t-4 border-[#3F3F3F]">
+                                    <h3 className="font-bold text-lg text-[#3F3F3F] mb-2">Caso 2: BPO 2.0 (Utilities)</h3>
+                                    <p className="text-sm text-[#B1B1B0] mb-4">Energética / 50k interacciones mes</p>
                                     <ul className="space-y-3 text-sm">
                                         <li className="flex justify-between border-b border-gray-100 pb-2"><span>Solución:</span> <span className="font-bold">Full Service (FCR + Order)</span></li>
                                         <li className="flex justify-between border-b border-gray-100 pb-2"><span>Cuota Plataforma:</span> <span className="font-bold">~€5,000 / mes</span></li>
                                         <li className="flex justify-between border-b border-gray-100 pb-2"><span>Cuota Éxito:</span> <span className="font-bold">Modelo Tiers (Volumen)</span></li>
-                                        <li className="flex justify-between bg-gray-50 p-2 rounded"><span>MRR Estimado:</span> <span className="font-bold text-[#6D84E3]">&gt; €25,000</span></li>
+                                        <li className="flex justify-between bg-[#E4E3E3] p-2 rounded"><span>MRR Estimado:</span> <span className="font-bold text-[#6D84E3]">&gt; €25,000</span></li>
                                     </ul>
                                 </div>
                             </div>
@@ -431,31 +431,31 @@ const PricingGuide: React.FC = () => {
                             
                             <div className="space-y-6">
                                 <div className="flex items-start">
-                                    <div className="bg-gray-100 text-gray-800 font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">1</div>
+                                    <div className="bg-[#E4E3E3] text-[#3F3F3F] font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">1</div>
                                     <div>
-                                        <h4 className="font-bold text-gray-800">Anclar en el Dolor (Discovery)</h4>
-                                        <p className="text-sm text-gray-600 mt-1">"Entiendo que vuestro principal problema es un FCR bajo (&lt;60%), lo que frustra a los clientes..."</p>
+                                        <h4 className="font-bold text-[#3F3F3F]">Anclar en el Dolor (Discovery)</h4>
+                                        <p className="text-sm text-[#B1B1B0] mt-1">"Entiendo que vuestro principal problema es un FCR bajo (&lt;60%), lo que frustra a los clientes..."</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start">
-                                    <div className="bg-gray-100 text-gray-800 font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">2</div>
+                                    <div className="bg-[#E4E3E3] text-[#3F3F3F] font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">2</div>
                                     <div>
-                                        <h4 className="font-bold text-gray-800">Cuantificar el Coste de Inacción</h4>
-                                        <p className="text-sm text-gray-600 mt-1">"Si cada rellamada cuesta 8€ y tenéis 10k llamadas/mes, este problema os cuesta <strong>15.000€ mensuales</strong> hoy."</p>
+                                        <h4 className="font-bold text-[#3F3F3F]">Cuantificar el Coste de Inacción</h4>
+                                        <p className="text-sm text-[#B1B1B0] mt-1">"Si cada rellamada cuesta 8€ y tenéis 10k llamadas/mes, este problema os cuesta <strong>15.000€ mensuales</strong> hoy."</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start">
-                                    <div className="bg-gray-100 text-gray-800 font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">3</div>
+                                    <div className="bg-[#E4E3E3] text-[#3F3F3F] font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">3</div>
                                     <div>
-                                        <h4 className="font-bold text-gray-800">Presentar la Solución como Puente</h4>
-                                        <p className="text-sm text-gray-600 mt-1">"BeyondFCR está diseñado para subir ese KPI al 85% en 90 días, eliminando ese desperdicio y mejorando el CSAT."</p>
+                                        <h4 className="font-bold text-[#3F3F3F]">Presentar la Solución como Puente</h4>
+                                        <p className="text-sm text-[#B1B1B0] mt-1">"BeyondFCR está diseñado para subir ese KPI al 85% en 90 días, eliminando ese desperdicio y mejorando el CSAT."</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start">
                                     <div className="bg-green-100 text-green-800 font-bold rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">4</div>
                                     <div>
-                                        <h4 className="font-bold text-gray-800">Precio como Inversión Lógica</h4>
-                                        <p className="text-sm text-gray-600 mt-1">"Para lograr esto, la inversión es [Precio]. Se autofinancia en 3 meses y luego es pura ganancia. ¿Tiene sentido?"</p>
+                                        <h4 className="font-bold text-[#3F3F3F]">Precio como Inversión Lógica</h4>
+                                        <p className="text-sm text-[#B1B1B0] mt-1">"Para lograr esto, la inversión es [Precio]. Se autofinancia en 3 meses y luego es pura ganancia. ¿Tiene sentido?"</p>
                                     </div>
                                 </div>
                             </div>
@@ -466,22 +466,22 @@ const PricingGuide: React.FC = () => {
                             
                             {/* Benchmarks */}
                             <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
-                                <h3 className="font-bold text-gray-800 mb-4">Benchmarks Sectoriales</h3>
+                                <h3 className="font-bold text-[#3F3F3F] mb-4">Benchmarks Sectoriales</h3>
                                 <div className="space-y-4">
                                     <div className="border-l-4 border-[#6D84E3] pl-4">
                                         <p className="text-xs font-bold text-[#6D84E3]">RETAIL / E-COMMERCE</p>
-                                        <p className="text-sm font-bold text-gray-800">Reducción TMO -40%</p>
-                                        <p className="text-xs text-gray-500">Automatización de "Dónde está mi pedido".</p>
+                                        <p className="text-sm font-bold text-[#3F3F3F]">Reducción TMO -40%</p>
+                                        <p className="text-xs text-[#B1B1B0]">Automatización de "Dónde está mi pedido".</p>
                                     </div>
                                     <div className="border-l-4 border-[#6D84E3] pl-4">
                                         <p className="text-xs font-bold text-[#6D84E3]">SANIDAD</p>
-                                        <p className="text-sm font-bold text-gray-800">No-Shows -30%</p>
-                                        <p className="text-xs text-gray-500">Confirmaciones proactivas por WhatsApp/Voz.</p>
+                                        <p className="text-sm font-bold text-[#3F3F3F]">No-Shows -30%</p>
+                                        <p className="text-xs text-[#B1B1B0]">Confirmaciones proactivas por WhatsApp/Voz.</p>
                                     </div>
                                     <div className="border-l-4 border-[#6D84E3] pl-4">
                                         <p className="text-xs font-bold text-[#6D84E3]">UTILITIES</p>
-                                        <p className="text-sm font-bold text-gray-800">FCR +20 Puntos</p>
-                                        <p className="text-xs text-gray-500">Resolución de incidencias masivas por IA.</p>
+                                        <p className="text-sm font-bold text-[#3F3F3F]">FCR +20 Puntos</p>
+                                        <p className="text-xs text-[#B1B1B0]">Resolución de incidencias masivas por IA.</p>
                                     </div>
                                 </div>
                             </div>
@@ -490,8 +490,8 @@ const PricingGuide: React.FC = () => {
                             <div className="bg-red-50 rounded-xl shadow-sm p-6 border border-red-100">
                                 <h3 className="font-bold text-red-800 mb-4">Estrategia de Cierre: "Give-to-Get"</h3>
                                 <p className="text-sm text-red-700 mb-4">Nunca concedas un descuento sin pedir algo a cambio. Protege el valor.</p>
-                                <div className="bg-white p-4 rounded border border-red-100 text-sm text-gray-700 italic">
-                                    <p className="font-bold not-italic text-gray-900 mb-2">Cliente: "¿Me haces un 10% de descuento?"</p>
+                                <div className="bg-white p-4 rounded border border-red-100 text-sm text-[#3F3F3F] italic">
+                                    <p className="font-bold not-italic text-[#3F3F3F] mb-2">Cliente: "¿Me haces un 10% de descuento?"</p>
                                     "Nuestros márgenes están ajustados al valor que damos. Pero si firmamos un <strong>contrato de 24 meses</strong> en lugar de 12, o realizamos el <strong>pago trimestral por adelantado</strong>, podría justificar ese ajuste internamente. ¿Qué opción te encaja mejor?"
                                 </div>
                             </div>

@@ -97,3 +97,11 @@
 - [x] Crear componente "Pricing & Negotiation" para dropdown Herramientas
 - [x] Actualizar tipos y navegación con nuevas herramientas
 - [ ] Actualizar todos los componentes con colores corporativos
+
+## Correcciones Pendientes
+
+- [x] Cambiar todas las fuentes restantes a Outfit
+- [x] Actualizar todos los colores a paleta corporativa
+- [x] Ajustar logo en header para mejor visualización
+- [x] Modificar Sales Plays Library para mostrar solo vista por fases
+- [x] Email Templates verificado (sin errores de sintaxis)

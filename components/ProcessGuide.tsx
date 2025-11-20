@@ -19,7 +19,7 @@ const TabButton: React.FC<{ active: boolean; onClick: () => void; label: string;
         className={`flex items-center justify-center px-6 py-4 text-sm md:text-base font-bold transition-all border-b-4 ${
             active 
                 ? 'border-[#6D84E3] text-[#6D84E3] bg-white' 
-                : 'border-transparent text-gray-500 hover:text-gray-700 hover:bg-gray-50'
+                : 'border-transparent text-[#B1B1B0] hover:text-[#3F3F3F] hover:bg-[#E4E3E3]'
         }`}
     >
         <span className="mr-2">{icon}</span>
@@ -39,7 +39,7 @@ const ArtifactChip: React.FC<{ artifact: Artifact }> = ({ artifact }) => {
 
     return (
         <button 
-            className="flex items-center bg-white border border-gray-200 hover:border-[#6D84E3] hover:bg-blue-50 text-xs font-medium text-gray-700 px-3 py-2 rounded-md transition-all shadow-sm group"
+            className="flex items-center bg-white border border-gray-200 hover:border-[#6D84E3] hover:bg-blue-50 text-xs font-medium text-[#3F3F3F] px-3 py-2 rounded-md transition-all shadow-sm group"
             onClick={() => alert(`Descargando plantilla: ${artifact.name}...`)}
         >
             <span className="mr-2 text-base">{getIcon(artifact.type)}</span>
@@ -57,8 +57,8 @@ const PillarSection: React.FC<{
     children: React.ReactNode; 
 }> = ({ number, title, conceptTitle, conceptText, children }) => (
     <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-8 shadow-sm hover:shadow-md transition-shadow">
-        <div className="bg-gray-50 p-4 border-b border-gray-200 flex items-center justify-between">
-             <h3 className="text-lg font-bold text-gray-800 flex items-center">
+        <div className="bg-[#E4E3E3] p-4 border-b border-gray-200 flex items-center justify-between">
+             <h3 className="text-lg font-bold text-[#3F3F3F] flex items-center">
                 <span className="bg-[#6D84E3] text-white rounded-full w-8 h-8 flex items-center justify-center mr-3 text-sm font-bold">{number}</span>
                 {title}
             </h3>
@@ -67,7 +67,7 @@ const PillarSection: React.FC<{
              {/* Concept Block */}
              <div className="bg-blue-50 border-l-4 border-[#6D84E3] p-4 mb-8 rounded-r-lg">
                 <p className="text-xs font-bold text-[#6D84E3] uppercase mb-1">📘 Concepto Clave: {conceptTitle}</p>
-                <p className="text-sm text-gray-700 leading-relaxed">{conceptText}</p>
+                <p className="text-sm text-[#3F3F3F] leading-relaxed">{conceptText}</p>
              </div>
              {/* Content */}
              {children}
@@ -102,11 +102,11 @@ const BlueprintCard: React.FC<{
                 
                 {/* Header */}
                 <div className="lg:col-span-4 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-gray-100 pb-4 lg:pb-0 lg:pr-4">
-                    <h3 className="text-2xl font-bold text-gray-800">{title}</h3>
+                    <h3 className="text-2xl font-bold text-[#3F3F3F]">{title}</h3>
                     <p className="text-sm text-[#6D84E3] font-bold mt-1 uppercase tracking-wide">Objetivo</p>
-                    <p className="text-sm text-gray-600 mt-1">{objective}</p>
+                    <p className="text-sm text-[#B1B1B0] mt-1">{objective}</p>
                     <div className="mt-4 flex items-center">
-                        <span className="text-xs font-bold bg-gray-100 text-gray-600 px-2 py-1 rounded">Roles: {roles}</span>
+                        <span className="text-xs font-bold bg-[#E4E3E3] text-[#B1B1B0] px-2 py-1 rounded">Roles: {roles}</span>
                     </div>
                 </div>
 
@@ -116,11 +116,11 @@ const BlueprintCard: React.FC<{
                         <p className="text-xs font-bold text-blue-800 uppercase mb-2 flex items-center">
                             <span className="mr-1">🛠</span> Misión en HubSpot
                         </p>
-                        <div className="text-sm text-gray-700 space-y-1 pl-1">{hubspot}</div>
+                        <div className="text-sm text-[#3F3F3F] space-y-1 pl-1">{hubspot}</div>
                     </div>
                     
                     <div>
-                        <p className="text-xs font-bold text-gray-500 uppercase mb-2">📂 Plantillas & Entregables</p>
+                        <p className="text-xs font-bold text-[#B1B1B0] uppercase mb-2">📂 Plantillas & Entregables</p>
                         <div className="flex flex-wrap gap-2">
                             {artifacts.map((art, idx) => <ArtifactChip key={idx} artifact={art} />)}
                         </div>
@@ -131,7 +131,7 @@ const BlueprintCard: React.FC<{
                 <div className="lg:col-span-4 flex flex-col justify-center">
                      <div className="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-400">
                         <p className="text-xs font-bold text-yellow-800 uppercase tracking-wider mb-2">🔒 Gatekeeper (Exit Criteria)</p>
-                        <p className="text-sm font-bold text-gray-800 italic">"{gatekeeper}"</p>
+                        <p className="text-sm font-bold text-[#3F3F3F] italic">"{gatekeeper}"</p>
                         <p className="text-xs text-yellow-700 mt-2">Si la respuesta es NO, el deal no avanza.</p>
                     </div>
                 </div>
@@ -145,7 +145,7 @@ const ChecklistItem: React.FC<{ category: string; items: string[] }> = ({ catego
         <h4 className="font-bold text-[#6D84E3] border-b border-gray-200 pb-2 mb-3">{category}</h4>
         <ul className="space-y-2">
             {items.map((item, idx) => (
-                <li key={idx} className="flex items-start text-sm text-gray-700">
+                <li key={idx} className="flex items-start text-sm text-[#3F3F3F]">
                     <input type="checkbox" className="mt-1 mr-3 text-[#6D84E3] focus:ring-[#6D84E3] rounded" />
                     <span>{item}</span>
                 </li>
@@ -156,21 +156,21 @@ const ChecklistItem: React.FC<{ category: string; items: string[] }> = ({ catego
 
 const RoleKpiCard: React.FC<{ role: string; northStar: string; inputs: string[]; outputs: string[]; color: string }> = ({ role, northStar, inputs, outputs, color }) => (
     <div className={`bg-white rounded-xl shadow border-t-4 ${color} p-6 flex flex-col h-full`}>
-        <h3 className="text-lg font-bold text-gray-800 mb-1">{role}</h3>
+        <h3 className="text-lg font-bold text-[#3F3F3F] mb-1">{role}</h3>
         <div className="mb-4 pb-4 border-b border-gray-100">
-            <p className="text-xs text-gray-500 uppercase font-bold">North Star Metric</p>
-            <p className="text-xl font-black text-gray-800">{northStar}</p>
+            <p className="text-xs text-[#B1B1B0] uppercase font-bold">North Star Metric</p>
+            <p className="text-xl font-black text-[#3F3F3F]">{northStar}</p>
         </div>
         <div className="flex-grow space-y-4">
             <div>
-                <p className="text-xs text-gray-500 uppercase font-bold mb-2">Inputs (Esfuerzo)</p>
-                <ul className="text-sm text-gray-600 space-y-1">
+                <p className="text-xs text-[#B1B1B0] uppercase font-bold mb-2">Inputs (Esfuerzo)</p>
+                <ul className="text-sm text-[#B1B1B0] space-y-1">
                     {inputs.map((i, idx) => <li key={idx} className="flex items-start"><span className="mr-2 text-gray-400">•</span>{i}</li>)}
                 </ul>
             </div>
             <div>
-                <p className="text-xs text-gray-500 uppercase font-bold mb-2">Outputs (Resultados)</p>
-                <ul className="text-sm text-gray-600 space-y-1">
+                <p className="text-xs text-[#B1B1B0] uppercase font-bold mb-2">Outputs (Resultados)</p>
+                <ul className="text-sm text-[#B1B1B0] space-y-1">
                     {outputs.map((o, idx) => <li key={idx} className="flex items-start"><span className="mr-2 text-gray-400">→</span>{o}</li>)}
                 </ul>
             </div>
@@ -179,19 +179,19 @@ const RoleKpiCard: React.FC<{ role: string; northStar: string; inputs: string[];
 );
 
 const MeddiccCard: React.FC<{ letter: string; title: string }> = ({ letter, title }) => (
-    <div className="flex flex-col items-center p-4 bg-gray-800 rounded-lg border border-gray-700 text-center min-w-[100px]">
+    <div className="flex flex-col items-center p-4 bg-[#3F3F3F] rounded-lg border border-[#3F3F3F] text-center min-w-[100px]">
         <span className="text-3xl font-black text-[#6D84E3] mb-1">{letter}</span>
         <span className="text-xs text-white font-medium">{title}</span>
     </div>
 );
 
 const RaciRow: React.FC<{ task: string; deliverable: string; sdr: string; ae: string; mgr: string }> = ({ task, deliverable, sdr, ae, mgr }) => (
-    <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
-        <td className="py-3 px-4 text-sm font-medium text-gray-700 w-1/3">{task}</td>
-        <td className="py-3 px-4 text-sm text-gray-600 italic border-r border-gray-100 w-1/3">{deliverable}</td>
-        <td className="py-3 px-4 text-center text-xs font-bold text-gray-500 w-1/9">{sdr}</td>
-        <td className="py-3 px-4 text-center text-xs font-bold text-gray-500 w-1/9">{ae}</td>
-        <td className="py-3 px-4 text-center text-xs font-bold text-gray-500 w-1/9">{mgr}</td>
+    <tr className="border-b border-gray-100 hover:bg-[#E4E3E3] transition-colors">
+        <td className="py-3 px-4 text-sm font-medium text-[#3F3F3F] w-1/3">{task}</td>
+        <td className="py-3 px-4 text-sm text-[#B1B1B0] italic border-r border-gray-100 w-1/3">{deliverable}</td>
+        <td className="py-3 px-4 text-center text-xs font-bold text-[#B1B1B0] w-1/9">{sdr}</td>
+        <td className="py-3 px-4 text-center text-xs font-bold text-[#B1B1B0] w-1/9">{ae}</td>
+        <td className="py-3 px-4 text-center text-xs font-bold text-[#B1B1B0] w-1/9">{mgr}</td>
     </tr>
 );
 
@@ -206,7 +206,7 @@ const ProcessGuide: React.FC = () => {
             
             {/* HEADER */}
             <header className="text-center py-10">
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">Sales Process Blueprint</h1>
+                <h1 className="text-4xl md:text-5xl font-bold text-[#3F3F3F] tracking-tight">Sales Process Blueprint</h1>
                 <p className="text-xl text-[#6D84E3] mt-4 font-medium">Metodología Consultiva: Del Diagnóstico al Escalado</p>
             </header>
 
@@ -226,8 +226,8 @@ const ProcessGuide: React.FC = () => {
                         
                         {/* 1. PRINCIPIOS OPERATIVOS */}
                         <section>
-                            <h2 className="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200">1. Principios de Nuestra Moción de Venta</h2>
-                            <div className="prose max-w-none text-gray-600 mb-6">
+                            <h2 className="text-2xl font-bold text-[#3F3F3F] mb-6 pb-2 border-b border-gray-200">1. Principios de Nuestra Moción de Venta</h2>
+                            <div className="prose max-w-none text-[#B1B1B0] mb-6">
                                 <p className="text-lg">
                                     No somos vendedores de licencias; somos consultores de operaciones. Nuestra moción comercial está diseñada para reducir el riesgo percibido por el cliente y demostrar valor incremental antes de pedir grandes compromisos.
                                 </p>
@@ -240,9 +240,9 @@ const ProcessGuide: React.FC = () => {
                                     { t: "Escalabilidad", d: "Procesos diseñados para ser repetibles." },
                                     { t: "Portfolio Entry", d: "Empezamos pequeño (Piloto), escalamos rápido." }
                                 ].map((p, i) => (
-                                    <div key={i} className="bg-gray-50 p-4 rounded-lg border border-gray-100 hover:border-[#6D84E3] transition-colors">
+                                    <div key={i} className="bg-[#E4E3E3] p-4 rounded-lg border border-gray-100 hover:border-[#6D84E3] transition-colors">
                                         <h4 className="font-bold text-[#6D84E3] text-sm mb-2">{p.t}</h4>
-                                        <p className="text-xs text-gray-500">{p.d}</p>
+                                        <p className="text-xs text-[#B1B1B0]">{p.d}</p>
                                     </div>
                                 ))}
                             </div>
@@ -251,8 +251,8 @@ const ProcessGuide: React.FC = () => {
                         {/* 2. LOS 3 PILARES */}
                         <section>
                             <div className="mb-8">
-                                <h2 className="text-2xl font-bold text-gray-800 pb-2 border-b border-gray-200">2. Los 3 Pilares de la Metodología</h2>
-                                <p className="text-gray-500 mt-2">Nuestra base estratégica para ganar en un mercado competitivo.</p>
+                                <h2 className="text-2xl font-bold text-[#3F3F3F] pb-2 border-b border-gray-200">2. Los 3 Pilares de la Metodología</h2>
+                                <p className="text-[#B1B1B0] mt-2">Nuestra base estratégica para ganar en un mercado competitivo.</p>
                             </div>
 
                             {/* 2.1 MANIFESTO */}
@@ -265,7 +265,7 @@ const ProcessGuide: React.FC = () => {
                                 <div className="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
                                     <div className="text-5xl">🎯</div>
                                     <div>
-                                        <p className="text-xl text-gray-800 font-medium italic leading-relaxed">
+                                        <p className="text-xl text-[#3F3F3F] font-medium italic leading-relaxed">
                                             "No vendemos servicios, vendemos Resultados de Negocio. Nos posicionamos como educadores que diagnostican y co-crean valor, no como vendedores transaccionales."
                                         </p>
                                     </div>
@@ -282,18 +282,18 @@ const ProcessGuide: React.FC = () => {
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                                     <div className="bg-blue-50 p-4 rounded-lg border border-blue-100 text-center">
                                         <div className="text-blue-600 font-black text-xl mb-1">TOFU</div>
-                                        <div className="text-xs font-bold uppercase tracking-wide text-gray-500">Educación & Awareness</div>
-                                        <p className="text-sm text-gray-600 mt-2">Posicionar BPO 2.0 y elevar el dolor consciente.</p>
+                                        <div className="text-xs font-bold uppercase tracking-wide text-[#B1B1B0]">Educación & Awareness</div>
+                                        <p className="text-sm text-[#B1B1B0] mt-2">Posicionar BPO 2.0 y elevar el dolor consciente.</p>
                                     </div>
                                     <div className="bg-green-50 p-4 rounded-lg border border-green-100 text-center">
                                         <div className="text-green-600 font-black text-xl mb-1">MOFU</div>
-                                        <div className="text-xs font-bold uppercase tracking-wide text-gray-500">Cualificación & Valor</div>
-                                        <p className="text-sm text-gray-600 mt-2">Diagnóstico, MEDDICC y Business Case.</p>
+                                        <div className="text-xs font-bold uppercase tracking-wide text-[#B1B1B0]">Cualificación & Valor</div>
+                                        <p className="text-sm text-[#B1B1B0] mt-2">Diagnóstico, MEDDICC y Business Case.</p>
                                     </div>
                                     <div className="bg-orange-50 p-4 rounded-lg border border-orange-100 text-center">
                                         <div className="text-orange-600 font-black text-xl mb-1">BOFU</div>
-                                        <div className="text-xs font-bold uppercase tracking-wide text-gray-500">Cierre & Impacto</div>
-                                        <p className="text-sm text-gray-600 mt-2">Negociación, Firma y Piloto.</p>
+                                        <div className="text-xs font-bold uppercase tracking-wide text-[#B1B1B0]">Cierre & Impacto</div>
+                                        <p className="text-sm text-[#B1B1B0] mt-2">Negociación, Firma y Piloto.</p>
                                     </div>
                                 </div>
                             </PillarSection>
@@ -305,7 +305,7 @@ const ProcessGuide: React.FC = () => {
                                 conceptTitle="¿Qué es MEDDICC?"
                                 conceptText="Es el estándar global en ventas empresariales (B2B) para cualificar oportunidades. Es un checklist mental que nos dice si vamos a ganar o perder un trato. Si no puedes responder a cada letra, estás volando a ciegas."
                             >
-                                <div className="bg-gray-900 rounded-xl p-8 text-white shadow-inner">
+                                <div className="bg-[#3F3F3F] rounded-xl p-8 text-white shadow-inner">
                                     <div className="flex flex-wrap justify-center gap-3 mb-6">
                                         <MeddiccCard letter="M" title="Metrics" />
                                         <MeddiccCard letter="E" title="Economic Buyer" />
@@ -331,8 +331,8 @@ const ProcessGuide: React.FC = () => {
                         {/* GOLDEN RULE */}
                         <div className="bg-white p-4 rounded-xl shadow-sm border-l-4 border-[#6D84E3] flex flex-col md:flex-row items-center justify-between gap-4 mb-8">
                             <div>
-                                <h3 className="font-bold text-gray-800 flex items-center"><span className="text-xl mr-2">📏</span> REGLA DE ORO:</h3>
-                                <p className="text-sm text-gray-600">La disciplina es nuestra ventaja. No muevas un deal si no superas el Gatekeeper. Calidad &gt; Cantidad.</p>
+                                <h3 className="font-bold text-[#3F3F3F] flex items-center"><span className="text-xl mr-2">📏</span> REGLA DE ORO:</h3>
+                                <p className="text-sm text-[#B1B1B0]">La disciplina es nuestra ventaja. No muevas un deal si no superas el Gatekeeper. Calidad &gt; Cantidad.</p>
                             </div>
                             <a href="https://app.hubspot.com" target="_blank" rel="noopener noreferrer" className="whitespace-nowrap bg-[#ff7a59] hover:bg-[#d95e3e] text-white font-bold py-2 px-4 rounded-lg shadow transition-all flex items-center text-sm">
                                 ABRIR HUBSPOT CRM
@@ -342,8 +342,8 @@ const ProcessGuide: React.FC = () => {
 
                         <div className="flex justify-between items-end mb-6 border-b pb-4">
                             <div>
-                                <h2 className="text-3xl font-bold text-gray-800">B1. El Flujo de Trabajo (Stages)</h2>
-                                <p className="text-gray-500 mt-1">Pipeline lineal de 7 etapas. Sigue el camino crítico.</p>
+                                <h2 className="text-3xl font-bold text-[#3F3F3F]">B1. El Flujo de Trabajo (Stages)</h2>
+                                <p className="text-[#B1B1B0] mt-1">Pipeline lineal de 7 etapas. Sigue el camino crítico.</p>
                             </div>
                         </div>
 
@@ -448,7 +448,7 @@ const ProcessGuide: React.FC = () => {
                             <div className="flex items-center mb-6 border-b border-blue-200 pb-4">
                                 <span className="text-4xl mr-4">🔍</span>
                                 <div>
-                                    <h2 className="text-2xl font-bold text-gray-800">B2. Deep Dive: Checklist de Discovery (Etapa 2)</h2>
+                                    <h2 className="text-2xl font-bold text-[#3F3F3F]">B2. Deep Dive: Checklist de Discovery (Etapa 2)</h2>
                                     <p className="text-blue-800">No salgas de la fase de Discovery sin estos datos. Son el combustible del ROI.</p>
                                 </div>
                             </div>
@@ -489,7 +489,7 @@ const ProcessGuide: React.FC = () => {
                                 <div>
                                     <div className="bg-white p-6 rounded-xl border border-blue-200 mb-8 shadow-sm">
                                         <h4 className="font-bold text-blue-800 mb-4">El Framework MEDDICC (Cualificación)</h4>
-                                        <ul className="space-y-3 text-sm text-gray-700">
+                                        <ul className="space-y-3 text-sm text-[#3F3F3F]">
                                             <li><strong>M (Metrics):</strong> ¿Qué KPI mejoraremos? (Ej: Bajar TMO 30%).</li>
                                             <li><strong>E (Economic Buyer):</strong> ¿Quién tiene el presupuesto?</li>
                                             <li><strong>D (Decision Criteria):</strong> ¿Técnica, Precio o Confianza?</li>
@@ -516,7 +516,7 @@ const ProcessGuide: React.FC = () => {
                             <div className="flex items-center mb-6 border-b border-green-200 pb-4">
                                 <span className="text-4xl mr-4">🚀</span>
                                 <div>
-                                    <h2 className="text-2xl font-bold text-gray-800">B3. Deep Dive: Estrategia de Piloto (Etapa 6)</h2>
+                                    <h2 className="text-2xl font-bold text-[#3F3F3F]">B3. Deep Dive: Estrategia de Piloto (Etapa 6)</h2>
                                     <p className="text-green-800">Cómo diseñar el "Low-Risk Entry Point". El objetivo es validar para escalar.</p>
                                 </div>
                             </div>
@@ -524,9 +524,9 @@ const ProcessGuide: React.FC = () => {
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
                                 <div className="bg-white border border-green-200 p-6 rounded-xl shadow-sm">
                                     <div className="text-3xl mb-4">🎯</div>
-                                    <h3 className="font-bold text-gray-800 mb-2">1. Selección del Caso de Uso</h3>
-                                    <p className="text-sm text-gray-600 mb-4">No intentes automatizar todo. Busca la victoria rápida.</p>
-                                    <ul className="text-sm text-gray-600 list-disc list-inside space-y-1">
+                                    <h3 className="font-bold text-[#3F3F3F] mb-2">1. Selección del Caso de Uso</h3>
+                                    <p className="text-sm text-[#B1B1B0] mb-4">No intentes automatizar todo. Busca la victoria rápida.</p>
+                                    <ul className="text-sm text-[#B1B1B0] list-disc list-inside space-y-1">
                                         <li><strong>Alto Volumen:</strong> &gt;1.000 interacciones/mes.</li>
                                         <li><strong>Baja Complejidad:</strong> Reglas claras (Ej: Citas, Pedidos).</li>
                                         <li><strong>Medible:</strong> KPI actual conocido.</li>
@@ -534,9 +534,9 @@ const ProcessGuide: React.FC = () => {
                                 </div>
                                 <div className="bg-white border border-green-200 p-6 rounded-xl shadow-sm">
                                     <div className="text-3xl mb-4">⏱️</div>
-                                    <h3 className="font-bold text-gray-800 mb-2">2. Duración y Alcance</h3>
-                                    <p className="text-sm text-gray-600 mb-4">Acotado en tiempo y riesgo.</p>
-                                    <ul className="text-sm text-gray-600 list-disc list-inside space-y-1">
+                                    <h3 className="font-bold text-[#3F3F3F] mb-2">2. Duración y Alcance</h3>
+                                    <p className="text-sm text-[#B1B1B0] mb-4">Acotado en tiempo y riesgo.</p>
+                                    <ul className="text-sm text-[#B1B1B0] list-disc list-inside space-y-1">
                                         <li><strong>Duración:</strong> 4 a 8 semanas máximo.</li>
                                         <li><strong>Setup:</strong> 2 semanas de configuración.</li>
                                         <li><strong>Canal:</strong> Preferiblemente 1 canal (ej: Voz).</li>
@@ -544,9 +544,9 @@ const ProcessGuide: React.FC = () => {
                                 </div>
                                 <div className="bg-white border border-green-200 p-6 rounded-xl shadow-sm">
                                     <div className="text-3xl mb-4">📊</div>
-                                    <h3 className="font-bold text-gray-800 mb-2">3. KPIs de Éxito</h3>
-                                    <p className="text-sm text-gray-600 mb-4">Define qué es "ganar" antes de empezar.</p>
-                                    <ul className="text-sm text-gray-600 list-disc list-inside space-y-1">
+                                    <h3 className="font-bold text-[#3F3F3F] mb-2">3. KPIs de Éxito</h3>
+                                    <p className="text-sm text-[#B1B1B0] mb-4">Define qué es "ganar" antes de empezar.</p>
+                                    <ul className="text-sm text-[#B1B1B0] list-disc list-inside space-y-1">
                                         <li><strong>FCR Piloto:</strong> &gt;70% resolución IA.</li>
                                         <li><strong>CSAT:</strong> Igual o superior al humano.</li>
                                         <li><strong>Cero Errores Críticos.</strong></li>
@@ -555,7 +555,7 @@ const ProcessGuide: React.FC = () => {
                             </div>
 
                             <div className="bg-white p-8 rounded-xl border border-green-200 shadow-sm">
-                                <h3 className="text-xl font-bold text-gray-800 mb-4">Plan de Implementación Estándar</h3>
+                                <h3 className="text-xl font-bold text-[#3F3F3F] mb-4">Plan de Implementación Estándar</h3>
                                 <div className="relative">
                                     <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gray-200"></div>
                                     <div className="space-y-6 pl-10">
@@ -568,8 +568,8 @@ const ProcessGuide: React.FC = () => {
                                         ].map((step, i) => (
                                             <div key={i} className="relative">
                                                 <div className="absolute -left-[31px] bg-green-500 w-4 h-4 rounded-full border-2 border-white shadow"></div>
-                                                <h4 className="font-bold text-gray-800">{step.t}</h4>
-                                                <p className="text-sm text-gray-600">{step.d}</p>
+                                                <h4 className="font-bold text-[#3F3F3F]">{step.t}</h4>
+                                                <p className="text-sm text-[#B1B1B0]">{step.d}</p>
                                             </div>
                                         ))}
                                     </div>
@@ -578,17 +578,17 @@ const ProcessGuide: React.FC = () => {
                         </div>
 
                          {/* VISUAL APPENDIX */}
-                        <div className="mt-12 bg-gray-50 p-6 rounded-xl border border-gray-200">
-                            <h3 className="font-bold text-gray-800 mb-4 text-center border-b pb-2">Apéndice Visual: Salud del Pipeline y MEDDICC</h3>
+                        <div className="mt-12 bg-[#E4E3E3] p-6 rounded-xl border border-gray-200">
+                            <h3 className="font-bold text-[#3F3F3F] mb-4 text-center border-b pb-2">Apéndice Visual: Salud del Pipeline y MEDDICC</h3>
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                                 <div className="bg-white rounded-xl shadow p-4 h-[450px] flex flex-col">
-                                    <h4 className="text-sm font-bold text-center text-gray-600 mb-2">Probabilidad de Cierre (Impacto MEDDICC)</h4>
+                                    <h4 className="text-sm font-bold text-center text-[#B1B1B0] mb-2">Probabilidad de Cierre (Impacto MEDDICC)</h4>
                                     <div className="flex-grow">
                                         <MeddiccImpactChart />
                                     </div>
                                 </div>
                                 <div className="bg-white rounded-xl shadow p-4 h-[450px] flex flex-col">
-                                    <h4 className="text-sm font-bold text-center text-gray-600 mb-2">Conversión por Etapa del Funnel</h4>
+                                    <h4 className="text-sm font-bold text-center text-[#B1B1B0] mb-2">Conversión por Etapa del Funnel</h4>
                                     <div className="flex-grow">
                                         <PipelineHealthChart />
                                     </div>
@@ -602,22 +602,22 @@ const ProcessGuide: React.FC = () => {
                 {activeTab === 'ops' && (
                     <div className="animate-fade-in space-y-16">
                         <div>
-                            <h2 className="text-3xl font-bold text-gray-800 mb-4">C. Modelo Operativo de Ventas (Sales Ops)</h2>
+                            <h2 className="text-3xl font-bold text-[#3F3F3F] mb-4">C. Modelo Operativo de Ventas (Sales Ops)</h2>
                             <p className="text-xl text-[#6D84E3] font-medium">Personas, Datos y Rituales</p>
-                            <p className="text-gray-600 mt-2">La estructura que soporta la ejecución. Definimos quién hace qué, cómo lo medimos y cuándo lo revisamos.</p>
+                            <p className="text-[#B1B1B0] mt-2">La estructura que soporta la ejecución. Definimos quién hace qué, cómo lo medimos y cuándo lo revisamos.</p>
                         </div>
                         
                         {/* BLOQUE 1: EQUIPO Y GOBERNANZA */}
                         <section>
-                            <h3 className="text-2xl font-bold text-gray-800 mb-8 flex items-center pb-2 border-b border-gray-200">
-                                <span className="bg-gray-800 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm mr-3">1</span>
+                            <h3 className="text-2xl font-bold text-[#3F3F3F] mb-8 flex items-center pb-2 border-b border-gray-200">
+                                <span className="bg-[#3F3F3F] text-white w-8 h-8 rounded-full flex items-center justify-center text-sm mr-3">1</span>
                                 Gobernanza del Equipo (Quién)
                             </h3>
                             
                             {/* Role Definitions */}
-                            <div className="bg-gray-50 p-4 rounded-lg border border-gray-200 mb-6 text-sm">
-                                <h4 className="font-bold text-gray-700 mb-2">📚 Definición de Roles:</h4>
-                                <ul className="space-y-2 text-gray-600">
+                            <div className="bg-[#E4E3E3] p-4 rounded-lg border border-gray-200 mb-6 text-sm">
+                                <h4 className="font-bold text-[#3F3F3F] mb-2">📚 Definición de Roles:</h4>
+                                <ul className="space-y-2 text-[#B1B1B0]">
                                     <li><strong>SDR (Sales Development Representative):</strong> Responsable de la prospección inicial. Su trabajo es encontrar leads, contactarlos y agendar reuniones cualificadas. No cierran ventas.</li>
                                     <li><strong>AE (Account Executive):</strong> Responsable del cierre. Toma la reunión agendada por el SDR, gestiona el ciclo de venta (Discovery, Demo, Propuesta) y firma el contrato.</li>
                                     <li><strong>Sales Manager:</strong> Líder del equipo. Responsable del Forecast, Coaching de repeticiones y desbloqueo de oportunidades complejas. Asegura que el proceso se cumpla.</li>
@@ -652,7 +652,7 @@ const ProcessGuide: React.FC = () => {
                             <div className="text-center">
                                 <button 
                                     onClick={() => setShowRaci(!showRaci)}
-                                    className="inline-flex items-center px-6 py-3 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none"
+                                    className="inline-flex items-center px-6 py-3 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-[#3F3F3F] bg-white hover:bg-[#E4E3E3] focus:outline-none"
                                 >
                                     {showRaci ? 'Ocultar Matriz' : 'Ver Matriz de Responsabilidades (RACI)'}
                                     <span className="ml-2 text-xs">{showRaci ? '▲' : '▼'}</span>
@@ -661,11 +661,11 @@ const ProcessGuide: React.FC = () => {
 
                             {showRaci && (
                                 <div className="mt-6 overflow-x-auto bg-white rounded-xl border border-gray-200 shadow-sm animate-fade-in">
-                                    <div className="p-4 bg-gray-50 border-b border-gray-200">
-                                        <p className="text-xs text-gray-500 italic"><strong>R:</strong> Responsable (Hace), <strong>A:</strong> Accountable (Dueño), <strong>C:</strong> Consultado, <strong>I:</strong> Informado</p>
+                                    <div className="p-4 bg-[#E4E3E3] border-b border-gray-200">
+                                        <p className="text-xs text-[#B1B1B0] italic"><strong>R:</strong> Responsable (Hace), <strong>A:</strong> Accountable (Dueño), <strong>C:</strong> Consultado, <strong>I:</strong> Informado</p>
                                     </div>
                                     <table className="min-w-full">
-                                        <thead className="bg-gray-100 text-gray-700 uppercase text-xs">
+                                        <thead className="bg-[#E4E3E3] text-[#3F3F3F] uppercase text-xs">
                                             <tr>
                                                 <th className="py-3 px-4 text-left w-1/3">Fase del Pipeline</th>
                                                 <th className="py-3 px-4 text-left w-1/3 text-[#6D84E3]">Entregable / Gatekeeper</th>
@@ -690,40 +690,40 @@ const ProcessGuide: React.FC = () => {
 
                         {/* BLOQUE 2: ARQUITECTURA DE DATOS */}
                         <section>
-                             <h3 className="text-2xl font-bold text-gray-800 mb-8 flex items-center pb-2 border-b border-gray-200">
-                                <span className="bg-gray-800 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm mr-3">2</span>
+                             <h3 className="text-2xl font-bold text-[#3F3F3F] mb-8 flex items-center pb-2 border-b border-gray-200">
+                                <span className="bg-[#3F3F3F] text-white w-8 h-8 rounded-full flex items-center justify-center text-sm mr-3">2</span>
                                 Higiene del Dato y Reglas de Negocio (Con Qué)
                             </h3>
-                            <p className="text-gray-600 mb-6">La calidad de los datos determina la calidad de la decisión. Si no está en el CRM, no existe.</p>
+                            <p className="text-[#B1B1B0] mb-6">La calidad de los datos determina la calidad de la decisión. Si no está en el CRM, no existe.</p>
 
                             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                                 {/* Col 1: Datos de Cualificación */}
                                 <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex flex-col h-full">
-                                    <h4 className="font-bold text-gray-800 mb-2 flex items-center"><span className="text-xl mr-2">🚦</span> Datos de Cualificación</h4>
-                                    <p className="text-xs text-gray-500 mb-4 uppercase font-bold">Objetivo: Pipeline Limpio</p>
+                                    <h4 className="font-bold text-[#3F3F3F] mb-2 flex items-center"><span className="text-xl mr-2">🚦</span> Datos de Cualificación</h4>
+                                    <p className="text-xs text-[#B1B1B0] mb-4 uppercase font-bold">Objetivo: Pipeline Limpio</p>
                                     <ul className="space-y-3 text-sm flex-grow">
-                                        <li className="p-2 bg-gray-50 rounded border border-gray-100">
-                                            <span className="block font-bold text-gray-700 text-xs">📌 Pain Point Principal</span>
+                                        <li className="p-2 bg-[#E4E3E3] rounded border border-gray-100">
+                                            <span className="block font-bold text-[#3F3F3F] text-xs">📌 Pain Point Principal</span>
                                             <div className="flex flex-wrap gap-1 mt-1">
                                                 <span className="bg-red-100 text-red-800 text-[10px] px-1 rounded">Costes</span>
                                                 <span className="bg-red-100 text-red-800 text-[10px] px-1 rounded">NPS</span>
                                                 <span className="bg-red-100 text-red-800 text-[10px] px-1 rounded">Escalabilidad</span>
                                             </div>
                                         </li>
-                                        <li className="p-2 bg-gray-50 rounded border border-gray-100">
-                                             <span className="block font-bold text-gray-700 text-xs">🚦 Fuente del Lead</span>
+                                        <li className="p-2 bg-[#E4E3E3] rounded border border-gray-100">
+                                             <span className="block font-bold text-[#3F3F3F] text-xs">🚦 Fuente del Lead</span>
                                               <div className="flex flex-wrap gap-1 mt-1">
                                                 <span className="bg-blue-100 text-blue-800 text-[10px] px-1 rounded">Inbound</span>
                                                 <span className="bg-blue-100 text-blue-800 text-[10px] px-1 rounded">Outbound</span>
                                                 <span className="bg-blue-100 text-blue-800 text-[10px] px-1 rounded">Evento</span>
                                             </div>
                                         </li>
-                                        <li className="p-2 bg-gray-50 rounded border border-gray-100">
-                                            <span className="block font-bold text-gray-700 text-xs">👤 Buyer Persona</span>
-                                            <span className="text-gray-500 text-xs block mt-1">[Director CX | COO | CEO]</span>
+                                        <li className="p-2 bg-[#E4E3E3] rounded border border-gray-100">
+                                            <span className="block font-bold text-[#3F3F3F] text-xs">👤 Buyer Persona</span>
+                                            <span className="text-[#B1B1B0] text-xs block mt-1">[Director CX | COO | CEO]</span>
                                         </li>
-                                        <li className="p-2 bg-gray-50 rounded border border-gray-100">
-                                            <span className="block font-bold text-gray-700 text-xs">🔢 Volumen Actual</span>
+                                        <li className="p-2 bg-[#E4E3E3] rounded border border-gray-100">
+                                            <span className="block font-bold text-[#3F3F3F] text-xs">🔢 Volumen Actual</span>
                                             <span className="text-gray-400 text-xs italic block mt-1">_____ interacciones/mes</span>
                                         </li>
                                     </ul>
@@ -731,40 +731,40 @@ const ProcessGuide: React.FC = () => {
 
                                 {/* Col 2: Datos de Solución */}
                                 <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex flex-col h-full">
-                                    <h4 className="font-bold text-gray-800 mb-2 flex items-center"><span className="text-xl mr-2">🛠️</span> Datos Solución & Técnica</h4>
-                                    <p className="text-xs text-gray-500 mb-4 uppercase font-bold">Objetivo: Viabilidad</p>
+                                    <h4 className="font-bold text-[#3F3F3F] mb-2 flex items-center"><span className="text-xl mr-2">🛠️</span> Datos Solución & Técnica</h4>
+                                    <p className="text-xs text-[#B1B1B0] mb-4 uppercase font-bold">Objetivo: Viabilidad</p>
                                     <ul className="space-y-3 text-sm flex-grow">
-                                        <li className="p-2 bg-gray-50 rounded border border-gray-100">
-                                            <span className="block font-bold text-gray-700 text-xs">🛠 Tech Stack Actual</span>
-                                            <span className="text-gray-500 text-xs block mt-1">(Salesforce, Genesys, Avaya...)</span>
+                                        <li className="p-2 bg-[#E4E3E3] rounded border border-gray-100">
+                                            <span className="block font-bold text-[#3F3F3F] text-xs">🛠 Tech Stack Actual</span>
+                                            <span className="text-[#B1B1B0] text-xs block mt-1">(Salesforce, Genesys, Avaya...)</span>
                                         </li>
-                                        <li className="p-2 bg-gray-50 rounded border border-gray-100 flex justify-between items-center">
-                                            <span className="font-bold text-gray-700 text-xs">✅ Viabilidad Técnica</span>
+                                        <li className="p-2 bg-[#E4E3E3] rounded border border-gray-100 flex justify-between items-center">
+                                            <span className="font-bold text-[#3F3F3F] text-xs">✅ Viabilidad Técnica</span>
                                             <span className="text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded">Sí/No</span>
                                         </li>
-                                        <li className="p-2 bg-gray-50 rounded border border-gray-100 flex justify-between items-center">
-                                            <span className="font-bold text-gray-700 text-xs">🗺 MAP Activo</span>
-                                            <span className="text-xs text-gray-500">Boolean</span>
+                                        <li className="p-2 bg-[#E4E3E3] rounded border border-gray-100 flex justify-between items-center">
+                                            <span className="font-bold text-[#3F3F3F] text-xs">🗺 MAP Activo</span>
+                                            <span className="text-xs text-[#B1B1B0]">Boolean</span>
                                         </li>
-                                        <li className="p-2 bg-gray-50 rounded border border-gray-100">
-                                            <span className="block font-bold text-gray-700 text-xs">👥 Roles Identificados</span>
-                                            <span className="text-gray-500 text-xs block mt-1">Champion & Technical Buyer asignados</span>
+                                        <li className="p-2 bg-[#E4E3E3] rounded border border-gray-100">
+                                            <span className="block font-bold text-[#3F3F3F] text-xs">👥 Roles Identificados</span>
+                                            <span className="text-[#B1B1B0] text-xs block mt-1">Champion & Technical Buyer asignados</span>
                                         </li>
                                     </ul>
                                 </div>
 
                                 {/* Col 3: Datos Económicos */}
                                 <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex flex-col h-full">
-                                    <h4 className="font-bold text-gray-800 mb-2 flex items-center"><span className="text-xl mr-2">💰</span> Datos Económicos & Cierre</h4>
-                                    <p className="text-xs text-gray-500 mb-4 uppercase font-bold">Objetivo: Forecast</p>
+                                    <h4 className="font-bold text-[#3F3F3F] mb-2 flex items-center"><span className="text-xl mr-2">💰</span> Datos Económicos & Cierre</h4>
+                                    <p className="text-xs text-[#B1B1B0] mb-4 uppercase font-bold">Objetivo: Forecast</p>
                                     <ul className="space-y-3 text-sm flex-grow">
-                                        <li className="p-2 bg-gray-50 rounded border border-gray-100">
-                                            <span className="block font-bold text-gray-700 text-xs">💰 Valor del Contrato (TCV)</span>
+                                        <li className="p-2 bg-[#E4E3E3] rounded border border-gray-100">
+                                            <span className="block font-bold text-[#3F3F3F] text-xs">💰 Valor del Contrato (TCV)</span>
                                             <span className="text-gray-400 text-xs italic block mt-1">€ _________ (Total Contract Value)</span>
                                         </li>
-                                        <li className="p-2 bg-gray-50 rounded border border-gray-100">
-                                            <span className="block font-bold text-gray-700 text-xs">📅 Fecha de Cierre</span>
-                                            <span className="text-gray-500 text-xs block mt-1">Actualizar semanalmente</span>
+                                        <li className="p-2 bg-[#E4E3E3] rounded border border-gray-100">
+                                            <span className="block font-bold text-[#3F3F3F] text-xs">📅 Fecha de Cierre</span>
+                                            <span className="text-[#B1B1B0] text-xs block mt-1">Actualizar semanalmente</span>
                                         </li>
                                         <li className="p-2 bg-red-50 rounded border border-red-100">
                                             <span className="block font-bold text-red-800 text-xs">📉 Motivo de Pérdida</span>
@@ -781,14 +781,14 @@ const ProcessGuide: React.FC = () => {
 
                         {/* BLOQUE 3: RITUALES DE GESTIÓN */}
                         <section>
-                             <h3 className="text-2xl font-bold text-gray-800 mb-8 flex items-center pb-2 border-b border-gray-200">
-                                <span className="bg-gray-800 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm mr-3">3</span>
+                             <h3 className="text-2xl font-bold text-[#3F3F3F] mb-8 flex items-center pb-2 border-b border-gray-200">
+                                <span className="bg-[#3F3F3F] text-white w-8 h-8 rounded-full flex items-center justify-center text-sm mr-3">3</span>
                                 Ritmo de Negocio (Cuándo)
                             </h3>
                             
                             <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-10">
                                 <table className="min-w-full text-sm text-left">
-                                    <thead className="bg-gray-50 text-gray-700 uppercase text-xs font-bold">
+                                    <thead className="bg-[#E4E3E3] text-[#3F3F3F] uppercase text-xs font-bold">
                                         <tr>
                                             <th className="px-6 py-3">Ritual</th>
                                             <th className="px-6 py-3">Frecuencia</th>
@@ -797,58 +797,58 @@ const ProcessGuide: React.FC = () => {
                                         </tr>
                                     </thead>
                                     <tbody className="divide-y divide-gray-100">
-                                        <tr className="hover:bg-gray-50">
-                                            <td className="px-6 py-4 font-bold text-gray-800">Daily Standup</td>
+                                        <tr className="hover:bg-[#E4E3E3]">
+                                            <td className="px-6 py-4 font-bold text-[#3F3F3F]">Daily Standup</td>
                                             <td className="px-6 py-4"><span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded font-bold">Diario (15 min)</span></td>
                                             <td className="px-6 py-4">Eliminar bloqueos inmediatos y asegurar foco en actividades generadoras de ingresos (IGA).</td>
-                                            <td className="px-6 py-4 text-gray-500">SDRs + Manager</td>
+                                            <td className="px-6 py-4 text-[#B1B1B0]">SDRs + Manager</td>
                                         </tr>
-                                        <tr className="hover:bg-gray-50">
-                                            <td className="px-6 py-4 font-bold text-gray-800">Pipeline Review</td>
+                                        <tr className="hover:bg-[#E4E3E3]">
+                                            <td className="px-6 py-4 font-bold text-[#3F3F3F]">Pipeline Review</td>
                                             <td className="px-6 py-4"><span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded font-bold">Semanal (Lunes)</span></td>
                                             <td className="px-6 py-4">Validar 'Next Steps' con fecha futura y sanear la higiene del dato (eliminar zombies).</td>
-                                            <td className="px-6 py-4 text-gray-500">AEs + Manager</td>
+                                            <td className="px-6 py-4 text-[#B1B1B0]">AEs + Manager</td>
                                         </tr>
-                                        <tr className="hover:bg-gray-50">
-                                            <td className="px-6 py-4 font-bold text-gray-800">Deal Strategy (Clinic)</td>
-                                            <td className="px-6 py-4"><span className="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded font-bold">Ad-hoc / Jueves</span></td>
+                                        <tr className="hover:bg-[#E4E3E3]">
+                                            <td className="px-6 py-4 font-bold text-[#3F3F3F]">Deal Strategy (Clinic)</td>
+                                            <td className="px-6 py-4"><span className="bg-[#E4E3E3] text-[#B1B1B0] text-xs px-2 py-1 rounded font-bold">Ad-hoc / Jueves</span></td>
                                             <td className="px-6 py-4">Desbloquear estancamientos en cuentas Tier 1 y definir plan de ataque con Executive Sponsorship.</td>
-                                            <td className="px-6 py-4 text-gray-500">Equipo Completo</td>
+                                            <td className="px-6 py-4 text-[#B1B1B0]">Equipo Completo</td>
                                         </tr>
-                                        <tr className="hover:bg-gray-50">
-                                            <td className="px-6 py-4 font-bold text-gray-800">Forecast Call</td>
+                                        <tr className="hover:bg-[#E4E3E3]">
+                                            <td className="px-6 py-4 font-bold text-[#3F3F3F]">Forecast Call</td>
                                             <td className="px-6 py-4"><span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded font-bold">Mensual</span></td>
                                             <td className="px-6 py-4">Confirmar la cifra de 'Commit' (Cierre seguro) y analizar desviaciones (Gap).</td>
-                                            <td className="px-6 py-4 text-gray-500">Manager + Dirección</td>
+                                            <td className="px-6 py-4 text-[#B1B1B0]">Manager + Dirección</td>
                                         </tr>
-                                         <tr className="hover:bg-gray-50">
-                                            <td className="px-6 py-4 font-bold text-gray-800">QBR (Quarterly Review)</td>
+                                         <tr className="hover:bg-[#E4E3E3]">
+                                            <td className="px-6 py-4 font-bold text-[#3F3F3F]">QBR (Quarterly Review)</td>
                                             <td className="px-6 py-4"><span className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded font-bold">Trimestral</span></td>
                                             <td className="px-6 py-4">Revisión de rendimiento trimestral (Win/Loss) y re-alineación de territorios/cuotas.</td>
-                                            <td className="px-6 py-4 text-gray-500">Toda la compañía</td>
+                                            <td className="px-6 py-4 text-[#B1B1B0]">Toda la compañía</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
 
-                            <h4 className="text-lg font-bold text-gray-700 mb-6">Output: Cuadros de Mando (Dashboards)</h4>
+                            <h4 className="text-lg font-bold text-[#3F3F3F] mb-6">Output: Cuadros de Mando (Dashboards)</h4>
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
                                 
                                 {/* Dashboard 1 */}
                                 <div className="flex flex-col h-full">
                                     <div className="bg-white p-5 rounded-t-xl border border-gray-200 shadow-sm flex-grow">
-                                        <h4 className="font-bold text-gray-700 mb-2">1. The Morning Coffee (Reps)</h4>
-                                        <p className="text-xs text-gray-500 mb-4">Para que el comercial sepa qué hacer hoy.</p>
-                                        <ul className="text-sm text-gray-600 list-disc list-inside">
+                                        <h4 className="font-bold text-[#3F3F3F] mb-2">1. The Morning Coffee (Reps)</h4>
+                                        <p className="text-xs text-[#B1B1B0] mb-4">Para que el comercial sepa qué hacer hoy.</p>
+                                        <ul className="text-sm text-[#B1B1B0] list-disc list-inside">
                                             <li>Tareas vencidas hoy.</li>
                                             <li>Deals sin "Next Step" futuro.</li>
                                             <li>Nuevos MQLs asignados.</li>
                                         </ul>
                                     </div>
                                     {/* Mockup 1 */}
-                                    <div className="bg-gray-100 p-4 rounded-b-xl border-x border-b border-gray-200 text-xs font-mono shadow-inner">
+                                    <div className="bg-[#E4E3E3] p-4 rounded-b-xl border-x border-b border-gray-200 text-xs font-mono shadow-inner">
                                         <div className="flex justify-between mb-2 border-b border-gray-300 pb-1">
-                                            <span className="font-bold text-gray-600">📅 HOY</span>
+                                            <span className="font-bold text-[#B1B1B0]">📅 HOY</span>
                                             <span className="text-red-500 font-bold">3 Tareas</span>
                                         </div>
                                         <div className="space-y-2 mb-3">
@@ -864,17 +864,17 @@ const ProcessGuide: React.FC = () => {
                                 {/* Dashboard 2 */}
                                 <div className="flex flex-col h-full">
                                     <div className="bg-white p-5 rounded-t-xl border border-gray-200 shadow-sm flex-grow">
-                                        <h4 className="font-bold text-gray-700 mb-2">2. Pipeline Velocity (Manager)</h4>
-                                        <p className="text-xs text-gray-500 mb-4">Para detectar cuellos de botella.</p>
-                                        <ul className="text-sm text-gray-600 list-disc list-inside">
+                                        <h4 className="font-bold text-[#3F3F3F] mb-2">2. Pipeline Velocity (Manager)</h4>
+                                        <p className="text-xs text-[#B1B1B0] mb-4">Para detectar cuellos de botella.</p>
+                                        <ul className="text-sm text-[#B1B1B0] list-disc list-inside">
                                             <li>Deals estancados (&gt;15 días).</li>
                                             <li>Tasa de conversión.</li>
                                             <li>Pipeline Coverage.</li>
                                         </ul>
                                     </div>
                                     {/* Mockup 2 */}
-                                    <div className="bg-gray-100 p-4 rounded-b-xl border-x border-b border-gray-200 text-xs font-mono shadow-inner">
-                                        <div className="text-center font-bold mb-2 text-gray-600 uppercase">⚠️ Stuck Deals</div>
+                                    <div className="bg-[#E4E3E3] p-4 rounded-b-xl border-x border-b border-gray-200 text-xs font-mono shadow-inner">
+                                        <div className="text-center font-bold mb-2 text-[#B1B1B0] uppercase">⚠️ Stuck Deals</div>
                                         <table className="w-full mb-3 text-[10px]">
                                             <thead><tr className="text-gray-400"><td>Deal</td><td className="text-right">Días</td></tr></thead>
                                             <tbody>
@@ -892,20 +892,20 @@ const ProcessGuide: React.FC = () => {
                                 {/* Dashboard 3 */}
                                 <div className="flex flex-col h-full">
                                     <div className="bg-white p-5 rounded-t-xl border border-gray-200 shadow-sm flex-grow">
-                                        <h4 className="font-bold text-gray-700 mb-2">3. The Board Pack (Exec)</h4>
-                                        <p className="text-xs text-gray-500 mb-4">La foto fija de la salud del negocio.</p>
-                                        <ul className="text-sm text-gray-600 list-disc list-inside">
+                                        <h4 className="font-bold text-[#3F3F3F] mb-2">3. The Board Pack (Exec)</h4>
+                                        <p className="text-xs text-[#B1B1B0] mb-4">La foto fija de la salud del negocio.</p>
+                                        <ul className="text-sm text-[#B1B1B0] list-disc list-inside">
                                             <li>Forecast vs. Objetivo.</li>
                                             <li>Win Rate global.</li>
                                             <li>Ingresos por Producto (Mix).</li>
                                         </ul>
                                     </div>
                                     {/* Mockup 3 */}
-                                    <div className="bg-gray-100 p-4 rounded-b-xl border-x border-b border-gray-200 text-xs font-mono shadow-inner">
+                                    <div className="bg-[#E4E3E3] p-4 rounded-b-xl border-x border-b border-gray-200 text-xs font-mono shadow-inner">
                                         <div className="flex justify-between items-end mb-3">
                                             <div>
                                                 <div className="text-gray-400 text-[9px] uppercase">Forecast Q3</div>
-                                                <div className="text-sm font-bold text-gray-800">€150k</div>
+                                                <div className="text-sm font-bold text-[#3F3F3F]">€150k</div>
                                             </div>
                                             <div className="text-green-600 font-bold text-[10px]">▲ 12% YoY</div>
                                         </div>
@@ -915,7 +915,7 @@ const ProcessGuide: React.FC = () => {
                                             <div className="w-1/4 bg-blue-500 h-[80%]"></div>
                                             <div className="w-1/4 bg-blue-600 h-[95%]"></div>
                                         </div>
-                                        <div className="text-center text-[9px] text-gray-500">Proyección MRR</div>
+                                        <div className="text-center text-[9px] text-[#B1B1B0]">Proyección MRR</div>
                                     </div>
                                 </div>
 

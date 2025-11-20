@@ -75,3 +75,25 @@
 - [x] Integrar componentes en App.tsx
 - [x] Crear dropdown "Herramientas" en navegación
 - [x] Navegación funcional entre todas las secciones
+
+## Branding Corporativo Actualización
+
+- [x] Cambiar tipografía a Outfit (fuente corporativa)
+- [x] Actualizar paleta de colores corporativos:
+  - Accent 1: #E4E3E3 (gris claro)
+  - Accent 2: #B1B1B0 (gris medio)
+  - Accent 3: #6D84E3 (azul corporativo principal)
+  - Accent 4: #3F3F3F (gris oscuro)
+  - Accent 5: #000000 (negro)
+- [x] Integrar logo corporativo Beyond en navegación
+- [ ] Actualizar todos los componentes con nuevos colores
+
+## Reorganización de Contenido
+
+- [x] Analizar sección "3. Metodología" para identificar duplicaciones
+- [x] Eliminar completamente tab "3.2 Herramientas Prácticas"
+- [x] Mantener solo "Metodología (Teoría)" en sección 3
+- [x] Crear componente "Discovery Scripts" para dropdown Herramientas
+- [x] Crear componente "Pricing & Negotiation" para dropdown Herramientas
+- [x] Actualizar tipos y navegación con nuevas herramientas
+- [ ] Actualizar todos los componentes con colores corporativos

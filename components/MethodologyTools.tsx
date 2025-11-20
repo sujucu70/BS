@@ -1,22 +1,7 @@
 
-import React, { useState } from 'react';
-import PricingGuide from './PricingGuide';
+import React from 'react';
 
 // --- SUB COMPONENTS ---
-
-const TabButton: React.FC<{ active: boolean; onClick: () => void; label: string; icon?: React.ReactNode }> = ({ active, onClick, label, icon }) => (
-    <button
-        onClick={onClick}
-        className={`flex items-center justify-center px-6 py-4 text-sm md:text-base font-bold transition-all border-b-4 flex-1 ${
-            active 
-                ? 'border-[#6D84E3] text-[#6D84E3] bg-white' 
-                : 'border-transparent text-gray-500 hover:text-gray-700 hover:bg-gray-50'
-        }`}
-    >
-        <span className="mr-2">{icon}</span>
-        {label}
-    </button>
-);
 
 const PillarSection: React.FC<{ 
     number: string; 
@@ -49,45 +34,25 @@ const MeddiccCard: React.FC<{ letter: string; title: string }> = ({ letter, titl
     </div>
 );
 
-const ChecklistItem: React.FC<{ category: string; items: string[] }> = ({ category, items }) => (
-    <div className="mb-6">
-        <h4 className="font-bold text-[#6D84E3] border-b border-gray-200 pb-2 mb-3">{category}</h4>
-        <ul className="space-y-2">
-            {items.map((item, idx) => (
-                <li key={idx} className="flex items-start text-sm text-gray-700">
-                    <span className="mr-2 text-[#6D84E3]">❓</span>
-                    <span>{item}</span>
-                </li>
-            ))}
-        </ul>
-    </div>
-);
+
 
 // --- MAIN COMPONENT ---
 
 const MethodologyTools: React.FC = () => {
-    const [activeTab, setActiveTab] = useState<'methodology' | 'tools'>('methodology');
-
     return (
         <div className="container mx-auto p-4 md:p-8 bg-[#f3f4f6] min-h-screen">
             
             {/* HEADER */}
             <header className="text-center py-8">
-                <h1 className="text-3xl md:text-5xl font-bold text-gray-900 tracking-tight">3. Metodología & Herramientas</h1>
-                <p className="text-lg text-[#6D84E3] mt-2 font-medium">Los "Cómo" de nuestra venta.</p>
+                <h1 className="text-3xl md:text-5xl font-bold text-[#3F3F3F] tracking-tight">3. Metodología</h1>
+                <p className="text-lg text-[#6D84E3] mt-2 font-medium">Los "Cómo" de nuestra venta - Frameworks y principios.</p>
             </header>
 
-            {/* TABS NAVIGATION */}
-            <div className="bg-white rounded-t-xl shadow-sm border-b border-gray-200 flex overflow-x-auto sticky top-16 z-30">
-                <TabButton active={activeTab === 'methodology'} onClick={() => setActiveTab('methodology')} label="3.1 Metodología (Teoría)" icon="🧠" />
-                <TabButton active={activeTab === 'tools'} onClick={() => setActiveTab('tools')} label="3.2 Herramientas Prácticas" icon="🛠️" />
-            </div>
-
             {/* CONTENT AREA */}
-            <main className="bg-white rounded-b-xl shadow-lg p-6 md:p-10 min-h-[500px]">
+            <main className="bg-white rounded-xl shadow-lg p-6 md:p-10 min-h-[500px]">
                 
-                {/* --- TAB 3.1: METODOLOGÍA --- */}
-                {activeTab === 'methodology' && (
+                {/* --- METODOLOGÍA --- */}
+                <div className="animate-fade-in space-y-12">
                     <div className="animate-fade-in space-y-12">
                         
                         {/* 1. PRINCIPIOS */}
@@ -174,111 +139,7 @@ const MethodologyTools: React.FC = () => {
                             </PillarSection>
                         </section>
                     </div>
-                )}
-
-                {/* --- TAB 3.2: HERRAMIENTAS PRÁCTICAS --- */}
-                {activeTab === 'tools' && (
-                    <div className="animate-fade-in space-y-16">
-                        
-                        {/* SECCIÓN A: GUIONES DE DISCOVERY */}
-                        <section>
-                             <h2 className="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200 flex items-center">
-                                <span className="bg-gray-800 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm mr-3">A</span>
-                                Guiones de Discovery (MEDDICC)
-                             </h2>
-                             <div className="bg-blue-50 p-8 rounded-2xl border border-blue-100 mb-8">
-                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                                    <div>
-                                        <ChecklistItem 
-                                            category="Volumetría y Canales" 
-                                            items={[
-                                                "¿Cuál es el volumen total de interacciones mensuales? (Voz, Chat, Email)",
-                                                "¿Cómo se distribuye ese volumen? (Ej: 70% voz, 30% email)",
-                                                "¿Tienen estacionalidad marcada? (Black Friday, Verano, Campañas)",
-                                                "¿Cuál es la duración media de la llamada (AHT/TMO) actual?",
-                                                "¿Cuál es el horario de atención actual y el deseado (24/7)?"
-                                            ]} 
-                                        />
-                                        <ChecklistItem 
-                                            category="Costes y Eficiencia (Pain)" 
-                                            items={[
-                                                "¿Cuál es el coste por contacto estimado actual? (Interno o externo)",
-                                                "¿Cuántos FTEs (agentes equivalentes) tienen dedicados hoy?",
-                                                "¿Cuál es la tasa de rotación de agentes anual?",
-                                                "¿Qué % de llamadas se abandonan antes de ser atendidas?"
-                                            ]} 
-                                        />
-                                    </div>
-                                    <div>
-                                        <div className="bg-white p-6 rounded-xl border border-blue-200 mb-8 shadow-sm">
-                                            <h4 className="font-bold text-blue-800 mb-4">El Framework MEDDICC (Preguntas Clave)</h4>
-                                            <ul className="space-y-3 text-sm text-gray-700">
-                                                <li><strong>M (Metrics):</strong> ¿Qué KPI numérico mejoraremos?</li>
-                                                <li><strong>E (Economic Buyer):</strong> ¿Quién tiene el presupuesto final?</li>
-                                                <li><strong>D (Decision Criteria):</strong> ¿Qué es más importante: Precio, Técnica o Confianza?</li>
-                                                <li><strong>I (Identify Pain):</strong> ¿Qué problema te quita el sueño?</li>
-                                                <li><strong>C (Champion):</strong> ¿Quién nos vende internamente cuando no estamos?</li>
-                                            </ul>
-                                        </div>
-                                        <ChecklistItem 
-                                            category="Tecnología y Stack" 
-                                            items={[
-                                                "¿Qué CRM utilizan? (Salesforce, HubSpot, Zendesk, Propio)",
-                                                "¿Qué sistema de telefonía/Contact Center tienen?",
-                                                "¿Tienen API disponible para integración?",
-                                                "¿Ya usan algún bot o IVR? ¿Qué tal funciona?"
-                                            ]} 
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-
-                        {/* SECCIÓN B: MANEJO DE OBJECIONES */}
-                        <section>
-                            <h2 className="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200 flex items-center">
-                                <span className="bg-gray-800 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm mr-3">B</span>
-                                Manejo de Objeciones y Pricing
-                             </h2>
-                            <div className="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500 mb-8">
-                                <p className="text-sm text-yellow-800">Esta sección integra nuestra filosofía de precios, la calculadora de ROI y cómo manejar la resistencia económica.</p>
-                            </div>
-                            <PricingGuide />
-                        </section>
-
-                        {/* SECCIÓN C: RECURSOS */}
-                        <section>
-                            <h2 className="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200 flex items-center">
-                                <span className="bg-gray-800 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm mr-3">C</span>
-                                Recursos Descargables
-                             </h2>
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                {[
-                                    { name: 'Secuencia Email Outbound', type: '📧' },
-                                    { name: 'One-Pager General', type: '📄' },
-                                    { name: 'Guion Discovery', type: '📄' },
-                                    { name: 'Deck Corporativo (Intro)', type: '📊' },
-                                    { name: 'Calculadora ROI Preliminar', type: '📗' },
-                                    { name: 'Template Diagnóstico Light', type: '📄' },
-                                    { name: 'Checklist Técnico', type: '📄' },
-                                    { name: 'Guion de Demo Híbrida', type: '📄' },
-                                    { name: 'Modelo Propuesta Económica', type: '📄' },
-                                    { name: 'Business Case Detallado', type: '📊' },
-                                    { name: 'MSA (Contrato Marco)', type: '📄' },
-                                    { name: 'Kickoff Deck Template', type: '📊' }
-                                ].map((res, i) => (
-                                    <div key={i} className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all flex items-center justify-between cursor-pointer" onClick={() => alert('Descargando ' + res.name)}>
-                                        <div className="flex items-center">
-                                            <span className="text-2xl mr-3">{res.type}</span>
-                                            <span className="font-medium text-gray-700">{res.name}</span>
-                                        </div>
-                                        <span className="text-[#6D84E3]">⬇</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </section>
-                    </div>
-                )}
+                </div>
             </main>
         </div>
     );

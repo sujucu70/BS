@@ -1,10 +1,11 @@
+
 import React, { useState, useCallback } from 'react';
 import { PlaybookSection } from './types';
 import PlaybookHome from './components/PlaybookHome';
-import ProcessGuide from './components/ProcessGuide';
-import ClientManifesto from './components/ClientManifesto';
-import ConversationArsenal from './components/ConversationArsenal';
-import PricingGuide from './components/PricingGuide';
+import StrategyGuide from './components/StrategyGuide';
+import SalesBlueprint from './components/SalesBlueprint';
+import MethodologyTools from './components/MethodologyTools';
+import OperatingModel from './components/OperatingModel';
 import BookingVP from './components/solutions/BookingVP';
 import FcrVP from './components/solutions/FcrVP';
 import IvrVP from './components/solutions/IvrVP';
@@ -20,14 +21,16 @@ const App: React.FC = () => {
 
     const renderSection = () => {
         switch (activeSection) {
-            case PlaybookSection.PROCESS:
-                return <ProcessGuide />;
-            case PlaybookSection.CLIENT:
-                return <ClientManifesto />;
-            case PlaybookSection.MESSAGE:
-                return <ConversationArsenal onNavigate={navigateTo} />;
-            case PlaybookSection.PRICING:
-                return <PricingGuide />;
+            case PlaybookSection.STRATEGY:
+                return <StrategyGuide />;
+            case PlaybookSection.BLUEPRINT:
+                return <SalesBlueprint />;
+            case PlaybookSection.METHODOLOGY:
+                return <MethodologyTools />;
+            case PlaybookSection.OPERATIONS:
+                return <OperatingModel />;
+            
+            // Solution pages
             case PlaybookSection.BOOKING_VP:
                 return <BookingVP />;
             case PlaybookSection.FCR_VP:
@@ -36,6 +39,7 @@ const App: React.FC = () => {
                 return <IvrVP />;
             case PlaybookSection.ORDER_VP:
                 return <OrderVP />;
+            
             case PlaybookSection.HOME:
             default:
                 return <PlaybookHome onNavigate={navigateTo} />;
@@ -44,10 +48,10 @@ const App: React.FC = () => {
 
     const navItems = [
         { section: PlaybookSection.HOME, label: 'Inicio' },
-        { section: PlaybookSection.PROCESS, label: '1. El Proceso' },
-        { section: PlaybookSection.CLIENT, label: '2. El Cliente' },
-        { section: PlaybookSection.MESSAGE, label: '3. El Mensaje' },
-        { section: PlaybookSection.PRICING, label: '4. El Precio' },
+        { section: PlaybookSection.STRATEGY, label: '1. Estrategia' },
+        { section: PlaybookSection.BLUEPRINT, label: '2. Blueprint' },
+        { section: PlaybookSection.METHODOLOGY, label: '3. Metodología' },
+        { section: PlaybookSection.OPERATIONS, label: '4. Operaciones' },
     ];
 
     return (

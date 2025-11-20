@@ -13,9 +13,11 @@ This is a React-based interactive sales playbook application for BeyondCX. It pr
 - Imported from GitHub repository
 - Configured for Replit environment
 - Updated Vite config to use port 5000 (required for Replit)
+- Added `allowedHosts: true` to Vite config (required for Replit's dynamic proxy URLs)
 - Added HMR client port configuration for proper hot module replacement
 - Installed all npm dependencies
 - Set up workflow for development server
+- Fixed host blocking error in preview environment
 
 ## Project Structure
 ```
@@ -55,7 +57,8 @@ Note: The API key is exposed to the frontend via Vite's define feature.
 ## Replit-Specific Configuration
 - Server runs on port 5000 (required for Replit webview)
 - Host set to 0.0.0.0 for proper network access
-- HMR configured for Replit's proxy environment
+- `allowedHosts: true` enabled to support Replit's dynamic proxy URLs
+- HMR configured for Replit's proxy environment with clientPort: 5000
 - Workflow: "Start application" runs `npm run dev`
 
 ## Features

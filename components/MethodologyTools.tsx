@@ -1,5 +1,6 @@
 
 import React from 'react';
+import MeddiccImpactChart from './charts/MeddiccImpactChart';
 
 // --- SUB COMPONENTS ---
 
@@ -137,6 +138,14 @@ const MethodologyTools: React.FC = () => {
                                     </div>
                                 </div>
                             </PillarSection>
+
+                            {/* Gráfico MEDDICC Impact */}
+                            <div className="mt-8 bg-white rounded-xl shadow p-6 border border-gray-200">
+                                <h4 className="text-lg font-bold text-center text-[#3F3F3F] mb-4">Probabilidad de Cierre (Impacto MEDDICC)</h4>
+                                <div className="h-[400px]">
+                                    <MeddiccImpactChart />
+                                </div>
+                            </div>
                         </section>
                     </div>
                 </div>

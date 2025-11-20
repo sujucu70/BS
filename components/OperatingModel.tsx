@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import PipelineHealthChart from './charts/PipelineHealthChart';
 
 const RoleKpiCard: React.FC<{ role: string; northStar: string; inputs: string[]; outputs: string[]; color: string }> = ({ role, northStar, inputs, outputs, color }) => (
     <div className={`bg-white rounded-xl shadow border-t-4 ${color} p-6 flex flex-col h-full`}>
@@ -256,6 +257,16 @@ const OperatingModel: React.FC = () => {
                     </div>
 
                     <h4 className="text-lg font-bold text-[#3F3F3F] mb-6">Output: Cuadros de Mando (Dashboards)</h4>
+                    
+                    {/* Ejemplo Visual: Gráfico de Conversión */}
+                    <div className="mb-8 bg-white rounded-xl shadow p-6 border border-gray-200">
+                        <h4 className="text-lg font-bold text-center text-[#3F3F3F] mb-4">Ejemplo: Conversión por Etapa del Funnel</h4>
+                        <p className="text-sm text-[#B1B1B0] text-center mb-4">Este tipo de gráfico debe estar visible en tus dashboards para monitorear la salud del pipeline</p>
+                        <div className="h-[400px]">
+                            <PipelineHealthChart />
+                        </div>
+                    </div>
+
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
                         
                         {/* Dashboard 1 */}

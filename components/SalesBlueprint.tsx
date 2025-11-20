@@ -193,24 +193,6 @@ const SalesBlueprint: React.FC = () => {
                     />
                 </div>
 
-                <div className="mt-12 bg-[#E4E3E3] p-6 rounded-xl border border-gray-200">
-                    <h3 className="font-bold text-[#3F3F3F] mb-4 text-center border-b pb-2">Apéndice Visual: Salud del Pipeline y MEDDICC</h3>
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        <div className="bg-white rounded-xl shadow p-4 h-[450px] flex flex-col">
-                            <h4 className="text-sm font-bold text-center text-[#B1B1B0] mb-2">Probabilidad de Cierre (Impacto MEDDICC)</h4>
-                            <div className="flex-grow">
-                                <MeddiccImpactChart />
-                            </div>
-                        </div>
-                        <div className="bg-white rounded-xl shadow p-4 h-[450px] flex flex-col">
-                            <h4 className="text-sm font-bold text-center text-[#B1B1B0] mb-2">Conversión por Etapa del Funnel</h4>
-                            <div className="flex-grow">
-                                <PipelineHealthChart />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </main>
         </div>
     );

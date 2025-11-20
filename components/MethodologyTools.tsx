@@ -204,8 +204,8 @@ const MethodologyTools: React.FC = () => {
 
                                     {/* Columna Derecha: La Evidencia */}
                                     <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border border-indigo-100">
-                                        <div className="mb-4">
-                                            <h4 className="text-sm font-bold text-[#B1B1B0] uppercase tracking-wide mb-1">Por qué usarlo</h4>
+                                        <div className="mb-4 flex items-baseline gap-2">
+                                            <h4 className="text-sm font-bold text-[#B1B1B0] uppercase tracking-wide">Por qué usarlo:</h4>
                                             <h5 className="text-lg font-bold text-[#3F3F3F]">Impacto en Win Rate</h5>
                                         </div>
                                         <div className="h-[400px] bg-white rounded-lg p-4 shadow-sm">

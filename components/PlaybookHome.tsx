@@ -58,9 +58,6 @@ const PlaybookHome: React.FC<PlaybookHomeProps> = ({ onNavigate }) => {
     return (
         <div className="container mx-auto p-4 md:p-8">
             <header className="text-center py-16 md:py-24">
-                <div className="inline-block bg-gradient-to-r from-[#6D84E3] to-[#3F3F3F] text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
-                    🚀 Sales Enablement Framework
-                </div>
                 <h1 className="text-5xl md:text-7xl font-bold text-[#3F3F3F] tracking-tight mb-6" style={{fontFamily: 'Outfit, sans-serif'}}>
                     BeyondCX Sales Playbook
                 </h1>

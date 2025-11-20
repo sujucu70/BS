@@ -66,7 +66,29 @@ const OperatingModel: React.FC = () => {
                     </div>
                     {showRaci && (
                         <div className="mt-6 overflow-x-auto bg-white rounded-xl border border-gray-200 shadow-sm animate-fade-in">
-                            <table className="min-w-full"><thead className="bg-gray-100 text-gray-700 uppercase text-xs"><tr><th className="py-3 px-4 text-left w-1/3">Fase del Pipeline</th><th className="py-3 px-4 text-left w-1/3 text-[#6D84E3]">Entregable / Gatekeeper</th><th className="py-3 px-4 text-center w-1/9">SDR</th><th className="py-3 px-4 text-center w-1/9">AE</th><th className="py-3 px-4 text-center w-1/9">Manager</th></tr></thead><tbody><RaciRow task="1. Lead (MQL)" deliverable="Gate 1: Reunión en cal." sdr="R/A" ae="I" mgr="I" /><RaciRow task="2. Discovery" deliverable="MEDDICC: Pain & Metrics" sdr="C" ae="R/A" mgr="C" /><RaciRow task="3. Diagnóstico / Fit" deliverable="Gate 2: Check Técnico" sdr="-" ae="R/A" mgr="I" /><RaciRow task="4. Solución & Demo" deliverable="MEDDICC: Champion OK" sdr="-" ae="R/A" mgr="I" /><RaciRow task="5. Propuesta & BC" deliverable="MEDDICC: Economic Buyer OK" sdr="-" ae="R/A" mgr="A" /><RaciRow task="6. Negociación" deliverable="Contrato Firmado" sdr="-" ae="R/A" mgr="A" /><RaciRow task="7. Cierre & Handoff" deliverable="Gate 3: Kick-off Agendado" sdr="-" ae="R" mgr="I" /></tbody></table>
+                            <div className="p-4 bg-gray-50 border-b border-gray-200">
+                                <p className="text-xs text-gray-500 italic"><strong>R:</strong> Responsable (Hace), <strong>A:</strong> Accountable (Dueño), <strong>C:</strong> Consultado, <strong>I:</strong> Informado</p>
+                            </div>
+                            <table className="min-w-full">
+                                <thead className="bg-gray-100 text-gray-700 uppercase text-xs">
+                                    <tr>
+                                        <th className="py-3 px-4 text-left w-1/3">Fase del Pipeline</th>
+                                        <th className="py-3 px-4 text-left w-1/3 text-[#6D84E3]">Entregable / Gatekeeper</th>
+                                        <th className="py-3 px-4 text-center w-1/9">SDR</th>
+                                        <th className="py-3 px-4 text-center w-1/9">AE</th>
+                                        <th className="py-3 px-4 text-center w-1/9">Manager</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <RaciRow task="1. Lead (MQL)" deliverable="Gate 1: Reunión aceptada en cal." sdr="R/A" ae="I" mgr="I" />
+                                    <RaciRow task="2. Discovery" deliverable="MEDDICC: Metrics & Pain identificados." sdr="C" ae="R/A" mgr="C" />
+                                    <RaciRow task="3. Diagnóstico / Fit" deliverable="Gate 2: Check de Viabilidad Técnica (Semáforo Verde)." sdr="-" ae="R/A" mgr="I" />
+                                    <RaciRow task="4. Solución & Demo" deliverable="MEDDICC: Champion valida la solución." sdr="-" ae="R/A" mgr="I" />
+                                    <RaciRow task="5. Propuesta & BC" deliverable="MEDDICC: Economic Buyer da el 'Sí'." sdr="-" ae="R/A" mgr="A" />
+                                    <RaciRow task="6. Negociación / Piloto" deliverable="MEDDICC: Paper Process (Proceso de firma claro)." sdr="-" ae="R/A" mgr="A" />
+                                    <RaciRow task="7. Cierre & Handoff" deliverable="Gate 3: Kick-off Meeting Agendada." sdr="-" ae="R" mgr="I" />
+                                </tbody>
+                            </table>
                         </div>
                     )}
                 </section>
@@ -78,44 +100,228 @@ const OperatingModel: React.FC = () => {
                         Higiene del Dato y Reglas de Negocio (Con Qué)
                     </h3>
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        {/* Col 1: Datos de Cualificación */}
                         <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex flex-col h-full">
                             <h4 className="font-bold text-gray-800 mb-2 flex items-center"><span className="text-xl mr-2">🚦</span> Datos de Cualificación</h4>
+                            <p className="text-xs text-gray-500 mb-4 uppercase font-bold">Objetivo: Pipeline Limpio</p>
                             <ul className="space-y-3 text-sm flex-grow">
-                                <li className="p-2 bg-gray-50 rounded border border-gray-100"><span className="block font-bold text-gray-700 text-xs">📌 Pain Point Principal</span><div className="flex flex-wrap gap-1 mt-1"><span className="bg-red-100 text-red-800 text-[10px] px-1 rounded">Costes</span><span className="bg-red-100 text-red-800 text-[10px] px-1 rounded">NPS</span></div></li>
-                                <li className="p-2 bg-gray-50 rounded border border-gray-100"><span className="block font-bold text-gray-700 text-xs">🚦 Fuente del Lead</span><div className="flex flex-wrap gap-1 mt-1"><span className="bg-blue-100 text-blue-800 text-[10px] px-1 rounded">Inbound</span><span className="bg-blue-100 text-blue-800 text-[10px] px-1 rounded">Outbound</span></div></li>
-                                <li className="p-2 bg-gray-50 rounded border border-gray-100"><span className="block font-bold text-gray-700 text-xs">👤 Buyer Persona</span><span className="text-gray-500 text-xs block mt-1">[CXO | COO | CEO]</span></li>
-                                <li className="p-2 bg-gray-50 rounded border border-gray-100"><span className="block font-bold text-gray-700 text-xs">🔢 Volumen Actual</span><span className="text-gray-400 text-xs italic block mt-1">_____ interacciones/mes</span></li>
+                                <li className="p-2 bg-gray-50 rounded border border-gray-100">
+                                    <span className="block font-bold text-gray-700 text-xs">📌 Pain Point Principal</span>
+                                    <div className="flex flex-wrap gap-1 mt-1">
+                                        <span className="bg-red-100 text-red-800 text-[10px] px-1 rounded">Costes</span>
+                                        <span className="bg-red-100 text-red-800 text-[10px] px-1 rounded">NPS</span>
+                                        <span className="bg-red-100 text-red-800 text-[10px] px-1 rounded">Escalabilidad</span>
+                                    </div>
+                                </li>
+                                <li className="p-2 bg-gray-50 rounded border border-gray-100">
+                                     <span className="block font-bold text-gray-700 text-xs">🚦 Fuente del Lead</span>
+                                      <div className="flex flex-wrap gap-1 mt-1">
+                                        <span className="bg-blue-100 text-blue-800 text-[10px] px-1 rounded">Inbound</span>
+                                        <span className="bg-blue-100 text-blue-800 text-[10px] px-1 rounded">Outbound</span>
+                                        <span className="bg-blue-100 text-blue-800 text-[10px] px-1 rounded">Evento</span>
+                                    </div>
+                                </li>
+                                <li className="p-2 bg-gray-50 rounded border border-gray-100">
+                                    <span className="block font-bold text-gray-700 text-xs">👤 Buyer Persona</span>
+                                    <span className="text-gray-500 text-xs block mt-1">[Director CX | COO | CEO]</span>
+                                </li>
+                                <li className="p-2 bg-gray-50 rounded border border-gray-100">
+                                    <span className="block font-bold text-gray-700 text-xs">🔢 Volumen Actual</span>
+                                    <span className="text-gray-400 text-xs italic block mt-1">_____ interacciones/mes</span>
+                                </li>
                             </ul>
                         </div>
+
+                        {/* Col 2: Datos de Solución */}
                         <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex flex-col h-full">
                             <h4 className="font-bold text-gray-800 mb-2 flex items-center"><span className="text-xl mr-2">🛠️</span> Datos Solución & Técnica</h4>
+                            <p className="text-xs text-gray-500 mb-4 uppercase font-bold">Objetivo: Viabilidad</p>
                             <ul className="space-y-3 text-sm flex-grow">
-                                <li className="p-2 bg-gray-50 rounded border border-gray-100"><span className="block font-bold text-gray-700 text-xs">🛠 Tech Stack Actual</span><span className="text-gray-500 text-xs block mt-1">(Salesforce, Genesys...)</span></li>
-                                <li className="p-2 bg-gray-50 rounded border border-gray-100 flex justify-between items-center"><span className="font-bold text-gray-700 text-xs">✅ Viabilidad Técnica</span><span className="text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded">Sí/No</span></li>
-                                <li className="p-2 bg-gray-50 rounded border border-gray-100 flex justify-between items-center"><span className="font-bold text-gray-700 text-xs">🗺 MAP Activo</span><span className="text-xs text-gray-500">Boolean</span></li>
-                                <li className="p-2 bg-gray-50 rounded border border-gray-100"><span className="block font-bold text-gray-700 text-xs">👥 Roles Identificados</span><span className="text-gray-500 text-xs block mt-1">Champion & Tech Buyer</span></li>
+                                <li className="p-2 bg-gray-50 rounded border border-gray-100">
+                                    <span className="block font-bold text-gray-700 text-xs">🛠 Tech Stack Actual</span>
+                                    <span className="text-gray-500 text-xs block mt-1">(Salesforce, Genesys, Avaya...)</span>
+                                </li>
+                                <li className="p-2 bg-gray-50 rounded border border-gray-100 flex justify-between items-center">
+                                    <span className="font-bold text-gray-700 text-xs">✅ Viabilidad Técnica</span>
+                                    <span className="text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded">Sí/No</span>
+                                </li>
+                                <li className="p-2 bg-gray-50 rounded border border-gray-100 flex justify-between items-center">
+                                    <span className="font-bold text-gray-700 text-xs">🗺 MAP Activo</span>
+                                    <span className="text-xs text-gray-500">Boolean</span>
+                                </li>
+                                <li className="p-2 bg-gray-50 rounded border border-gray-100">
+                                    <span className="block font-bold text-gray-700 text-xs">👥 Roles Identificados</span>
+                                    <span className="text-gray-500 text-xs block mt-1">Champion & Technical Buyer asignados</span>
+                                </li>
                             </ul>
                         </div>
+
+                        {/* Col 3: Datos Económicos */}
                         <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex flex-col h-full">
                             <h4 className="font-bold text-gray-800 mb-2 flex items-center"><span className="text-xl mr-2">💰</span> Datos Económicos & Cierre</h4>
+                            <p className="text-xs text-gray-500 mb-4 uppercase font-bold">Objetivo: Forecast</p>
                             <ul className="space-y-3 text-sm flex-grow">
-                                <li className="p-2 bg-gray-50 rounded border border-gray-100"><span className="block font-bold text-gray-700 text-xs">💰 Valor del Contrato (TCV)</span><span className="text-gray-400 text-xs italic block mt-1">€ _________</span></li>
-                                <li className="p-2 bg-gray-50 rounded border border-gray-100"><span className="block font-bold text-gray-700 text-xs">📅 Fecha de Cierre</span><span className="text-gray-500 text-xs block mt-1">Actualizar semanalmente</span></li>
-                                <li className="p-2 bg-red-50 rounded border border-red-100"><span className="block font-bold text-red-800 text-xs">📉 Motivo de Pérdida</span><span className="text-red-600 text-xs block mt-1">Obligatorio en Closed Lost</span></li>
-                                <li className="p-2 bg-green-50 rounded border border-green-100"><span className="block font-bold text-green-800 text-xs">🚀 Fecha Inicio Servicio</span><span className="text-green-600 text-xs block mt-1">Para facturación</span></li>
+                                <li className="p-2 bg-gray-50 rounded border border-gray-100">
+                                    <span className="block font-bold text-gray-700 text-xs">💰 Valor del Contrato (TCV)</span>
+                                    <span className="text-gray-400 text-xs italic block mt-1">€ _________ (Total Contract Value)</span>
+                                </li>
+                                <li className="p-2 bg-gray-50 rounded border border-gray-100">
+                                    <span className="block font-bold text-gray-700 text-xs">📅 Fecha de Cierre</span>
+                                    <span className="text-gray-500 text-xs block mt-1">Actualizar semanalmente</span>
+                                </li>
+                                <li className="p-2 bg-red-50 rounded border border-red-100">
+                                    <span className="block font-bold text-red-800 text-xs">📉 Motivo de Pérdida</span>
+                                    <span className="text-red-600 text-xs block mt-1">Obligatorio en Closed Lost (Precio, Competencia...)</span>
+                                </li>
+                                <li className="p-2 bg-green-50 rounded border border-green-100">
+                                    <span className="block font-bold text-green-800 text-xs">🚀 Fecha Inicio Servicio</span>
+                                    <span className="text-green-600 text-xs block mt-1">Para facturación</span>
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </section>
 
-                {/* BLOQUE 3: RITUALES */}
+                {/* BLOQUE 3: RITUALES DE GESTIÓN */}
                 <section>
                      <h3 className="text-2xl font-bold text-gray-800 mb-8 flex items-center pb-2 border-b border-gray-200">
                         <span className="bg-gray-800 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm mr-3">3</span>
                         Ritmo de Negocio (Cuándo)
                     </h3>
+                    
                     <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-10">
-                        <table className="min-w-full text-sm text-left"><thead className="bg-gray-50 text-gray-700 uppercase text-xs font-bold"><tr><th className="px-6 py-3">Ritual</th><th className="px-6 py-3">Frecuencia</th><th className="px-6 py-3">Objetivo Crítico</th><th className="px-6 py-3">Audiencia</th></tr></thead><tbody className="divide-y divide-gray-100"><tr className="hover:bg-gray-50"><td className="px-6 py-4 font-bold text-gray-800">Daily Standup</td><td className="px-6 py-4">Diario (15 min)</td><td className="px-6 py-4">Foco en IGAs y desbloqueo.</td><td className="px-6 py-4 text-gray-500">SDRs + Manager</td></tr><tr className="hover:bg-gray-50"><td className="px-6 py-4 font-bold text-gray-800">Pipeline Review</td><td className="px-6 py-4">Semanal</td><td className="px-6 py-4">Sanidad y Next Steps reales.</td><td className="px-6 py-4 text-gray-500">AEs + Manager</td></tr><tr className="hover:bg-gray-50"><td className="px-6 py-4 font-bold text-gray-800">Deal Clinic</td><td className="px-6 py-4">Ad-hoc</td><td className="px-6 py-4">Creatividad para desbloquear.</td><td className="px-6 py-4 text-gray-500">Equipo Completo</td></tr><tr className="hover:bg-gray-50"><td className="px-6 py-4 font-bold text-gray-800">Forecast Call</td><td className="px-6 py-4">Mensual</td><td className="px-6 py-4">Precisión (Commit vs Gap).</td><td className="px-6 py-4 text-gray-500">Manager + Dirección</td></tr><tr className="hover:bg-gray-50"><td className="px-6 py-4 font-bold text-gray-800">QBR</td><td className="px-6 py-4">Trimestral</td><td className="px-6 py-4">Aprendizaje y Territorio.</td><td className="px-6 py-4 text-gray-500">Toda la compañía</td></tr></tbody></table>
+                        <table className="min-w-full text-sm text-left">
+                            <thead className="bg-gray-50 text-gray-700 uppercase text-xs font-bold">
+                                <tr>
+                                    <th className="px-6 py-3">Ritual</th>
+                                    <th className="px-6 py-3">Frecuencia</th>
+                                    <th className="px-6 py-3">Objetivo Crítico</th>
+                                    <th className="px-6 py-3">Audiencia</th>
+                                </tr>
+                            </thead>
+                            <tbody className="divide-y divide-gray-100">
+                                <tr className="hover:bg-gray-50">
+                                    <td className="px-6 py-4 font-bold text-gray-800">Daily Standup</td>
+                                    <td className="px-6 py-4"><span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded font-bold">Diario (15 min)</span></td>
+                                    <td className="px-6 py-4">Eliminar bloqueos inmediatos y asegurar foco en actividades generadoras de ingresos (IGA).</td>
+                                    <td className="px-6 py-4 text-gray-500">SDRs + Manager</td>
+                                </tr>
+                                <tr className="hover:bg-gray-50">
+                                    <td className="px-6 py-4 font-bold text-gray-800">Pipeline Review</td>
+                                    <td className="px-6 py-4"><span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded font-bold">Semanal (Lunes)</span></td>
+                                    <td className="px-6 py-4">Validar 'Next Steps' con fecha futura y sanear la higiene del dato (eliminar zombies).</td>
+                                    <td className="px-6 py-4 text-gray-500">AEs + Manager</td>
+                                </tr>
+                                <tr className="hover:bg-gray-50">
+                                    <td className="px-6 py-4 font-bold text-gray-800">Deal Strategy (Clinic)</td>
+                                    <td className="px-6 py-4"><span className="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded font-bold">Ad-hoc / Jueves</span></td>
+                                    <td className="px-6 py-4">Desbloquear estancamientos en cuentas Tier 1 y definir plan de ataque con Executive Sponsorship.</td>
+                                    <td className="px-6 py-4 text-gray-500">Equipo Completo</td>
+                                </tr>
+                                <tr className="hover:bg-gray-50">
+                                    <td className="px-6 py-4 font-bold text-gray-800">Forecast Call</td>
+                                    <td className="px-6 py-4"><span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded font-bold">Mensual</span></td>
+                                    <td className="px-6 py-4">Confirmar la cifra de 'Commit' (Cierre seguro) y analizar desviaciones (Gap).</td>
+                                    <td className="px-6 py-4 text-gray-500">Manager + Dirección</td>
+                                </tr>
+                                 <tr className="hover:bg-gray-50">
+                                    <td className="px-6 py-4 font-bold text-gray-800">QBR (Quarterly Review)</td>
+                                    <td className="px-6 py-4"><span className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded font-bold">Trimestral</span></td>
+                                    <td className="px-6 py-4">Revisión de rendimiento trimestral (Win/Loss) y re-alineación de territorios/cuotas.</td>
+                                    <td className="px-6 py-4 text-gray-500">Toda la compañía</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h4 className="text-lg font-bold text-gray-700 mb-6">Output: Cuadros de Mando (Dashboards)</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                        
+                        {/* Dashboard 1 */}
+                        <div className="flex flex-col h-full">
+                            <div className="bg-white p-5 rounded-t-xl border border-gray-200 shadow-sm flex-grow">
+                                <h4 className="font-bold text-gray-700 mb-2">1. The Morning Coffee (Reps)</h4>
+                                <p className="text-xs text-gray-500 mb-4">Para que el comercial sepa qué hacer hoy.</p>
+                                <ul className="text-sm text-gray-600 list-disc list-inside">
+                                    <li>Tareas vencidas hoy.</li>
+                                    <li>Deals sin "Next Step" futuro.</li>
+                                    <li>Nuevos MQLs asignados.</li>
+                                </ul>
+                            </div>
+                            {/* Mockup 1 */}
+                            <div className="bg-gray-100 p-4 rounded-b-xl border-x border-b border-gray-200 text-xs font-mono shadow-inner">
+                                <div className="flex justify-between mb-2 border-b border-gray-300 pb-1">
+                                    <span className="font-bold text-gray-600">📅 HOY</span>
+                                    <span className="text-red-500 font-bold">3 Tareas</span>
+                                </div>
+                                <div className="space-y-2 mb-3">
+                                    <div className="flex items-center"><div className="w-2 h-2 bg-red-500 rounded-full mr-2"></div><span className="truncate">Llamar: Hospital Central</span></div>
+                                    <div className="flex items-center"><div className="w-2 h-2 bg-yellow-500 rounded-full mr-2"></div><span className="truncate">Email: Propuesta Acme</span></div>
+                                </div>
+                                <div className="bg-blue-100 p-2 rounded text-center text-blue-800 font-bold border border-blue-200">
+                                    🔔 2 Nuevos MQLs
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Dashboard 2 */}
+                        <div className="flex flex-col h-full">
+                            <div className="bg-white p-5 rounded-t-xl border border-gray-200 shadow-sm flex-grow">
+                                <h4 className="font-bold text-gray-700 mb-2">2. Pipeline Velocity (Manager)</h4>
+                                <p className="text-xs text-gray-500 mb-4">Para detectar cuellos de botella.</p>
+                                <ul className="text-sm text-gray-600 list-disc list-inside">
+                                    <li>Deals estancados (&gt;15 días).</li>
+                                    <li>Tasa de conversión.</li>
+                                    <li>Pipeline Coverage.</li>
+                                </ul>
+                            </div>
+                            {/* Mockup 2 */}
+                            <div className="bg-gray-100 p-4 rounded-b-xl border-x border-b border-gray-200 text-xs font-mono shadow-inner">
+                                <div className="text-center font-bold mb-2 text-gray-600 uppercase">⚠️ Stuck Deals</div>
+                                <table className="w-full mb-3 text-[10px]">
+                                    <thead><tr className="text-gray-400"><td>Deal</td><td className="text-right">Días</td></tr></thead>
+                                    <tbody>
+                                        <tr><td>Clínica Sur</td><td className="text-right text-red-600 font-bold">22</td></tr>
+                                        <tr><td>Seguros Y</td><td className="text-right text-red-600 font-bold">18</td></tr>
+                                    </tbody>
+                                </table>
+                                <div className="mt-2">
+                                    <div className="flex justify-between text-[10px] mb-1"><span>Coverage</span><span>3.5x</span></div>
+                                    <div className="h-1.5 bg-gray-300 rounded-full overflow-hidden"><div className="w-[70%] h-full bg-green-500"></div></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Dashboard 3 */}
+                        <div className="flex flex-col h-full">
+                            <div className="bg-white p-5 rounded-t-xl border border-gray-200 shadow-sm flex-grow">
+                                <h4 className="font-bold text-gray-700 mb-2">3. The Board Pack (Exec)</h4>
+                                <p className="text-xs text-gray-500 mb-4">La foto fija de la salud del negocio.</p>
+                                <ul className="text-sm text-gray-600 list-disc list-inside">
+                                    <li>Forecast vs. Objetivo.</li>
+                                    <li>Win Rate global.</li>
+                                    <li>Ingresos por Producto (Mix).</li>
+                                </ul>
+                            </div>
+                            {/* Mockup 3 */}
+                            <div className="bg-gray-100 p-4 rounded-b-xl border-x border-b border-gray-200 text-xs font-mono shadow-inner">
+                                <div className="flex justify-between items-end mb-3">
+                                    <div>
+                                        <div className="text-gray-400 text-[9px] uppercase">Forecast Q3</div>
+                                        <div className="text-sm font-bold text-gray-800">€150k</div>
+                                    </div>
+                                    <div className="text-green-600 font-bold text-[10px]">▲ 12% YoY</div>
+                                </div>
+                                <div className="flex space-x-1 h-8 items-end mb-2">
+                                    <div className="w-1/4 bg-blue-300 h-[40%]"></div>
+                                    <div className="w-1/4 bg-blue-400 h-[60%]"></div>
+                                    <div className="w-1/4 bg-blue-500 h-[80%]"></div>
+                                    <div className="w-1/4 bg-blue-600 h-[95%]"></div>
+                                </div>
+                                <div className="text-center text-[9px] text-gray-500">Proyección MRR</div>
+                            </div>
+                        </div>
+
                     </div>
                 </section>
             </main>

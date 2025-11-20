@@ -275,7 +275,7 @@ const ProcessGuide: React.FC = () => {
                             {/* 2.2 FRAMEWORK (TOFU/MOFU/BOFU) */}
                             <PillarSection 
                                 number="2.2" 
-                                title="Ciclo Consultivo (Framework TOFU-MOFU-BOFU)"
+                                title="Venta Consultiva (Framework TOFU-MOFU-BOFU)"
                                 conceptTitle="El Embudo de Ventas"
                                 conceptText="El viaje del cliente no es lineal, pero nuestra gestión sí debe serlo. Dividimos el proceso en 3 fases: Top (Consciencia), Middle (Evaluación) y Bottom (Decisión) para aplicar las herramientas correctas en el momento justo."
                             >

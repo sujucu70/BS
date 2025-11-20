@@ -98,7 +98,7 @@ const MethodologyTools: React.FC = () => {
                             {/* 2.2 FRAMEWORK */}
                             <PillarSection 
                                 number="2.2" 
-                                title="Ciclo Consultivo (TOFU-MOFU-BOFU)" 
+                                title="Venta Consultiva (TOFU-MOFU-BOFU)" 
                                 conceptTitle="El Embudo de Ventas" 
                                 conceptText="Dividimos el proceso en 3 fases: Top (Consciencia), Middle (Evaluación) y Bottom (Decisión) para aplicar las herramientas correctas en el momento justo."
                             >

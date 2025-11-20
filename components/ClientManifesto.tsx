@@ -203,14 +203,12 @@ const ClientManifesto: React.FC = () => {
                              </div>
                         </div>
                     </div>
-                </section>
 
-                {/* SECCION D: RED FLAGS */}
-                <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="bg-white rounded-xl shadow-sm p-8 border border-gray-200">
+                    {/* Red Flags */}
+                    <div className="mt-8">
                         <h3 className="text-xl font-bold text-red-600 mb-6 flex items-center">🚫 Red Flags (Descalificación Temprana)</h3>
                         <div className="overflow-hidden rounded-lg border border-gray-200">
-                            <table className="min-w-full text-sm">
+                            <table className="min-w-full text-sm bg-white">
                                 <thead className="bg-[#E4E3E3]">
                                     <tr>
                                         <th className="px-4 py-3 text-left font-bold text-[#3F3F3F]">Señal (Red Flag)</th>
@@ -228,80 +226,8 @@ const ClientManifesto: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className="bg-[#3F3F3F] rounded-xl shadow-lg p-8 text-white flex flex-col justify-center">
-                        <h3 className="text-xl font-bold text-blue-300 mb-6">👮 Reglas Operativas del Equipo</h3>
-                        <ul className="space-y-4 text-lg">
-                            <li className="flex items-start">
-                                <span className="mr-3 text-green-400">✓</span>
-                                <p>No invertir tiempo en cuentas con <strong>Scoring &lt; 40 puntos</strong>.</p>
-                            </li>
-                            <li className="flex items-start">
-                                <span className="mr-3 text-green-400">✓</span>
-                                <p>No avanzar a Demo sin validar al menos <strong>3 dolores operativos</strong> claros.</p>
-                            </li>
-                            <li className="flex items-start">
-                                <span className="mr-3 text-green-400">✓</span>
-                                <p>Siempre priorizar sectores con casos de uso replicables (Booking y Order).</p>
-                            </li>
-                            <li className="flex items-start">
-                                <span className="mr-3 text-green-400">✓</span>
-                                <p>Vendemos <strong>Impacto (ROI)</strong>, no tecnología. Si no hay métrica, no hay deal.</p>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-
-                {/* SECCION E: ANEXO - MATERIAL DE REFERENCIA CUALITATIVO (RESTORED CONTENT) */}
-                <section className="bg-[#E4E3E3] rounded-xl shadow-inner p-8 border border-gray-200">
-                    <div className="mb-8">
-                        <h2 className="text-2xl font-bold text-[#B1B1B0]">📚 Anexo: Profundización Cualitativa</h2>
-                        <p className="text-[#B1B1B0] mt-2">Buyer Personas detallados y eventos disparadores de compra para enriquecer la estrategia.</p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                        {/* Persona 1: Ops */}
-                        <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                            <div className="flex items-center mb-3">
-                                <div className="bg-blue-100 p-2 rounded-full mr-3"><span className="text-xl">👤</span></div>
-                                <h4 className="text-lg font-bold text-[#6D84E3]">El Champion (COO / Dir. CX)</h4>
-                            </div>
-                            <p className="text-sm text-[#B1B1B0] mb-4 italic border-l-2 border-gray-300 pl-2">"Necesito que esto funcione ya y sin darme problemas."</p>
-                            <ul className="text-sm space-y-2 text-[#3F3F3F]">
-                                <li><strong>Motivación:</strong> Cumplir SLAs, reducir quejas, dormir tranquilo.</li>
-                                <li><strong>Miedo:</strong> Una implementación fallida que pare la operación.</li>
-                                <li><strong>Mensaje Clave:</strong> "Nosotros operamos por ti. Tú controlas, nosotros remamos."</li>
-                            </ul>
-                        </div>
-                        {/* Persona 2: Finance */}
-                        <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                            <div className="flex items-center mb-3">
-                                <div className="bg-green-100 p-2 rounded-full mr-3"><span className="text-xl">💰</span></div>
-                                <h4 className="text-lg font-bold text-[#6D84E3]">El Economic Buyer (CFO)</h4>
-                            </div>
-                            <p className="text-sm text-[#B1B1B0] mb-4 italic border-l-2 border-gray-300 pl-2">"¿Cuánto me voy a ahorrar y cuándo?"</p>
-                            <ul className="text-sm space-y-2 text-[#3F3F3F]">
-                                <li><strong>Motivación:</strong> Variabilizar costes, ROI rápido, eliminar CAPEX.</li>
-                                <li><strong>Miedo:</strong> Costes ocultos y contratos largos sin salida.</li>
-                                <li><strong>Mensaje Clave:</strong> "Autofinanciado con ahorros. Sin inversión inicial."</li>
-                            </ul>
-                        </div>
-                        {/* Persona 3: Tech */}
-                        <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                            <div className="flex items-center mb-3">
-                                <div className="bg-purple-100 p-2 rounded-full mr-3"><span className="text-xl">🛡️</span></div>
-                                <h4 className="text-lg font-bold text-[#6D84E3]">El Gatekeeper (CTO / IT)</h4>
-                            </div>
-                            <p className="text-sm text-[#B1B1B0] mb-4 italic border-l-2 border-gray-300 pl-2">"No toquéis mi infraestructura sin permiso."</p>
-                            <ul className="text-sm space-y-2 text-[#3F3F3F]">
-                                <li><strong>Motivación:</strong> Seguridad, integridad de datos, menos tickets de soporte.</li>
-                                <li><strong>Miedo:</strong> Brechas de seguridad, 'Shadow IT', integraciones chapuceras.</li>
-                                <li><strong>Mensaje Clave:</strong> "API-first, Compliance certificado (GDPR/ISO), carga cero para tu equipo."</li>
-                            </ul>
-                        </div>
-                    </div>
-
                     {/* Trigger Events */}
-                    <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <div className="mt-8 bg-white p-6 rounded-lg shadow-sm border border-gray-100">
                          <h4 className="text-lg font-bold text-[#3F3F3F] mb-4 flex items-center"><span className="mr-2">⚡</span> Eventos Desencadenantes (Trigger Events)</h4>
                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
                             <div className="flex items-start">

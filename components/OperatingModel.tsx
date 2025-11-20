@@ -95,87 +95,108 @@ const OperatingModel: React.FC = () => {
 
                 {/* BLOQUE 2: HIGIENE DEL DATO */}
                 <section>
-                     <h3 className="text-2xl font-bold text-[#3F3F3F] mb-8 flex items-center pb-2 border-b border-gray-200">
+                     <h3 className="text-2xl font-bold text-[#3F3F3F] mb-4 flex items-center">
                         <span className="bg-[#3F3F3F] text-white w-8 h-8 rounded-full flex items-center justify-center text-sm mr-3">2</span>
                         Higiene del Dato y Reglas de Negocio (Con Qué)
                     </h3>
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                        {/* Col 1: Datos de Cualificación */}
-                        <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex flex-col h-full">
-                            <h4 className="font-bold text-[#3F3F3F] mb-2 flex items-center"><span className="text-xl mr-2">🚦</span> Datos de Cualificación</h4>
-                            <p className="text-xs text-[#B1B1B0] mb-4 uppercase font-bold">Objetivo: Pipeline Limpio</p>
-                            <ul className="space-y-3 text-sm flex-grow">
-                                <li className="p-2 bg-[#E4E3E3] rounded border border-gray-100">
-                                    <span className="block font-bold text-[#3F3F3F] text-xs">📌 Pain Point Principal</span>
-                                    <div className="flex flex-wrap gap-1 mt-1">
-                                        <span className="bg-red-100 text-red-800 text-[10px] px-1 rounded">Costes</span>
-                                        <span className="bg-red-100 text-red-800 text-[10px] px-1 rounded">NPS</span>
-                                        <span className="bg-red-100 text-red-800 text-[10px] px-1 rounded">Escalabilidad</span>
+                    <p className="text-sm text-[#B1B1B0] mb-8">La calidad de los datos determina la calidad de la decisión. Si no está en el CRM, no existe.</p>
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        {/* Col 1: Objetos Críticos */}
+                        <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                            <h4 className="font-bold text-[#3F3F3F] mb-4 flex items-center">
+                                <span className="text-xl mr-2">📁</span> Objetos Críticos
+                            </h4>
+                            <ul className="space-y-4">
+                                <li className="flex items-start gap-3 p-3 bg-[#E4E3E3] rounded-lg">
+                                    <div className="bg-[#6D84E3] text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">L</div>
+                                    <div>
+                                        <div className="font-bold text-[#3F3F3F] text-sm">Lead (Persona)</div>
+                                        <p className="text-xs text-[#B1B1B0]">Individuo antes de cualificar.</p>
                                     </div>
                                 </li>
-                                <li className="p-2 bg-[#E4E3E3] rounded border border-gray-100">
-                                     <span className="block font-bold text-[#3F3F3F] text-xs">🚦 Fuente del Lead</span>
-                                      <div className="flex flex-wrap gap-1 mt-1">
-                                        <span className="bg-blue-100 text-blue-800 text-[10px] px-1 rounded">Inbound</span>
-                                        <span className="bg-blue-100 text-blue-800 text-[10px] px-1 rounded">Outbound</span>
-                                        <span className="bg-blue-100 text-blue-800 text-[10px] px-1 rounded">Evento</span>
+                                <li className="flex items-start gap-3 p-3 bg-[#E4E3E3] rounded-lg">
+                                    <div className="bg-[#6D84E3] text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">C</div>
+                                    <div>
+                                        <div className="font-bold text-[#3F3F3F] text-sm">Company (Empresa)</div>
+                                        <p className="text-xs text-[#B1B1B0]">Entidad legal. Fuente de verdad.</p>
                                     </div>
                                 </li>
-                                <li className="p-2 bg-[#E4E3E3] rounded border border-gray-100">
-                                    <span className="block font-bold text-[#3F3F3F] text-xs">👤 Buyer Persona</span>
-                                    <span className="text-[#B1B1B0] text-xs block mt-1">[Director CX | COO | CEO]</span>
-                                </li>
-                                <li className="p-2 bg-[#E4E3E3] rounded border border-gray-100">
-                                    <span className="block font-bold text-[#3F3F3F] text-xs">🔢 Volumen Actual</span>
-                                    <span className="text-gray-400 text-xs italic block mt-1">_____ interacciones/mes</span>
+                                <li className="flex items-start gap-3 p-3 bg-[#E4E3E3] rounded-lg">
+                                    <div className="bg-[#6D84E3] text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">D</div>
+                                    <div>
+                                        <div className="font-bold text-[#3F3F3F] text-sm">Deal (Oportunidad)</div>
+                                        <p className="text-xs text-[#B1B1B0]">Posible venta con valor €.</p>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
 
-                        {/* Col 2: Datos de Solución */}
-                        <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex flex-col h-full">
-                            <h4 className="font-bold text-[#3F3F3F] mb-2 flex items-center"><span className="text-xl mr-2">🛠️</span> Datos Solución & Técnica</h4>
-                            <p className="text-xs text-[#B1B1B0] mb-4 uppercase font-bold">Objetivo: Viabilidad</p>
-                            <ul className="space-y-3 text-sm flex-grow">
-                                <li className="p-2 bg-[#E4E3E3] rounded border border-gray-100">
-                                    <span className="block font-bold text-[#3F3F3F] text-xs">🛠 Tech Stack Actual</span>
-                                    <span className="text-[#B1B1B0] text-xs block mt-1">(Salesforce, Genesys, Avaya...)</span>
-                                </li>
-                                <li className="p-2 bg-[#E4E3E3] rounded border border-gray-100 flex justify-between items-center">
-                                    <span className="font-bold text-[#3F3F3F] text-xs">✅ Viabilidad Técnica</span>
-                                    <span className="text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded">Sí/No</span>
-                                </li>
-                                <li className="p-2 bg-[#E4E3E3] rounded border border-gray-100 flex justify-between items-center">
-                                    <span className="font-bold text-[#3F3F3F] text-xs">🗺 MAP Activo</span>
-                                    <span className="text-xs text-[#B1B1B0]">Boolean</span>
-                                </li>
-                                <li className="p-2 bg-[#E4E3E3] rounded border border-gray-100">
-                                    <span className="block font-bold text-[#3F3F3F] text-xs">👥 Roles Identificados</span>
-                                    <span className="text-[#B1B1B0] text-xs block mt-1">Champion & Technical Buyer asignados</span>
-                                </li>
-                            </ul>
+                        {/* Col 2: Campos Obligatorios */}
+                        <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                            <h4 className="font-bold text-[#3F3F3F] mb-4 flex items-center">
+                                <span className="text-xl mr-2">🔵</span> Campos Obligatorios
+                            </h4>
+                            <div className="space-y-4">
+                                <div>
+                                    <p className="text-xs font-bold text-[#B1B1B0] mb-2">Etapa 2 (Discovery)</p>
+                                    <p className="text-sm text-[#3F3F3F]">Pain, Métrica, Champion (MEDDICC).</p>
+                                </div>
+                                <div>
+                                    <p className="text-xs font-bold text-[#B1B1B0] mb-2">Etapa 4 (Solución)</p>
+                                    <p className="text-sm text-[#3F3F3F]">Importe Estimado, Fecha Cierre.</p>
+                                </div>
+                                <div>
+                                    <p className="text-xs font-bold text-[#B1B1B0] mb-2">Etapa 5 (Propuesta)</p>
+                                    <p className="text-sm text-[#3F3F3F]">Link a Propuesta, Competidor.</p>
+                                </div>
+                                <div>
+                                    <p className="text-xs font-bold text-[#B1B1B0] mb-2">Closed Lost</p>
+                                    <p className="text-sm text-[#3F3F3F]">Motivo de Pérdida (Reason Code).</p>
+                                </div>
+                                <div className="mt-6 p-3 bg-[#E4E3E3] rounded-lg">
+                                    <p className="text-xs text-[#B1B1B0]">
+                                        <strong>🚦 Datos de Cualificación:</strong> Pain Point Principal, Fuente del Lead, Buyer Persona, Volumen Actual
+                                    </p>
+                                </div>
+                                <div className="p-3 bg-[#E4E3E3] rounded-lg">
+                                    <p className="text-xs text-[#B1B1B0]">
+                                        <strong>🛠️ Datos Solución:</strong> Tech Stack Actual, Viabilidad Técnica, MAP Activo, Roles Identificados
+                                    </p>
+                                </div>
+                                <div className="p-3 bg-[#E4E3E3] rounded-lg">
+                                    <p className="text-xs text-[#B1B1B0]">
+                                        <strong>💰 Datos Económicos:</strong> TCV, Fecha de Cierre, Motivo de Pérdida, Fecha Inicio Servicio
+                                    </p>
+                                </div>
+                            </div>
                         </div>
 
-                        {/* Col 3: Datos Económicos */}
-                        <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex flex-col h-full">
-                            <h4 className="font-bold text-[#3F3F3F] mb-2 flex items-center"><span className="text-xl mr-2">💰</span> Datos Económicos & Cierre</h4>
-                            <p className="text-xs text-[#B1B1B0] mb-4 uppercase font-bold">Objetivo: Forecast</p>
-                            <ul className="space-y-3 text-sm flex-grow">
-                                <li className="p-2 bg-[#E4E3E3] rounded border border-gray-100">
-                                    <span className="block font-bold text-[#3F3F3F] text-xs">💰 Valor del Contrato (TCV)</span>
-                                    <span className="text-gray-400 text-xs italic block mt-1">€ _________ (Total Contract Value)</span>
+                        {/* Col 3: Trigger Events */}
+                        <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                            <h4 className="font-bold text-[#3F3F3F] mb-4 flex items-center">
+                                <span className="text-xl mr-2">⚡</span> Trigger Events
+                            </h4>
+                            <ul className="space-y-3">
+                                <li className="flex items-start gap-2">
+                                    <span className="text-sm">→</span>
+                                    <div>
+                                        <p className="text-sm font-bold text-[#3F3F3F]">Cambio a "Propuesta"</p>
+                                        <p className="text-xs text-[#B1B1B0]">Alerta automática a Manager para revisión.</p>
+                                    </div>
                                 </li>
-                                <li className="p-2 bg-[#E4E3E3] rounded border border-gray-100">
-                                    <span className="block font-bold text-[#3F3F3F] text-xs">📅 Fecha de Cierre</span>
-                                    <span className="text-[#B1B1B0] text-xs block mt-1">Actualizar semanalmente</span>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-sm">→</span>
+                                    <div>
+                                        <p className="text-sm font-bold text-[#3F3F3F]">Deal Estancado &gt; 14 días</p>
+                                        <p className="text-xs text-[#B1B1B0]">Tarea auto-generada: "Limpiar Pipeline".</p>
+                                    </div>
                                 </li>
-                                <li className="p-2 bg-red-50 rounded border border-red-100">
-                                    <span className="block font-bold text-red-800 text-xs">📉 Motivo de Pérdida</span>
-                                    <span className="text-red-600 text-xs block mt-1">Obligatorio en Closed Lost (Precio, Competencia...)</span>
-                                </li>
-                                <li className="p-2 bg-green-50 rounded border border-green-100">
-                                    <span className="block font-bold text-green-800 text-xs">🚀 Fecha Inicio Servicio</span>
-                                    <span className="text-green-600 text-xs block mt-1">Para facturación</span>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-sm">→</span>
+                                    <div>
+                                        <p className="text-sm font-bold text-[#3F3F3F]">Closed Won</p>
+                                        <p className="text-xs text-[#B1B1B0]">Slack a #wins, Email a Ops y Finanzas.</p>
+                                    </div>
                                 </li>
                             </ul>
                         </div>

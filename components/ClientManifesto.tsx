@@ -54,9 +54,9 @@ const Matrix2x2 = () => (
 const ClientManifesto: React.FC = () => {
     return (
         <div className="container mx-auto p-4 md:p-8 bg-[#f3f4f6]">
-            <header className="text-center py-12">
-                <h1 className="text-4xl md:text-5xl font-bold text-[#3F3F3F] tracking-tight">Estrategia de Segmentación y Targeting</h1>
-                <p className="text-xl text-[#6D84E3] mt-4 font-medium">Dónde jugar y cómo ganar: Definición operativa del mercado objetivo.</p>
+            <header className="py-6">
+                <h2 className="text-2xl font-bold text-[#3F3F3F] mb-2" style={{fontFamily: 'Outfit, sans-serif'}}>Estrategia de Segmentación y Targeting</h2>
+                <p className="text-base text-[#B1B1B0]">Dónde jugar y cómo ganar: Definición operativa del mercado objetivo</p>
             </header>
 
             <main className="space-y-12 max-w-7xl mx-auto">

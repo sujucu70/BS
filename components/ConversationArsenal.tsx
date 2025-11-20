@@ -189,9 +189,9 @@ const ConversationArsenal: React.FC<ConversationArsenalProps> = ({ onNavigate })
 
     return (
         <div className="container mx-auto p-4 md:p-8 bg-[#f8f9fa]">
-             <header className="text-center py-12">
-                <h1 className="text-4xl md:text-6xl font-bold text-[#3F3F3F] tracking-tight">Narrativa de Valor y Mensajería</h1>
-                <p className="text-xl text-[#6D84E3] mt-4 font-medium">Guía Estratégica para Comunicar el Valor de BeyondCX</p>
+             <header className="py-6">
+                <h2 className="text-2xl font-bold text-[#3F3F3F] mb-2" style={{fontFamily: 'Outfit, sans-serif'}}>Narrativa de Valor y Mensajería</h2>
+                <p className="text-base text-[#B1B1B0]">Guía Estratégica para Comunicar el Valor de BeyondCX</p>
             </header>
 
             <main className="max-w-7xl mx-auto space-y-16">

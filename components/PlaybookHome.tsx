@@ -62,7 +62,7 @@ const PlaybookHome: React.FC<PlaybookHomeProps> = ({ onNavigate }) => {
                     BeyondCX Sales Playbook
                 </h1>
                 <p className="text-xl md:text-2xl text-[#B1B1B0] mt-4 max-w-3xl mx-auto leading-relaxed">
-                    Framework Estratégico para Equipos Comerciales de Alto Rendimiento
+                    Framework Estratégico para Equipos Comerciales
                 </p>
             </header>
             <main>

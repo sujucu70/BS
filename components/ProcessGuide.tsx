@@ -517,7 +517,7 @@ const ProcessGuide: React.FC = () => {
                                     <h3 className="font-bold text-gray-800 mb-2">1. Selección del Caso de Uso</h3>
                                     <p className="text-sm text-gray-600 mb-4">No intentes automatizar todo. Busca la victoria rápida.</p>
                                     <ul className="text-sm text-gray-600 list-disc list-inside space-y-1">
-                                        <li><strong>Alto Volumen:</strong> >1.000 interacciones/mes.</li>
+                                        <li><strong>Alto Volumen:</strong> &gt;1.000 interacciones/mes.</li>
                                         <li><strong>Baja Complejidad:</strong> Reglas claras (Ej: Citas, Pedidos).</li>
                                         <li><strong>Medible:</strong> KPI actual conocido.</li>
                                     </ul>
@@ -537,7 +537,7 @@ const ProcessGuide: React.FC = () => {
                                     <h3 className="font-bold text-gray-800 mb-2">3. KPIs de Éxito</h3>
                                     <p className="text-sm text-gray-600 mb-4">Define qué es "ganar" antes de empezar.</p>
                                     <ul className="text-sm text-gray-600 list-disc list-inside space-y-1">
-                                        <li><strong>FCR Piloto:</strong> >70% resolución IA.</li>
+                                        <li><strong>FCR Piloto:</strong> &gt;70% resolución IA.</li>
                                         <li><strong>CSAT:</strong> Igual o superior al humano.</li>
                                         <li><strong>Cero Errores Críticos.</strong></li>
                                     </ul>
@@ -666,7 +666,7 @@ const ProcessGuide: React.FC = () => {
                                         <tr className="hover:bg-gray-50">
                                             <td className="px-6 py-4 font-bold text-gray-800">Deal Strategy (Clinic)</td>
                                             <td className="px-6 py-4"><span className="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded font-bold">Ad-hoc / Jueves</span></td>
-                                            <td className="px-6 py-4">Desbloquear deals complejos (> Tier 2). Brainstorming colectivo.</td>
+                                            <td className="px-6 py-4">Desbloquear deals complejos (&gt; Tier 2). Brainstorming colectivo.</td>
                                             <td className="px-6 py-4 text-gray-500">Equipo Completo</td>
                                         </tr>
                                         <tr className="hover:bg-gray-50">
@@ -726,7 +726,7 @@ const ProcessGuide: React.FC = () => {
                                         <h4 className="font-bold text-gray-700 mb-2">2. Pipeline Velocity (Manager)</h4>
                                         <p className="text-xs text-gray-500 mb-4">Para detectar cuellos de botella.</p>
                                         <ul className="text-sm text-gray-600 list-disc list-inside">
-                                            <li>Deals estancados (>15 días).</li>
+                                            <li>Deals estancados (&gt;15 días).</li>
                                             <li>Tasa de conversión.</li>
                                             <li>Pipeline Coverage.</li>
                                         </ul>

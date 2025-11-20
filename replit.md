@@ -20,16 +20,18 @@ This is a React-based interactive sales playbook application for BeyondCX. It pr
 - Fixed host blocking error in preview environment
 
 ### Content Reorganization & Humanization
-- **Charts Relocated**: Moved MEDDICC Impact chart from Blueprint to Metodología section; moved Pipeline Conversion chart to Operaciones/Dashboards section
-- **Modelo Operativo Humanized** (components/OperatingModel.tsx):
+- **Charts Relocated**: Moved MEDDICC Impact chart from Blueprint to Metodología section; removed Pipeline Conversion chart from Operaciones section to reduce visual noise
+- **Modelo Operativo Humanized & Simplified** (components/OperatingModel.tsx):
   - Added micro-narratives to role cards: SDR ("Tu motor de generación de oportunidades"), AE ("Convertir dolor en contratos firmados"), Manager ("Eliminar obstáculos y asegurar el pronóstico")
   - Updated North Star metrics to plain language: "New MRR (Ingreso Recurrente)", "Precisión del Forecast"
-  - Explained technical acronyms in Higiene del Dato section: TCV → "Valor Total Contrato (TCV): Suma total a facturar en el periodo", MAP → "Plan de Acción Mutuo (MAP): ¿Tenemos fechas de cierre pactadas con el cliente?", Tech Stack → "Tecnología Actual del Cliente", Pain Point → "Dolor Principal (Pain): ¿Qué problema les cuesta dinero hoy?"
+  - Simplified Higiene del Dato section: eliminated 3 redundant grey cards, consolidated content into clean phase-based structure (Discovery, Solución, Económica) within "Campos Obligatorios" column
+  - Integrated humanized explanations directly: Pain → "¿Qué problema les cuesta dinero hoy?", Tech Stack → "Tecnología actual del cliente", MAP → "¿Fechas de cierre pactadas?", TCV → "Valor Total del Contrato"
   - Added new column "¿Qué debo llevar preparado?" to Rituales de Gestión table with preparation requirements for each meeting type
+  - Removed redundant funnel chart from Dashboards section, giving more prominence to the 3 dashboard definition cards
 - **MEDDICC Section Redesigned** (components/MethodologyTools.tsx):
   - Unified MEDDICC framework and impact chart into single two-column card layout
   - Left column: Vertical list of 7 MEDDICC elements with indigo circular badges and brief descriptions
-  - Right column: Win Rate impact chart with gradient background
+  - Right column: Win Rate impact chart with gradient background and inline title "Por qué usarlo: Impacto en Win Rate"
   - Removed dark horizontal bar design for cleaner "Dashboard SaaS" aesthetic
   - Theory and visual proof now side-by-side for single-glance comprehension
 

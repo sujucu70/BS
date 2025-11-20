@@ -19,6 +19,14 @@ This is a React-based interactive sales playbook application for BeyondCX. It pr
 - Set up workflow for development server
 - Fixed host blocking error in preview environment
 
+### Content Reorganization & Humanization
+- **Charts Relocated**: Moved MEDDICC Impact chart from Blueprint to Metodología section; moved Pipeline Conversion chart to Operaciones/Dashboards section
+- **Modelo Operativo Humanized** (components/OperatingModel.tsx):
+  - Added micro-narratives to role cards: SDR ("Tu motor de generación de oportunidades"), AE ("Convertir dolor en contratos firmados"), Manager ("Eliminar obstáculos y asegurar el pronóstico")
+  - Updated North Star metrics to plain language: "New MRR (Ingreso Recurrente)", "Precisión del Forecast"
+  - Explained technical acronyms in Higiene del Dato section: TCV → "Valor Total Contrato (TCV): Suma total a facturar en el periodo", MAP → "Plan de Acción Mutuo (MAP): ¿Tenemos fechas de cierre pactadas con el cliente?", Tech Stack → "Tecnología Actual del Cliente", Pain Point → "Dolor Principal (Pain): ¿Qué problema les cuesta dinero hoy?"
+  - Added new column "¿Qué debo llevar preparado?" to Rituales de Gestión table with preparation requirements for each meeting type
+
 ## Project Structure
 ```
 .
